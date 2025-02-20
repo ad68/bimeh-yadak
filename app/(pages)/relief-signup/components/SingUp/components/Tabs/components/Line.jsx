@@ -1,14 +1,12 @@
-'use client'
 import { useState, useContext, useEffect } from "react";
-import Step from './components/Step'
-import Line from './components/Line'
+
 //
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
 // ────────────────────────────────────────────────────────────────────
 //
 
-export default function Index({ activeTab, setActiveTab }) {
+export default function Index() {
     // ─── Global Variable ────────────────────────────────────────────────────────────
 
     // ─── States ─────────────────────────────────────────────────────────────────────
@@ -22,11 +20,5 @@ export default function Index({ activeTab, setActiveTab }) {
     //   :::::: R E N D E R : :  :   :    :     :        :          :
     // ──────────────────────────────────────────────────────────────
     //
-    return <section className="flex gap-1">
-        <Step activeType="current" stepNumber={1} />
-        <Line />
-        <Step />
-        <Line />
-        <Step />
-    </section>;
+    return <></>;
 }
