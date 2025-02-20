@@ -49,8 +49,8 @@ const yekanbakh = localFont({
   variable: "--font-yekanbakh",
 });
 const APP_NAME = "PWA App";
-const APP_DEFAULT_TITLE = "تضمین ماشین";
-const APP_TITLE_TEMPLATE = "تضمین ماشین | صفحه اصلی";
+const APP_DEFAULT_TITLE = "بیمه یدک";
+const APP_TITLE_TEMPLATE = "بیمه یدک | صفحه اصلی";
 const APP_DESCRIPTION = "بانک اطلاعات خودروئی";
 export const metadata = {
   applicationName: APP_NAME,

@@ -25,7 +25,7 @@ export default function Index() {
     <>
       <section className="">
         <section className="my-[80px] flex h-[150px] w-full items-center justify-center bg-blue text-[50px] font-bold  text-white ">
-          <h1>تضمین ماشین</h1>
+          <h1>بیمه یدک</h1>
         </section>
         <Section1 />
         {/* <Section2

@@ -16,7 +16,7 @@ export default function Index() {
         loading: () => <p>Map is loading</p>,
         ssr: false,
       }),
-    [],
+    []
   );
   // ─── States ─────────────────────────────────────────────────────────────────────
 
@@ -35,13 +35,9 @@ export default function Index() {
         <section className="h-full w-full  bg-gradient-to-br from-black  to-[#24418e] opacity-95"></section>
         <section className="absolute left-[50%] top-[5%] z-[900]  w-full translate-x-[-50%] xl:top-[15%]">
           <section className="mx-auto flex w-[80%] flex-col justify-center justify-items-center gap-4 text-white xl:w-[400px]">
-            <h5 className="text-center text-lg"> ارتباط با تضمین ماشین </h5>
-            <h2 className="text-center text-3xl font-bold leading-9">
-              با ما در ارتباط باشید:
-            </h2>
-            <span className="text-center">
-              اگر سوال یا نظری دارید لطفا با ما در میان بگذارید:
-            </span>
+            <h5 className="text-center text-lg"> ارتباط با بیمه یدک </h5>
+            <h2 className="text-center text-3xl font-bold leading-9">با ما در ارتباط باشید:</h2>
+            <span className="text-center">اگر سوال یا نظری دارید لطفا با ما در میان بگذارید:</span>
           </section>
           <ContactUsForm />
         </section>

@@ -5,7 +5,7 @@
 //
 
 export const metadata = {
-  title: "تضمین ماشین |  درباره ما",
+  title: "بیمه یدک |  درباره ما",
   description: "بانک اطلاعات خودروئی",
 };
 export default function aboutLayout({ children }) {

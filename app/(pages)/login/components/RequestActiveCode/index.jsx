@@ -30,7 +30,7 @@ export default function Index({ actionLoading, requestActiveCode }) {
   return (
 
     <section className="h-[325px] w-[300px] text-center transition-all duration-700 ease-in-out" >
-      <h2 className="mb-[20px] text-[30px] font-semibold text-blue text-center">
+      <h2 className="mb-[20px] text-[30px] font-semibold text-primary text-center">
         خوش آمدید!
       </h2>
       <section className="mb-[9px] flex gap-1 justify-center">

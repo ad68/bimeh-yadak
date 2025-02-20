@@ -25,7 +25,7 @@ export default function Index() {
   return (
     <>
       <section className="mx-auto  mt-[112px] flex h-[33px] w-[1240px] justify-between">
-        <h2 className="text-2xl font-bold text-[#3E4151]">تضمین ماشین</h2>
+        <h2 className="text-2xl font-bold text-[#3E4151]">بیمه یدک</h2>
         <Image
           className=""
           src="/assets/images/Vector-header.png"

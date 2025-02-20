@@ -65,7 +65,7 @@ export default function Index({
       <section className="h-[24px]">
         {!resendBtnState && (
           <section className="flex">
-            <span className="block w-[46px]" id="countDown"></span>
+            <span className="block w-[46px] text-black" id="countDown"></span>
             <span className="mr-2">مانده تا دریافت مجدد کد</span>
           </section>
         )}

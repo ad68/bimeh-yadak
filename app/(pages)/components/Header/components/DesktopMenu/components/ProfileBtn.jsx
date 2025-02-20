@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   IconArrowdown,
-  IconDashboard,
   IconDashboardprofile,
   IconLogout,
 } from "@/common/icons";
@@ -51,10 +50,9 @@ function ProfileBtn({ authInfo, mode, setLogOutModal }) {
       <section className="relative">
         <button
           onClick={() => setMenuShow(!menuShow)}
-          className="profileMenuBtnDesc flex h-9 min-w-[100px] items-center justify-center gap-1 rounded-full bg-blue px-4
-              py-[10px] font-medium leading-normal text-[white] hover:bg-[#4E94EA] md:h-[42px] xl:w-auto dark:bg-darkBtn-100 dark:text-darkText-500 dark:hover:bg-darkBtn-200"
+          className="profileMenuBtnDesc flex h-9 min-w-[100px] items-center justify-center gap-1 rounded-full bg-primary px-4
+              py-[10px] font-medium leading-normal text-[#505050] hover:bg-primary md:h-[42px] xl:w-auto  dark:text-darkText-500 dark:hover:bg-darkBtn-200"
         >
-          <Image src={Avatar} alt="" className="h-[25px] w-[25px]" />
           <span className="mr-2">
             {mode === "userInfoNotComplete" && authInfo?.mobileNumber}
             {mode === "userInfoComplete" &&
@@ -65,13 +63,6 @@ function ProfileBtn({ authInfo, mode, setLogOutModal }) {
         <section
           className={`profileMenuDesc absolute left-0  mr-[-1px] mt-[4px] h-auto w-[200px] overflow-hidden rounded-xl bg-white shadow-xl transition-all [&>*]:transition-all [&>span:hover]:bg-slate-200 ${menuShow ? "block" : "hidden"}`}
         >
-          {/* <span className='flex items-center py-3 pb-2 px-5 cursor-pointer '>
-                        <IconUserCircle />
-                        <span className='mr-2'>
-                            {mode === "userInfoNotComplete" && authInfo?.mobileNumber}
-                            {mode === "userInfoComplete" && authInfo?.firstName + " " + authInfo?.lastName}
-                        </span>
-                    </span> */}
           <span className="block cursor-pointer px-5 py-2">
             <Link href="/dashboard" className="flex items-center">
               <IconDashboardprofile />

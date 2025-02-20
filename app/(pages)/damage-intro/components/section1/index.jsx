@@ -36,7 +36,7 @@ export default function Index() {
         </h2>
         <section className=" order-last mx-auto flex w-[90%]  flex-col text-[#3E4151] xl:order-first xl:w-[542px]">
           <section className="hidden   gap-[0.3rem] pt-8 text-xs xl:flex">
-            <a href="#">تضمین ماشین</a>
+            <a href="#">بیمه یدک</a>
             <span>/</span>
             <a href="#" className=" text-[#0165E1]">
               اعلام خسارت
@@ -47,7 +47,7 @@ export default function Index() {
           </h2>
           <section className=" order-last mx-auto flex w-[90%]  flex-col text-[#3E4151] md:w-[80%] xl:order-first xl:w-[542px] ">
             <section className="hidden items-center gap-[0.3rem] pt-8 text-xs xl:flex">
-              <a href="#">تضمین ماشین</a>
+              <a href="#">بیمه یدک</a>
               <span>/</span>
               <a href="#" className="text-sm text-[#0165E1]">
                 اعلام خسارت

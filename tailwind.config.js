@@ -2,6 +2,7 @@
 export const tailwindColors = {
   transparent: "transparent",
   current: "currentColor",
+  primary: "#F3C401",
   white: "#ffffff",
   purple: "#3f3cbb",
   midnight: "#121063",

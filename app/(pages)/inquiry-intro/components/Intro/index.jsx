@@ -38,7 +38,7 @@ export default function Index() {
       <section className="container mx-auto mb-8 mt-[73px] flex flex-wrap justify-between">
         <section className="order-2 mx-auto flex w-full flex-col p-8 text-[#3E4151] md:px-[90px] lg:w-[542px] lg:p-0">
           <section className="hidden  gap-[0.3rem] pt-8 text-xs xl:flex">
-            <a href="#">تضمین ماشین</a>
+            <a href="#">بیمه یدک</a>
             <span>/</span>
             <a href="#">استعلام</a>
             <span>/</span>

@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "تضمین ماشین - ورود",
+  title: "بیمه یدک - ورود",
   description: "بانک",
 };
 

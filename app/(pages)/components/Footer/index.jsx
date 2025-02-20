@@ -30,7 +30,8 @@ export default function Footer() {
             <section className="mx-auto flex w-[90%] flex-col gap-[14px] xl:w-[291px]">
               <Link href="/" className="hidden cursor-pointer lg:flex">
                 <h3 className="flex h-[51px] w-[109px] gap-1 text-[30px] font-bold tracking-wider text-white">
-                  <span className="text-blue"> تضمین</span>ماشین
+                  <span className="text-primary">بیمه</span>
+                  <span>یدک</span>
                 </h3>
               </Link>
             </section>

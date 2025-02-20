@@ -46,12 +46,12 @@ export default function Index({ children, open, onClose, width }) {
   // ──────────────────────────────────────────────────────────────
   //
   return (
-    <section ref={modalWrapper} className="fixed h-full w-full top-0 left-0 hidden items-center justify-center z-[500]">
-      <section ref={modalOverlay} onClick={onClose} className="absolute w-full h-full top-0 opacity-0 transition-all duration-300 left-0 backdrop-blur-sm z-[150] bg-[#4d4d4d7e]">
+    <section ref={modalWrapper} className="fixed h-full w-full top-0 left-0 hidden items-center justify-center z-[1001]">
+      <section ref={modalOverlay} onClick={onClose} className="absolute w-full h-full top-0 opacity-0 transition-all duration-300 left-0 backdrop-blur-sm z-[500] bg-[#4d4d4d7e]">
       </section>
       <section
         ref={modalBox}
-        className="h-auto py-[60px] px-[30px] min-h-[100px] bg-white mx-auto z-[1000] rounded-[10px] scale-0 transition-all duration-300"
+        className="h-auto py-[60px] px-[30px] min-h-[100px] bg-white mx-auto z-[1000] max-w-[95%] rounded-[10px] scale-0 transition-all duration-300"
         style={{ width: width ? width : 500 }}
       >
         <section

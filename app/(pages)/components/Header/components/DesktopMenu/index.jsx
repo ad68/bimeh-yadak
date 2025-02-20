@@ -2,14 +2,12 @@
 import React, { useState, useContext, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+
 import { IconMenu, IconLogin } from "@/common/icons";
 import { useAuthStore } from "@/store/auth/login";
 import { isEmptyObject } from "@/helper";
 import TopNavigation from "../TopNavigation";
-import logo from "../../../../../../public/assets/images/logo.png";
-import DashboardMobileMenu from "../DashboardMobileMenu";
-import DarkMode from "../DarkMode";
+import logo from "../../../../../../public/assets/images/logo.svg";
 import ProfileBtn from "./components/ProfileBtn";
 //
 // ────────────────────────────────────────────────────────── I ──────────
@@ -18,7 +16,7 @@ import ProfileBtn from "./components/ProfileBtn";
 //
 export default function Index({ setOpen, open, setLogOutModal }) {
   // ─── Global Variable ────────────────────────────────────────────────────────────
-  const pathname = usePathname();
+
   const authInfo = useAuthStore((state) => state.authInfo);
   // ─── States ─────────────────────────────────────────────────────────────────────
   const [authStatus, setAuthStatus] = useState(false);
@@ -67,13 +65,19 @@ export default function Index({ setOpen, open, setLogOutModal }) {
             />
           </section>
           <Link href="/" className="hidden cursor-pointer lg:flex">
-            <Image
-              className="hidden lg:flex"
-              src={logo}
-              width={162}
-              height={54}
-              alt="LogoDesktop"
-            />
+            <section className="flex gap-[13px] justify-center font-bold text-[20px] text-[#303030] items-center">
+              <Image
+                className="hidden lg:flex"
+                src={logo}
+                width={56}
+                height={56}
+                alt="LogoDesktop"
+              />
+              <h1>
+                بیمه یدک
+              </h1>
+            </section>
+
           </Link>
           <div className="hidden lg:flex">
             <TopNavigation />
@@ -81,14 +85,14 @@ export default function Index({ setOpen, open, setLogOutModal }) {
           <div className="hidden flex-row items-center justify-between lg:flex  lg:gap-16">
             {authStatus === "notLoggedIn" && (
               <Link
-                className="flex h-9 min-w-[154px] items-center justify-center gap-1  rounded-full  bg-blue  px-4 py-[10px] font-medium leading-normal text-[white] hover:bg-[#4E94EA] md:h-[42px] md:w-[154px] dark:bg-darkBtn-100 dark:text-darkText-500 dark:hover:bg-darkBtn-200 "
+                className="flex h-9 min-w-[154px] items-center justify-center gap-2  rounded-full  bg-primary  px-4 py-[10px] font-medium leading-normal text-[white]  md:h-[42px] md:w-[154px] dark:text-darkText-500 dark:hover:bg-darkBtn-200 "
                 href="/login"
               >
-                <p className="mb-[2px] align-middle md:text-[15px]">
+                <p className="mb-[2px] align-middle text-[#505050] md:text-[15px]">
                   ورود | ثبت نام
                 </p>
                 <span className="">
-                  <IconLogin strokeWidth="2" />
+                  <IconLogin color="#505050" strokeWidth="2" />
                 </span>
               </Link>
             )}
@@ -108,12 +112,11 @@ export default function Index({ setOpen, open, setLogOutModal }) {
             )}
             {/* <DarkMode /> */}
           </div>
-          <Link className="flex lg:hidden" href="/">
-            <Image src={logo} width={112} height={38} alt="LogoMobile" />
+          <Link className="flex justify-center items-center gap-2 font-bold lg:hidden" href="/">
+            <Image src={logo} width={38} height={38} alt="LogoMobile" />
+            <span>بیمه یدک</span>
           </Link>
-          {pathname.substring(1, 10) === "dashboard" && (
-            <DashboardMobileMenu setLogOutModal={setLogOutModal} />
-          )}
+
         </header>
       </nav>
     </header>

@@ -80,7 +80,7 @@ export default function Index({
   return (
     <section className="relative h-[325px] w-[300px] text-center">
       <button
-        className=" mr-auto  flex items-center justify-center text-blue"
+        className=" mr-auto  flex items-center justify-center text-black"
         onClick={() => setPanelMode("activeCode")}
       >
         <span>بازگشت</span>
