@@ -32,7 +32,7 @@ export default function Index() {
   return (
     <>
       <section className="relative mt-[62px] h-[800px] w-full bg-[url('/assets/images/ContactUs.jpg')] bg-cover xl:mt-[80px] xl:h-[620px]">
-        <section className="h-full w-full  bg-gradient-to-br from-black  to-[#24418e] opacity-95"></section>
+        <section className="h-full w-full  bg-gradient-to-br from-black  to-primary opacity-95"></section>
         <section className="absolute left-[50%] top-[5%] z-[900]  w-full translate-x-[-50%] xl:top-[15%]">
           <section className="mx-auto flex w-[80%] flex-col justify-center justify-items-center gap-4 text-white xl:w-[400px]">
             <h5 className="text-center text-lg"> ارتباط با بیمه یدک </h5>

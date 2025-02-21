@@ -1,5 +1,6 @@
 import toast from "react-hot-toast";
 import Moment from "moment-jalaali";
+import moment from "moment-jalaali";
 export const isValue = (value) => {
   if (value === null || value === "" || value === undefined) {
     return false;
@@ -219,4 +220,28 @@ export const removeFromArray = (arr, search) => {
 export const sumOfArray = (arr) => {
   const sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
   return sum;
+};
+export const persianToEnglishNumber = (input) => {
+  if (typeof input !== "string") {
+    throw new Error("Input must be a string");
+  }
+
+  const persianDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
+  const englishDigits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+  return input
+    .split("")
+    .map((char) => {
+      const index = persianDigits.indexOf(char);
+      return index !== -1 ? englishDigits[index] : char;
+    })
+    .join("");
+};
+
+export const jalaliToGregorian = (value) => {
+  if (value) {
+    const greDate = moment(persianToEnglishNumber(value), "jYYYY/jMM/jDD").format("YYYY-MM-DD");
+    return greDate;
+  }
+  return "";
 };

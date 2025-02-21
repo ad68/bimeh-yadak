@@ -59,7 +59,7 @@ export default function Index({
   //
   return (
     <>
-      <section className="mx-auto flex h-[48px] w-full max-w-full rounded xl:w-[280px] ">
+      <section className="mx-auto flex h-[48px]  w-full max-w-full rounded">
         <section className="flex  rounded-r  border-y-[0.4px] border-r-[0.4px] border-solid border-[#A6A9BD] ">
           <section className="flex h-full w-[46px] items-center justify-center border-l-[0.4px] border-solid border-[#A6A9BD] ">
             <section className="flex h-[32px] w-[30px] items-center justify-center rounded-[5px] border border-solid border-[#8B929A36] ">
@@ -95,11 +95,9 @@ export default function Index({
                 className="w-[48px] focus:outline-none"
                 onChange={(e) => setAlphabetCode(e.target.value)}
                 value={alphabetCode}
-                /* defaultValue={alphabetCode ? alphabetCode : "الف"} */
+
               >
-                {/*  <option className="" value={""} selected disabled>
-                  انتخاب کنید
-                </option> */}
+
                 <option value={"الف"} selected>
                   الف
                 </option>
@@ -113,6 +111,7 @@ export default function Index({
                 <option value={"ژ"}>ژ</option>
                 <option value={"س"}>س</option>
                 <option value={"ش"}>ش</option>
+                <option value="ص">ص</option>
                 <option value={"ط"}>ط</option>
                 <option value={"ع"}>ع</option>
                 <option value={"ف"}>ف</option>
@@ -127,6 +126,7 @@ export default function Index({
                 <option value={"ی"}>ی</option>
                 <option value={"معلولین"}>معلولین</option>
                 <option value={"تشریفات"}>تشریفات</option>
+                <option value="خاص">خاص</option>
                 <option value={"D"}>D</option>
                 <option value={"S"}>S</option>
               </select>

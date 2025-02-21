@@ -14,7 +14,7 @@ const TopNavigation = () => {
     <>
       <ul className="flex flex-col gap-8 text-base font-semibold leading-6 antialiased md:flex md:flex-row md:items-center	">
         <MenuLink title="خانه" link="/" />
-        <MenuLink title="خرید بیمه نامه" link="/purchase" />
+        <MenuLink title="خرید بیمه نامه" link="/relief-signup" />
         <MenuLink title="درخواست امداد خودرو" link="/request" />
         <MenuLink title="درباره ما" link="/about" />
         <MenuLink title="تماس با ما" link="/contact-us" />

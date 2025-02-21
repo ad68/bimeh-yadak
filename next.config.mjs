@@ -11,7 +11,6 @@ const nextConfig = {
         protocol: "https",
         hostname: "cdn.hamrah-mechanic.com",
       },
-
       {
         protocol: "https",
         hostname: "cc.tazminyadak.com",
@@ -23,8 +22,10 @@ const nextConfig = {
       {
         protocol: "http",
         hostname: "localhost",
-        port: ":3000",
+        port: "3000", // نیازی به ":" نیست
       },
     ],
   },
 };
+
+export default nextConfig;

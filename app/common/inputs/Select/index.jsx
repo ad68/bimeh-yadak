@@ -19,7 +19,7 @@ export default function Index({
   setState,
 }) {
   // ─── Global Variable ────────────────────────────────────────────────────────────
-  const token = "TOKEN";
+
   // ─── States ─────────────────────────────────────────────────────────────────────
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -63,9 +63,10 @@ export default function Index({
         placeholder={title ? title : "انتخاب کنید"}
         className={dark ? "darkSelect" : ""}
         loading={loading}
+
         style={{
           width: "100%",
-          height: 48,
+
         }}
         options={data}
         onSearch={onSearch}

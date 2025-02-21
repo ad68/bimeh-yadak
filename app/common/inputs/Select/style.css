@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .darkSelect {
   /*.ant-select-dropdown .ant-select-item{
     color: white;
@@ -21,4 +22,10 @@
 
 .ant-select-selector {
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1411764706);
+}
+
+.ant-select-selector {
+  height: 50px !important; /* افزایش ارتفاع ورودی */
+  display: flex;
+  align-items: center;
 }/*# sourceMappingURL=style.css.map */

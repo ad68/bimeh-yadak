@@ -79,6 +79,7 @@ export default function Index({
           ...baseStyles,
           borderColor: state.isFocused ? "black" : "silver",
           backgroundColor: dark ? "#2f2f2f80" : "white",
+          height: "48px",
           width: "100% !important",
         }),
         /*   option: (provided) => ({

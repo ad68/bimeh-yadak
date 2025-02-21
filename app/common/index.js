@@ -18,25 +18,5 @@ import ComponentLoading from "./ComponentLoading";
 import ErrorMessage from "./Message/ErrorMessage";
 import Gallery from "./Gallery";
 import ServerError from "./ServerError";
-export {
-  Select,
-  AsyncSelect,
-  TextBox,
-  Number,
-  LoadingSpinner,
-  Button,
-  RangePicker,
-  Modal,
-  CarLicensePlate,
-  CycleLicensePlate,
-  ConfirmModal,
-  QuestionModal,
-  DeleteModal,
-  Notify,
-  ComponentLoading,
-  ErrorMessage,
-  LogoutModal,
-  FullLoading,
-  Gallery,
-  ServerError,
-};
+import DatePicker from "./inputs/DatePicker";
+export { Select, AsyncSelect, TextBox, Number, LoadingSpinner, Button, RangePicker, Modal, CarLicensePlate, CycleLicensePlate, ConfirmModal, QuestionModal, DeleteModal, Notify, ComponentLoading, ErrorMessage, LogoutModal, FullLoading, Gallery, ServerError, DatePicker };

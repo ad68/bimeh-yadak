@@ -1,5 +1,4 @@
 'use client'
-import { useState, useContext, useEffect } from "react";
 import Step from './components/Step'
 import Line from './components/Line'
 //
@@ -8,7 +7,7 @@ import Line from './components/Line'
 // ────────────────────────────────────────────────────────────────────
 //
 
-export default function Index({ activeTab, setActiveTab }) {
+export default function Index({ activeTab }) {
     // ─── Global Variable ────────────────────────────────────────────────────────────
 
     // ─── States ─────────────────────────────────────────────────────────────────────
@@ -22,11 +21,11 @@ export default function Index({ activeTab, setActiveTab }) {
     //   :::::: R E N D E R : :  :   :    :     :        :          :
     // ──────────────────────────────────────────────────────────────
     //
-    return <section className="flex gap-1">
-        <Step activeType="current" stepNumber={1} />
+    return <section className="flex justify-center items-center mt-10 px-10 gap-1">
+        <Step activeType={activeTab === 1 ? "active" : activeTab > 1 ? "passed" : "notActive"} stepNumber={1} />
         <Line />
-        <Step />
+        <Step activeType={activeTab === 2 ? "active" : activeTab > 2 ? "passed" : "notActive"} stepNumber={2} />
         <Line />
-        <Step />
+        <Step activeType={activeTab === 3 ? "active" : activeTab > 3 ? "passed" : "notActive"} stepNumber={3} />
     </section>;
 }

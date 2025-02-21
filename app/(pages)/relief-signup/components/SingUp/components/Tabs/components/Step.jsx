@@ -12,7 +12,17 @@ export default function Index({ stepNumber, activeType }) {
     // ─── States ─────────────────────────────────────────────────────────────────────
 
     // ─── Functions ──────────────────────────────────────────────────────────────────
-
+    const getStepStyle = () => {
+        if (activeType === "active") {
+            return "border-primary text-primary bg-white"
+        }
+        if (activeType === "passed") {
+            return "border-primary text-[gray] bg-primary"
+        }
+        if (activeType === "notActive") {
+            return "border-silver text-[gray] bg-white"
+        }
+    }
     // ─── Life Cycle ─────────────────────────────────────────────────────────────────
 
     //
@@ -20,7 +30,7 @@ export default function Index({ stepNumber, activeType }) {
     //   :::::: R E N D E R : :  :   :    :     :        :          :
     // ──────────────────────────────────────────────────────────────
     //
-    return <span className={`w-[50px] h-[50px]  flex border border-1 border-silver rounded-full  justify-center items-center`}>
+    return <span className={`w-[50px] h-[50px] ${getStepStyle()} flex border border-1  rounded-full  justify-center items-center`}>
         {stepNumber}
     </span>;
 }
