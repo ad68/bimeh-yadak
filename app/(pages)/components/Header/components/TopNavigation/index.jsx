@@ -16,6 +16,7 @@ const TopNavigation = () => {
         <MenuLink title="خانه" link="/" />
         <MenuLink title="خرید بیمه نامه" link="/relief-signup" />
         <MenuLink title="درخواست امداد خودرو" link="/request" />
+        <MenuLink title="همکاری در بازاریابی" link="/marketing" />
         <MenuLink title="درباره ما" link="/about" />
         <MenuLink title="تماس با ما" link="/contact-us" />
       </ul>

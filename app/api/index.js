@@ -37,6 +37,10 @@ export const api = {
   },
   insurance: {
     preRegistration: baseUrl + "pre-registration-insurance/add",
+    adminPreRegistration: baseUrl + "pre-registration-insurance/admin/add",
+  },
+  collaboration: {
+    addCollaboration: baseUrl + "collaboration-in-marketing/add",
   },
   payment: {
     requestPayment: baseUrl + "payment/request",

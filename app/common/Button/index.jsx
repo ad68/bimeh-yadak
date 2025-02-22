@@ -26,7 +26,7 @@ export default function Index({
   const getColor = () => {
     if (outlined) {
       if (type === "primary") {
-        return "text-black border-[2px] border border-primary";
+        return "text-black border-[2px] border border-primary bg-[white]";
       } else if (type === "danger") {
         return "text-red border-[2px] border border-red";
       } else {
@@ -50,6 +50,7 @@ export default function Index({
   return (
     <button
       {...rest}
+      type={type ? type : "submit"}
       disabled={loading || disabled}
       onClick={onClick}
       className={`relative flex h-12 ${loading && "pl-10"} items-center justify-center rounded-[10px] ${dark ? "border border-[gray]  bg-[#ffffff1a] text-white" : getColor()} px-5 transition-all duration-700 disabled:opacity-50 ${className}`}

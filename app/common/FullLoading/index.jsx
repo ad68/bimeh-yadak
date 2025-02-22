@@ -23,7 +23,7 @@ export default function Index() {
   return (
     <section className="fixed left-0  top-0 z-[1000] flex h-full w-full items-center justify-center bg-[#2362e51f] backdrop-blur-[2px]">
       <section className="max-[90%] mt-[-100px] flex h-[200px] w-[300px] flex-col items-center justify-center rounded-2xl bg-white">
-        <Image alt="" src="/assets/images/logo.png" width={218} height={74} />
+        <Image alt="" src="/assets/images/svg.png" width={218} height={74} />
         <div className="fullLoading">
           <div></div>
           <div></div>

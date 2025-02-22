@@ -3,8 +3,7 @@ import { api } from "@/api";
 import { Button, CarLicensePlate, DatePicker, ErrorMessage, Notify, Select, TextBox } from "@/common";
 import { NotifyMessage, Regex } from "@/enums";
 import { jalaliToGregorian, notify, numberWithCommas } from "@/helper";
-import { useAxios } from "@/hooks";
-import { useSearchParams } from "next/navigation";
+import { useAxios, useAxiosWithToken } from "@/hooks";
 import { useEffect, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 //
@@ -12,7 +11,7 @@ import { useForm, Controller } from "react-hook-form";
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
 // ────────────────────────────────────────────────────────────────────
 //
-export default function Index({ setActiveTab }) {
+export default function Index() {
     // ─── Global Variable ────────────────────────────────────────────────────────────
     const {
         handleSubmit,
@@ -20,16 +19,13 @@ export default function Index({ setActiveTab }) {
         formState: { errors },
         setValue,
         watch
-    } = useForm({
-
-    });
+    } = useForm();
     const generateArray = (start, end, step) => {
         return Array.from({ length: (end - start) / step + 1 }, (_, i) => {
             const value = start + i * step;
             return { label: numberWithCommas(value), value };
         });
     };
-    const searchParams = useSearchParams()
     const warrantyList = generateArray(5000000, 25000000, 1000000);
     const [brandId] = watch(["brandId"]);
     const [modelId] = watch(["modelId"]);
@@ -147,6 +143,7 @@ export default function Index({ setActiveTab }) {
     const preSignUp = (data) => {
         setActionLoading(true);
         const expireDate = `${data?.insuranceExpireDate?.year}/${data?.insuranceExpireDate?.month}/${data?.insuranceExpireDate?.day}`
+
         let params = {
             firstName: data?.firstName,
             lastName: data?.lastName,
@@ -167,12 +164,12 @@ export default function Index({ setActiveTab }) {
             color: data?.colorId.value,
             referralCode: data?.referralCode
         }
-        useAxios
-            .post(api.insurance.preRegistration, params)
+        useAxiosWithToken
+            .post(api.insurance.adminPreRegistration, params)
             .then((res) => {
                 setActionLoading(false);
                 notify.Success("درخواست شما با موفقیت ثبت شد");
-                setActiveTab(3)
+
             })
             .catch((e) => {
                 notify.Error(NotifyMessage.GLOBAL_ERROR)
@@ -227,10 +224,6 @@ export default function Index({ setActiveTab }) {
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [province])
-    useEffect(() => {
-        setValue("referralCode", searchParams.get("referralCode"))
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [searchParams])
     //
     // ──────────────────────────────────────────────────── I ──────────
     //   :::::: R E N D E R : :  :   :    :     :        :          :
@@ -239,14 +232,9 @@ export default function Index({ setActiveTab }) {
     return <>
         <form
             onSubmit={handleSubmit((data) => preSignUp(data))}
-            className="grid grid-cols-1 xl:grid-cols-4 mt-10 gap-4 py-10"
+            className="grid grid-cols-1 xl:grid-cols-4  gap-4 py-10"
         >
-            {/*  <section className="col-span-4">
-                <section className="p-4 w-[350px] m-auto rounded-md text-center bg-[whitesmoke]">
-                    <span> کد معرف : </span>
-                    <span className="font-bold">{searchParams.get("referralCode")}</span>
-                </section>
-            </section> */}
+
             <section className="col-span-4 mt-5">
                 <span className="text-[24px] font-bold">اطلاعات فردی:</span>
             </section>
@@ -449,7 +437,7 @@ export default function Index({ setActiveTab }) {
                 <ErrorMessage>{errors?.yearId?.message}</ErrorMessage>
 
             </section>
-            <section className="flex w-full flex-col gap-[2px]  text-sm">
+            <section className="flex w-full flex-col gap-[2px] text-sm">
                 <label className="pt-[6px] ">رنگ</label>
                 <Controller
                     control={control}
@@ -472,7 +460,7 @@ export default function Index({ setActiveTab }) {
                 />
                 <ErrorMessage>{errors?.colorId?.message}</ErrorMessage>
             </section>
-            <section className="flex w-full flex-col gap-[2px]  text-sm">
+            <section className="flex w-full flex-col xl:col-span-4  gap-[2px]  text-sm">
                 <label className="pt-[6px] ">شماره پلاک</label>
                 <Controller
                     control={control}
@@ -582,7 +570,6 @@ export default function Index({ setActiveTab }) {
                     )}
                 />
                 <ErrorMessage>{errors?.province?.message}</ErrorMessage>
-
             </section>
             <section className="flex w-full flex-col gap-[2px]  text-sm">
                 <label className="pt-[6px] ">شهر</label>
@@ -638,7 +625,7 @@ export default function Index({ setActiveTab }) {
                     render={({ field: { onChange, value } }) => (
                         <TextBox
                             onChange={onChange}
-                            disabled={searchParams.get("referralCode")}
+
                             value={value}
                             placeholder=" کد معرف را وارد کنید"
                             className="h-[48px] rounded-lg "
@@ -647,34 +634,10 @@ export default function Index({ setActiveTab }) {
                 />
                 <ErrorMessage>{errors?.referralCode?.message}</ErrorMessage>
             </section>
-            <section className="col-span-4">
-                <h1 className="font-bold text-[20px]">
-                    صاحبان و مالکین خودرو لطفا به موارد ذیل توجه فرمایید :
-                </h1>
-                <ul className="text-[14px] list-decimal leading-10 pr-[40px]">
-                    <li>
-                        در انتخاب تعهدات بیمه دقت نمایید هر مبلغی را که به عنوان بیمه امداد مشخص می کنید برای استفاده در طول سال هست پس در انتخاب مبلغ تعهدات دقت شود پیشنهاد برای انتخاب تعهدات : الف)برای خودروهای ایرانی از ۵ تا ۱۰ میلیون تومان پوشش تعهدات انتخاب شود یا بیشتر *مثال محاسباتی :* برای ۵ میلیون پوش تعهدات بیمه فقط مبلغ ۲۵۰ هزار تومان پرداخت می شود (یعنی ۵٪ تعهدات) ب) برای خودروهای شاسی خارجی و چینی و ایرانی از ۱۵ تا ۲۵ میلیون تومان پوشش تعهدات انتخاب شود *مثال محاسباتی :* برای ۲۵ میلیون تومان پوشش تعهدات فقط مبلغ ۱۲۵۰۰۰۰ حق بیمه امداد پرداخت می شود .(یعنی ۵٪ حق بیمه تعهدات پوششی )                     </li>
-                    <li>
-                        حق بیمه ۵٪ از هزینه تعهدات تا پایان سال ۱۴۰۳ می باشد از شروع سال جدید ۱۴۰۴ به حق بیمه ۱۰٪ افزایش خواهد یافت پس دقت نمایید قبل از سال جدید تعهدات بیمه امداد خود را خریداری نمایید . *(در نظر داشته باشید این تخفیف فقط به مناسبت ۲۲ بهمن و عید نوروز می باشد )
-                    </li>
-                    <li>
-                        طرح بیمه امداد در حمل خودرو برای اولین بار راه اندازی شده و هدف آن کوتاه کردن دستان افراد سود جو می باشد تا شما هزینه های هنگفت در زمان حمل به اجبار پرداخت ننمایید
-                    </li>
-                    <li>
-                        تنها سامانه پیامکی امداد خودرو کشور ۱۰۰۰۰۱۵۹۳ بوده و سایر پیامک های از سامانه های دیگر فاقد اعتبار می باشد .
-                    </li>
-                </ul>
-            </section>
+
             {/* -------------------Submit------------------- */}
             <section className="col-span-4 flex gap-4">
-                <Button
-                    onClick={() => setActiveTab(1)}
-                    type="button"
-                    outlined
-                    className="mb-4 mt-[13px] h-[48px] w-[93%]  text-lg  leading-[27.9px] xl:mb-0 xl:w-[280px]"
-                >
-                    مرحله قبل
-                </Button>
+
                 <Button
                     loading={actionLoading}
                     className="mb-4 mt-[13px] h-[48px] w-[93%]  text-lg  leading-[27.9px]  xl:mb-0 xl:w-[280px]"

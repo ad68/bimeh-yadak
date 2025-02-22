@@ -10,7 +10,6 @@ import { usePathname } from "next/navigation";
 import { IconDamage, IconHome, IconInquiry2, IconLogout } from "@/common/icons";
 import { LogoutModal } from "@/common";
 import { useSideBarStore } from "@/store/dashboard/sidebar";
-
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
 // ────────────────────────────────────────────────────────────────────

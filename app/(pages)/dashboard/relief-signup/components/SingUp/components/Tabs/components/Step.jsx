@@ -1,31 +1,36 @@
-'use client'
-import { useState } from "react";
-import Tabs from './components/Tabs'
-import Rules from './components/TabContent/Rules'
-import PreSignup from './components/TabContent/Pre-Signup'
-import Success from './components/TabContent/Success'
+import { useState, useContext, useEffect } from "react";
+
 //
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
 // ────────────────────────────────────────────────────────────────────
 //
-export default function Index() {
+
+export default function Index({ stepNumber, activeType }) {
     // ─── Global Variable ────────────────────────────────────────────────────────────
+
     // ─── States ─────────────────────────────────────────────────────────────────────
-    const [activeTab, setActiveTab] = useState(1)
+
     // ─── Functions ──────────────────────────────────────────────────────────────────
+    const getStepStyle = () => {
+        if (activeType === "active") {
+            return "border-primary text-primary bg-white"
+        }
+        if (activeType === "passed") {
+            return "border-primary text-[gray] bg-primary"
+        }
+        if (activeType === "notActive") {
+            return "border-silver text-[gray] bg-white"
+        }
+    }
     // ─── Life Cycle ─────────────────────────────────────────────────────────────────
+
     //
     // ──────────────────────────────────────────────────── I ──────────
     //   :::::: R E N D E R : :  :   :    :     :        :          :
     // ──────────────────────────────────────────────────────────────
     //
-    return <section className="h-[700px] mt-[100px] w-[1366px] max-w-full m-auto">
-        <h3 className="text-[24px] font-bold text-center px-10">پیش ثبت نام بیمه امداد حمل رایگان</h3>
-        <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
-        {activeTab === 1 && <Rules setActiveTab={setActiveTab} />}
-        {activeTab === 2 && <PreSignup setActiveTab={setActiveTab} />}
-        {activeTab === 3 && <Success setActiveTab={setActiveTab} />}
-
-    </section>;
+    return <span className={`w-[50px] h-[50px] ${getStepStyle()} flex border border-1  rounded-full  justify-center items-center`}>
+        {stepNumber}
+    </span>;
 }

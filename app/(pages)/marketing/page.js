@@ -1,20 +1,12 @@
-import Image from "next/image";
-import React, { useState, useContext, useEffect } from "react";
-
-//
-// ────────────────────────────────────────────────────────── I ──────────
-//   :::::: C O M P O N E N T : :  :   :    :     :        :          :
-// ────────────────────────────────────────────────────────────────────
-//
-
+import MarketingForm from "./components/Form";
 export default function Index() {
   // ─── Global Variable ────────────────────────────────────────────────────────────
 
   // ─── States ─────────────────────────────────────────────────────────────────────
 
-  // ─── Life Cycle ─────────────────────────────────────────────────────────────────
-
   // ─── Functions ──────────────────────────────────────────────────────────────────
+
+  // ─── Life Cycle ─────────────────────────────────────────────────────────────────
 
   //
   // ──────────────────────────────────────────────────── I ──────────
@@ -22,17 +14,9 @@ export default function Index() {
   // ──────────────────────────────────────────────────────────────
   //
   return (
-    <section className="flex h-[80px] w-full items-center justify-between px-2">
-      <h3 className="p-2 text-center font-bold">
-        فرم افت قیمت شرکت ایرانیان پوشش
-      </h3>
-      <Image
-        className="mt-[-5px]"
-        src="/assets/images/logo.svg"
-        width={110}
-        height={15}
-        alt="LogoDesktop"
-      />
+    <section className="w-[800px] max-w-[90%] m-auto border border-1 mt-[100px] xl:mt-[200px] p-5 rounded-md">
+      <h3 className="text-[24px] font-bold text-center mt-10 px-10"> ثبت نام همکاری در بازایابی امداد </h3>
+      <MarketingForm />
     </section>
   );
 }

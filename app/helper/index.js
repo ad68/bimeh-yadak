@@ -1,6 +1,8 @@
 import toast from "react-hot-toast";
 import Moment from "moment-jalaali";
 import moment from "moment-jalaali";
+import CryptoJS from "crypto-js";
+
 export const isValue = (value) => {
   if (value === null || value === "" || value === undefined) {
     return false;
@@ -244,4 +246,53 @@ export const jalaliToGregorian = (value) => {
     return greDate;
   }
   return "";
+};
+
+const secretKey = "ad682309412"; // کلید محرمانه (این کلید را در کدهای عمومی قرار ندهید)
+export const encrypt = (role) => {
+  return CryptoJS.AES.encrypt(role, secretKey).toString(); // رمزگذاری داده
+};
+export const decrypt = (encryptedRole) => {
+  const bytes = CryptoJS.AES.decrypt(encryptedRole, secretKey); // رمزگشایی داده
+  return bytes.toString(CryptoJS.enc.Utf8);
+};
+export const isAdmin = () => {
+  let roles = decrypt(localStorage.getItem("ur")).split(",");
+  if (roles.includes("admin")) {
+    return true;
+  } else {
+    return false;
+  }
+};
+export const isDoctor = () => {
+  let roles = decrypt(localStorage.getItem("ur")).split(",");
+  if (roles.includes("doctor")) {
+    return true;
+  } else {
+    return false;
+  }
+};
+export const isCoach = () => {
+  let roles = decrypt(localStorage.getItem("ur")).split(",");
+  if (roles.includes("coach")) {
+    return true;
+  } else {
+    return false;
+  }
+};
+export const isAdminDoctor = () => {
+  let roles = decrypt(localStorage.getItem("ur")).split(",");
+  if (roles.includes("admin_doctor")) {
+    return true;
+  } else {
+    return false;
+  }
+};
+export const isUser = () => {
+  let roles = decrypt(localStorage.getItem("ur")).split(",");
+  if (roles.includes("user")) {
+    return true;
+  } else {
+    return false;
+  }
 };

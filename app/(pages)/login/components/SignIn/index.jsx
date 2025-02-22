@@ -3,10 +3,10 @@ import { useForm, Controller } from "react-hook-form";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import CountDown from "./components/CountDown";
-import { Button, ErrorMessage, Notify, TextBox } from "@/common";
+import { Button, ErrorMessage, TextBox } from "@/common";
 import { IconChevronDown } from "@/common/icons";
 import axios from "axios";
-import { notify } from "@/helper";
+import { encrypt, notify } from "@/helper";
 import { NotifyMessage } from "@/enums";
 import { useAuthStore } from "@/store/auth/login";
 //
@@ -50,6 +50,8 @@ export default function Index({
         setActionLoading(false);
         localStorage.token = `Bearer ${res?.data?.token}`;
         updateAuthInfo(res?.data);
+        let roles = res.data.role;
+        localStorage.ur = encrypt(roles.toString());
         router.push("/", { scroll: false });
       })
       .catch((err) => {
