@@ -30,13 +30,13 @@ export default function Index() {
     <section>
       <section className="w-[90%] mx-auto xl:w-full flex justify-center gap-x-10 xl:gap-[164px] gap-y-6 xl:gap-y-[20px] xl:mt-[75px] mt-[30px] ">
         <section>
-          <LinkItem img={Repair} title="خرید بیمه‌نامه" href="/part-order" />
+          <LinkItem img={Repair} title="خرید بیمه‌نامه" href="/relief-signup" />
         </section>
         <section>
           <LinkItem
             img={Store}
             title="درخواست امداد خودرو"
-            href="/website-sell"
+            href="/request-relief"
           />
         </section>
         <section>

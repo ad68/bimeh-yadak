@@ -7,11 +7,6 @@ import { useAxiosWithToken } from "@/hooks";
 import { notify } from "@/helper";
 import { NotifyMessage } from "@/enums";
 import './style.css'
-//
-// ────────────────────────────────────────────────────────── I ──────────
-//   :::::: C O M P O N E N T : :  :   :    :     :        :          :
-// ────────────────────────────────────────────────────────────────────
-//
 
 export default function Index({
   children,
@@ -23,52 +18,42 @@ export default function Index({
   api,
   id,
 }) {
-  // ─── Global Variable ────────────────────────────────────────────────────────────
-  const modalBox = useRef();
-  const modalWrapper = useRef();
-  const modalOverlay = useRef();
-  // ─── States ─────────────────────────────────────────────────────────────────────
+  const modalBox = useRef(null);
+  const modalWrapper = useRef(null);
+  const modalOverlay = useRef(null);
+
   const [loading, setLoading] = useState(false);
-  const [showChildren, setShowChildren] = useState(false)
-  // ─── Life Cycle ─────────────────────────────────────────────────────────────────
+  const [showChildren, setShowChildren] = useState(false);
+
   useEffect(() => {
-    if (open) {
-      modalWrapper.current.style.display = "flex";
-      setShowChildren(true)
-      setTimeout(() => {
-        modalBox.current.style.transform = "scale(1)";
-        modalOverlay.current.style.opacity = "1";
-      }, 10);
-    } else {
-      modalBox.current.style.transform = "scale(0)";
-      modalOverlay.current.style.opacity = "0";
-      setTimeout(() => {
-        modalWrapper.current.style.display = "none";
-        setShowChildren(false)
-      }, 400);
+    if (modalWrapper.current && modalBox.current && modalOverlay.current) {
+      if (open) {
+        modalWrapper.current.style.display = "flex";
+        setShowChildren(true);
+        setTimeout(() => {
+          modalBox.current.style.transform = "scale(1)";
+          modalOverlay.current.style.opacity = "1";
+        }, 10);
+      } else {
+        modalBox.current.style.transform = "scale(0)";
+        modalOverlay.current.style.opacity = "0";
+        setTimeout(() => {
+          if (modalWrapper.current) {
+            modalWrapper.current.style.display = "none";
+            setShowChildren(false);
+          }
+
+        }, 400);
+      }
     }
-    // eslint-disable-next-line
   }, [open]);
 
-  // ─── Functions ──────────────────────────────────────────────────────────────────
-  /*   const showDialog = () => {
-      setTimeout(() => {
-        modalBox.current.style.transform = "scale(1)";
-      }, 10);
-    };
-    const hideDialog = () => {
-      setTimeout(() => {
-        modalBox.current.style.transform = "scale(0)";
-        onClose();
-      }, 10);
-    }; */
   const success = () => {
     setLoading(true);
     useAxiosWithToken
       .delete(api + id)
       .then((res) => {
         setLoading(false);
-        /* message.success("عملیات با موفقیت انجام شد"); */
         notify.Success(NotifyMessage.SUCCESS_ACTION);
         if (onSuccess) {
           onSuccess();
@@ -81,15 +66,10 @@ export default function Index({
         onClose();
       });
   };
-  //
-  // ──────────────────────────────────────────────────── I ──────────
-  //   :::::: R E N D E R : :  :   :    :     :        :          :
-  // ──────────────────────────────────────────────────────────────
-  //
+
   return (
     <section ref={modalWrapper} className="fixed h-full w-full top-0 left-0 hidden items-center justify-center z-[500]">
-      <section ref={modalOverlay} onClick={onClose} className="absolute w-full h-full top-0 opacity-0 transition-all duration-300 left-0 backdrop-blur-sm z-[150] bg-[#4d4d4d7e]">
-      </section>
+      <section ref={modalOverlay} onClick={onClose} className="absolute w-full h-full top-0 opacity-0 transition-all duration-300 left-0 backdrop-blur-sm z-[150] bg-[#4d4d4d7e]"></section>
       <section className="relative left-0 top-0 flex h-full w-full items-center justify-center">
         <section
           ref={modalBox}

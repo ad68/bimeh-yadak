@@ -296,3 +296,9 @@ export const isUser = () => {
     return false;
   }
 };
+
+export const objectToQueryString = (obj) => {
+  const filteredObj = Object.fromEntries(Object.entries(obj).filter(([key, value]) => value !== null && value !== undefined && value !== ""));
+  const params = new URLSearchParams(filteredObj);
+  return params.toString();
+};

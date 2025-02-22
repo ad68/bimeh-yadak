@@ -3,22 +3,28 @@ import { api } from "@/api";
 import { Button, ErrorMessage, TextBox } from "@/common";
 import { Regex } from "@/enums";
 import { useAxios } from "@/hooks";
-import { useState } from "react";
-import { Controller, useForm } from "react-hook-form";
 import dynamic from "next/dynamic";
-import Map from "./components/Map";
+import { useMemo, useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+
+
 export default function Index() {
   const {
     handleSubmit,
     control,
-    setValue,
     formState: { errors },
-  } = useForm(/* {
-    defaultValues: {
-      phone: "09120910782",
-    },
-  } */);
-  const [loading, setLoading] = useState(false);
+  } = useForm();
+  const Map = useMemo(
+    () =>
+      dynamic(
+        () => import("@/(pages)/dashboard/request-relief/components/Form/components/Map"),
+        {
+          loading: () => <p>A map is loading</p>,
+          ssr: false,
+        },
+      ),
+    [],
+  );
   const [actionLoading, setActionLoading] = useState(false);
   const [longData, setLongData] = useState(-308.5904);
   const [latData, setLatData] = useState(35.7249);
@@ -36,7 +42,13 @@ export default function Index() {
       .post(api.contactUs, params)
       .then((res) => {
         setActionLoading(false);
-        reset();
+        reset({
+          firstName: "",
+          lastName: "",
+          mobileNumber: "",
+          nationalCode: "",
+
+        });
         notify.Success(NotifyMessage.SUCCESS_ACTION);
       })
       .catch((err) => {
@@ -162,12 +174,12 @@ export default function Index() {
           </section>
           <section className="flex justify-center mt-6">
 
-          <Button
-            loading={actionLoading}
-            className=" h-[48px] w-[80%] border-none text-lg font-bold leading-[27.9px] text-white xl:mb-0 xl:w-[280px] "
-          >
-            ذخیره
-          </Button>
+            <Button
+              loading={actionLoading}
+              className=" h-[48px] w-[80%] border-none text-lg font-bold leading-[27.9px] text-white xl:mb-0 xl:w-[280px] "
+            >
+              ذخیره
+            </Button>
           </section>
         </form>
       </section>

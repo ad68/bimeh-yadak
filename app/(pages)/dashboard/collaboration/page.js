@@ -1,9 +1,18 @@
-import MarketingForm from "./components/Form";
+"use client";
+import { api } from "@/api";
+import { Table } from "@/common";
+import { useState } from "react";
 export default function Index() {
   // ─── Global Variable ────────────────────────────────────────────────────────────
-
+  const cols = [
+    { title: "شناسه", field: "id" },
+    { title: "نام", field: "firstName" },
+    { title: "نام خانوادگی", field: "lastName" },
+  ];
+  const actions = [{ type: "delete" }];
   // ─── States ─────────────────────────────────────────────────────────────────────
-
+  const [reload, setReload] = useState(false);
+  const [open, setOpen] = useState(false);
   // ─── Functions ──────────────────────────────────────────────────────────────────
 
   // ─── Life Cycle ─────────────────────────────────────────────────────────────────
@@ -14,9 +23,8 @@ export default function Index() {
   // ──────────────────────────────────────────────────────────────
   //
   return (
-    <section className="w-[800px] max-w-[90%] m-auto border border-1 mt-[100px] xl:mt-[200px] p-5 rounded-md">
-      <h3 className="text-[24px] font-bold text-center mt-10 px-10"> ثبت نام همکاری در بازاریابی امداد </h3>
-      <MarketingForm />
-    </section>
+    <>
+      <Table cols={cols} reload={reload} apiDel={api.collaboration.deleteCollaboration} actions={actions} api={api.collaboration.getCollaborationList} />
+    </>
   );
 }

@@ -1,7 +1,7 @@
 'use client'
 import { Button } from "@/common";
 import { Checkbox } from "antd";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 //
 // ────────────────────────────────────────────────────────── I ──────────
@@ -17,16 +17,14 @@ export default function Index({ setActiveTab }) {
     // ─── Functions ──────────────────────────────────────────────────────────────────
 
     // ─── Life Cycle ─────────────────────────────────────────────────────────────────
-    useEffect(() => {
-        console.log(rule)
-    }, [rule])
+
     //
     // ──────────────────────────────────────────────────── I ──────────
     //   :::::: R E N D E R : :  :   :    :     :        :          :
     // ──────────────────────────────────────────────────────────────
     //
     return (
-        <section className="mt-[40px]">
+        <section className="mt-[40px] px-3 py-2">
             <h1 className="font-bold text-[20px]">
                 چرا حمل در امداد خودرو رایگان می شود؟
             </h1>

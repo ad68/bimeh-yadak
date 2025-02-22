@@ -235,7 +235,7 @@ export default function Index() {
             className="grid grid-cols-1 xl:grid-cols-4  gap-4 py-10"
         >
 
-            <section className="col-span-4 mt-5">
+            <section className="xl:col-span-4 mt-5">
                 <span className="text-[24px] font-bold">اطلاعات فردی:</span>
             </section>
             <section className="flex w-full flex-col gap-[2px] text-sm">
@@ -340,7 +340,7 @@ export default function Index() {
                 <ErrorMessage>{errors?.mobileNumber?.message}</ErrorMessage>
 
             </section>
-            <section className="col-span-4 mt-5">
+            <section className="xl:col-span-4 mt-5">
                 <span className="text-[24px] font-bold">مشخصات خودرو:</span>
             </section>
             <section className="flex w-full flex-col gap-[2px]  text-sm">
@@ -546,7 +546,7 @@ export default function Index() {
                 />
                 <ErrorMessage>{errors?.insuranceExpireDate?.message}</ErrorMessage>
             </section>
-            <section className="col-span-4 mt-5">
+            <section className="xl:col-span-4  mt-5">
                 <span className="text-[24px] font-bold">مشخصات محل اقامت:</span>
             </section>
             <section className="flex w-full flex-col gap-[2px]  text-sm">
@@ -593,10 +593,10 @@ export default function Index() {
                 />
                 <ErrorMessage>{errors?.city?.message}</ErrorMessage>
             </section>
-            <section className="col-span-4 mt-5">
+            <section className="xl:col-span-4  mt-5">
                 <span className="text-[24px] font-bold">تعیین سقف پوشش خدمات:</span>
             </section>
-            <section className="flex w-full flex-col gap-[2px] col-span-2  text-sm">
+            <section className="flex w-full flex-col gap-[2px] xl:col-span-2  text-sm">
                 <label className="pt-[6px] ">میزان تعهدات درخواست امداد حمل رایگان را مشخص نمائید (تومان)</label>
                 <Controller
                     control={control}
@@ -617,7 +617,7 @@ export default function Index() {
                 />
                 <ErrorMessage>{errors?.amountWarranty?.message}</ErrorMessage>
             </section>
-            <section className="flex w-full flex-col gap-[2px] col-span-2  text-sm">
+            <section className="flex w-full flex-col gap-[2px] xl:col-span-2  text-sm">
                 <label className="pt-[6px]">کد معرف</label>
                 <Controller
                     control={control}
@@ -636,11 +636,11 @@ export default function Index() {
             </section>
 
             {/* -------------------Submit------------------- */}
-            <section className="col-span-4 flex gap-4">
+            <section className="xl:col-span-4 flex gap-4">
 
                 <Button
                     loading={actionLoading}
-                    className="mb-4 mt-[13px] h-[48px] w-[93%]  text-lg  leading-[27.9px]  xl:mb-0 xl:w-[280px]"
+                    className="mb-4 mt-[13px] m-auto h-[48px] w-[93%]  text-lg  leading-[27.9px]  xl:mb-0 xl:w-[280px]"
                 >
                     ذخیره
                 </Button>

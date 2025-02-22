@@ -1,3 +1,4 @@
+'use client'
 import React, {
   useState,
   useEffect,
@@ -57,12 +58,12 @@ export default function MyMap({ setLongData, setLatData, latData, longData }) {
           ref={setMap}
         >
           <Image
-                      alt=""
-                      src="/assets/icons/pin.png"
-                      width={40}
-                      height={50}
-                      className="absolute right-[50%] top-[50%] z-[1000]  h-auto w-[30px] translate-x-[50%] translate-y-[-50%] xl:w-[40px]"
-                    />
+            alt=""
+            src="/assets/icons/pin.png"
+            width={40}
+            height={50}
+            className="absolute right-[50%] top-[50%] z-[1000]  h-auto w-[30px] translate-x-[50%] translate-y-[-50%] xl:w-[40px]"
+          />
 
           <TileLayer
             attribution="Google Maps"

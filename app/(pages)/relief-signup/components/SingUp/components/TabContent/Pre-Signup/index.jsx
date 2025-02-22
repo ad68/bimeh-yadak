@@ -239,15 +239,15 @@ export default function Index({ setActiveTab }) {
     return <>
         <form
             onSubmit={handleSubmit((data) => preSignUp(data))}
-            className="grid grid-cols-1 xl:grid-cols-4 mt-10 gap-4 py-10"
+            className="grid grid-cols-1 xl:grid-cols-4 px-3 mt-10 gap-4 py-10"
         >
-            {/*  <section className="col-span-4">
+            {/*  <section className="xl:col-span-4">
                 <section className="p-4 w-[350px] m-auto rounded-md text-center bg-[whitesmoke]">
                     <span> کد معرف : </span>
                     <span className="font-bold">{searchParams.get("referralCode")}</span>
                 </section>
             </section> */}
-            <section className="col-span-4 mt-5">
+            <section className="xl:col-span-4 mt-5">
                 <span className="text-[24px] font-bold">اطلاعات فردی:</span>
             </section>
             <section className="flex w-full flex-col gap-[2px] text-sm">
@@ -352,7 +352,7 @@ export default function Index({ setActiveTab }) {
                 <ErrorMessage>{errors?.mobileNumber?.message}</ErrorMessage>
 
             </section>
-            <section className="col-span-4 mt-5">
+            <section className="xl:col-span-4 mt-5">
                 <span className="text-[24px] font-bold">مشخصات خودرو:</span>
             </section>
             <section className="flex w-full flex-col gap-[2px]  text-sm">
@@ -558,7 +558,7 @@ export default function Index({ setActiveTab }) {
                 />
                 <ErrorMessage>{errors?.insuranceExpireDate?.message}</ErrorMessage>
             </section>
-            <section className="col-span-4 mt-5">
+            <section className="xl:col-span-4 mt-5">
                 <span className="text-[24px] font-bold">مشخصات محل اقامت:</span>
             </section>
             <section className="flex w-full flex-col gap-[2px]  text-sm">
@@ -606,10 +606,10 @@ export default function Index({ setActiveTab }) {
                 />
                 <ErrorMessage>{errors?.city?.message}</ErrorMessage>
             </section>
-            <section className="col-span-4 mt-5">
+            <section className="xl:col-span-4 mt-5">
                 <span className="text-[24px] font-bold">تعیین سقف پوشش خدمات:</span>
             </section>
-            <section className="flex w-full flex-col gap-[2px] col-span-2  text-sm">
+            <section className="flex w-full flex-col gap-[2px] xl:col-span-2  text-sm">
                 <label className="pt-[6px] ">میزان تعهدات درخواست امداد حمل رایگان را مشخص نمائید (تومان)</label>
                 <Controller
                     control={control}
@@ -630,7 +630,7 @@ export default function Index({ setActiveTab }) {
                 />
                 <ErrorMessage>{errors?.amountWarranty?.message}</ErrorMessage>
             </section>
-            <section className="flex w-full flex-col gap-[2px] col-span-2  text-sm">
+            <section className="flex w-full flex-col gap-[2px] xl:col-span-2  text-sm">
                 <label className="pt-[6px]">کد معرف</label>
                 <Controller
                     control={control}
@@ -647,7 +647,7 @@ export default function Index({ setActiveTab }) {
                 />
                 <ErrorMessage>{errors?.referralCode?.message}</ErrorMessage>
             </section>
-            <section className="col-span-4">
+            <section className="xl:col-span-4">
                 <h1 className="font-bold text-[20px]">
                     صاحبان و مالکین خودرو لطفا به موارد ذیل توجه فرمایید :
                 </h1>
@@ -666,7 +666,7 @@ export default function Index({ setActiveTab }) {
                 </ul>
             </section>
             {/* -------------------Submit------------------- */}
-            <section className="col-span-4 flex gap-4">
+            <section className="xl:col-span-4 flex gap-4">
                 <Button
                     onClick={() => setActiveTab(1)}
                     type="button"
