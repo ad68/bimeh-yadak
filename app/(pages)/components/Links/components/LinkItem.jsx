@@ -1,15 +1,14 @@
-/* import Calculate from "./components/CalculateBox";
-import CalculateBoxMobile from "./components/CalculateBoxMobile"; */
 import Image from "next/image";
-import Links from "./components/Links";
-import Logo from "../../public/icons/Group 13.png";
+import React, { useState, useContext, useEffect } from "react";
+import Link from "next/link";
+
 //
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
 // ────────────────────────────────────────────────────────────────────
 //
 
-export default function page() {
+export default function Index({ img, title, href }) {
   // ─── Global Variable ────────────────────────────────────────────────────────────
 
   // ─── States ─────────────────────────────────────────────────────────────────────
@@ -17,30 +16,34 @@ export default function page() {
   // ─── Life Cycle ─────────────────────────────────────────────────────────────────
 
   // ─── Functions ──────────────────────────────────────────────────────────────────
-  //
 
+  //
   // ──────────────────────────────────────────────────── I ──────────
   //   :::::: R E N D E R : :  :   :    :     :        :          :
   // ──────────────────────────────────────────────────────────────
   //
   return (
-    <>
-      <section className="w-[1366px] max-w-full m-auto mt-[100px] xl:mt-[200px]">
-        {/* <section className="container hidden items-center justify-center lg:flex">
-          <Calculate />
-        </section>
-        <section className="container flex items-center justify-center lg:hidden">
-          <CalculateBoxMobile />
+    <Link
+      href={href}
+      className="xl:w-[122px] w-[69px] flex justify-center m-auto hover:scale-105 transition-all duration-300"
+    >
+      <section className="flex flex-col justify-center items-center">
+        {/* <section className="w-[80px] h-[80px]  flex justify-center items-center bg-[#F3C401] hover:bg-[#f3c3018a] transition-all duration-300 shadow-[0px_18px_40px_0px_#B070701F]  rounded-full p-2 cursor-pointer">
+          <Image className="w-[50px] h-[50px]" src={img} alt="" />
         </section> */}
-        <section className="">
-          <section className="flex justify-center items-center gap-3">
-            <Image src={Logo} width={88} height={88} alt="" />
-            <section className="text-[#303030] xl:text-[48px] text-[36px] font-bold">بیمه یدک</section>
+        <section className="hex">
+          <section className="absolute top-[6px] left-[-10px] flex justify-center items-center rotate-[330deg] z-30 w-[67px] h-[67px]">
+            <Image
+              className="xl:w-[60px] w-[48px] h-[48px] xl:h-[60px] absolute z-50"
+              src={img}
+              alt=""
+            />
           </section>
-          <section className="xl:mt-[27px] mt-4 text-[#303030] xl:text-[20px] text-[16px] font-bold text-center">اولین و معتبرترین پلتفرم درخواست امداد خودرو به همراه بیمه</section>
         </section>
-        <Links />
+        <span className="block text-center mt-[5px] min-w-[100px] xl:w-[130px] h-[80px] text-[12px] xl:text-[18px] leading-[31px] flex-wrap text-[#303030]">
+          {title}
+        </span>
       </section>
-    </>
+    </Link>
   );
 }

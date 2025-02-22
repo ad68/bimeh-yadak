@@ -1,15 +1,18 @@
-/* import Calculate from "./components/CalculateBox";
-import CalculateBoxMobile from "./components/CalculateBoxMobile"; */
-import Image from "next/image";
-import Links from "./components/Links";
-import Logo from "../../public/icons/Group 13.png";
+"use client";
+import React, { useState, useContext, useEffect } from "react";
+import LinkItem from "./components/LinkItem";
+import Repair from "../../../../public/icons/Group 4.png";
+import Api from "../../../../public/icons/Group 8.png";
+import Store from "../../../../public/icons/Group 6.png";
+import Money from "../../../../public/icons/Group 10.png";
+import Chart from "../../../../public/icons/Layer_1.png";
 //
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
 // ────────────────────────────────────────────────────────────────────
 //
 
-export default function page() {
+export default function Index() {
   // ─── Global Variable ────────────────────────────────────────────────────────────
 
   // ─── States ─────────────────────────────────────────────────────────────────────
@@ -17,30 +20,41 @@ export default function page() {
   // ─── Life Cycle ─────────────────────────────────────────────────────────────────
 
   // ─── Functions ──────────────────────────────────────────────────────────────────
-  //
 
+  //
   // ──────────────────────────────────────────────────── I ──────────
   //   :::::: R E N D E R : :  :   :    :     :        :          :
   // ──────────────────────────────────────────────────────────────
   //
   return (
-    <>
-      <section className="w-[1366px] max-w-full m-auto mt-[100px] xl:mt-[200px]">
-        {/* <section className="container hidden items-center justify-center lg:flex">
-          <Calculate />
+    <section>
+      <section className="w-[90%] mx-auto xl:w-full flex justify-center gap-x-10 xl:gap-[164px] gap-y-6 xl:gap-y-[20px] xl:mt-[75px] mt-[30px] ">
+        <section>
+          <LinkItem img={Repair} title="خرید بیمه‌نامه" href="/part-order" />
         </section>
-        <section className="container flex items-center justify-center lg:hidden">
-          <CalculateBoxMobile />
-        </section> */}
-        <section className="">
-          <section className="flex justify-center items-center gap-3">
-            <Image src={Logo} width={88} height={88} alt="" />
-            <section className="text-[#303030] xl:text-[48px] text-[36px] font-bold">بیمه یدک</section>
-          </section>
-          <section className="xl:mt-[27px] mt-4 text-[#303030] xl:text-[20px] text-[16px] font-bold text-center">اولین و معتبرترین پلتفرم درخواست امداد خودرو به همراه بیمه</section>
+        <section>
+          <LinkItem
+            img={Store}
+            title="درخواست امداد خودرو"
+            href="/website-sell"
+          />
         </section>
-        <Links />
+        <section>
+          <LinkItem img={Api} title="اعلام خسارت" href="/api-sell" />
+        </section>
       </section>
-    </>
+      <section className="flex justify-center xl:gap-[164px] gap-x-10">
+        <section>
+          <LinkItem img={Money} title="ارزش روز خودرو" href="/" />
+        </section>
+        <section>
+          <LinkItem
+            img={Chart}
+            title="محاسبه افت بازار و بیمه خودرو"
+            href="/price-drop"
+          />
+        </section>
+      </section>
+    </section>
   );
 }
