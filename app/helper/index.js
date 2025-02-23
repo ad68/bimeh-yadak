@@ -290,7 +290,7 @@ export const isAdminDoctor = () => {
 };
 export const isUser = () => {
   let roles = decrypt(localStorage.getItem("ur")).split(",");
-  if (roles.includes("user")) {
+  if (roles.includes("client_user")) {
     return true;
   } else {
     return false;

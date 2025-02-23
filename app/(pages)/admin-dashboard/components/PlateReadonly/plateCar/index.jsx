@@ -1,13 +1,17 @@
-import Section1 from "./components/Section1";
-import Section2 from "./components/Section2";
-import Section3 from "./components/Section3";
-import Section4 from "./components/Section4";
-
+"use client";
+import React from "react";
+import Image from "next/image";
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
 // ────────────────────────────────────────────────────────────────────
 //
-export default function Index() {
+
+export default function Index({
+  platePart1,
+  platePart2,
+  platePart3,
+  platePart4,
+}) {
   // ─── Global Variable ────────────────────────────────────────────────────────────
 
   // ─── States ─────────────────────────────────────────────────────────────────────
@@ -23,13 +27,30 @@ export default function Index() {
   //
   return (
     <>
-      <section className="">
-        <section className="my-[80px] flex h-[150px] w-full items-center justify-center bg-blue font-bold text-white ">
-          <h1 className="text-[40px]">بیمه یدک</h1>
+      <section className="flex h-[48px] w-[219.93px] max-w-full rounded">
+        <section className="flex  rounded-r  border-y-[0.4px] border-r-[0.4px] border-solid border-[#A6A9BD] bg-white">
+          <section className="flex h-full w-[43.79px] max-w-full items-center justify-center border-l-[0.4px] border-solid border-[#A6A9BD]">
+            {platePart4}
+          </section>
+          <section className=" flex h-full w-[143.3px]  items-center justify-center gap-2">
+            <section className="mr-[11.3px] dark:text-white ">
+              {platePart2}
+            </section>
+            <section className="flex h-[32px] w-[52px]  items-center justify-center">
+              {platePart3}
+            </section>
+            <section className="flex h-[32px]  w-[52px] items-center justify-center">
+              {platePart1}
+            </section>
+          </section>
         </section>
-        <section className="w-[1366px] m-auto max-w-full">
-          <p className="text-center leading-10">مجموعه امداد خودرو کشوری با چندین سال سابقه در امر امداد رسانی آماده ارائه خدمات به مشتریان در سراسر ایران می باشد. امدادخودرو ۱۵۹۳ با ارایه خدمات خودرو بری، حمل خودرو، یدک کش، کفی خودرو آماده امداد رسانی به شما عزیزان می باشد.حمل و جابجایی خودروهای لوکس و گران قیمت خود را با خیال راحت به ما بسپارید.</p>
-        </section>
+        <Image
+          src="/assets/images/plate.png"
+          width={32.84}
+          height={48.8}
+          className=""
+          alt=""
+        />
       </section>
     </>
   );

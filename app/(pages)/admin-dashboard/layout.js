@@ -1,10 +1,13 @@
 "use client";
-/* import { isUser } from "@/helper"; */
+import { isAdmin } from "@/helper";
 import Sidebar from "./components/SideBar";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Layout({ children }) {
-  /*   useEffect(() => {
-    if (!isUser()) {
+  const router = useRouter();
+  /* useEffect(() => {
+    if (!isAdmin()) {
       router.push("/login");
     }
   }, []); */

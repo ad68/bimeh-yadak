@@ -1,7 +1,6 @@
-import Section1 from "./components/Section1";
-import Section2 from "./components/Section2";
-import Section3 from "./components/Section3";
-import Section4 from "./components/Section4";
+"use client";
+import React, { useState } from "react";
+import ListItem from "./components/ListItem";
 
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
@@ -23,13 +22,40 @@ export default function Index() {
   //
   return (
     <>
-      <section className="">
-        <section className="my-[80px] flex h-[150px] w-full items-center justify-center bg-blue font-bold text-white ">
-          <h1 className="text-[40px]">بیمه یدک</h1>
-        </section>
-        <section className="w-[1366px] m-auto max-w-full">
-          <p className="text-center leading-10">مجموعه امداد خودرو کشوری با چندین سال سابقه در امر امداد رسانی آماده ارائه خدمات به مشتریان در سراسر ایران می باشد. امدادخودرو ۱۵۹۳ با ارایه خدمات خودرو بری، حمل خودرو، یدک کش، کفی خودرو آماده امداد رسانی به شما عزیزان می باشد.حمل و جابجایی خودروهای لوکس و گران قیمت خود را با خیال راحت به ما بسپارید.</p>
-        </section>
+      <header className="mx-[24px] mb-6 text-[20px] font-semibold xl:mb-10 xl:text-[28px]">
+        داشبورد
+      </header>
+      <section className="mx-[24px] grid gap-4 md:mx-auto md:w-[80%] xl:w-full xl:grid-cols-3  xl:gap-6">
+        <ListItem
+          link={"/dashboard/Inquiry/violation"}
+          title="استعلام خلافی"
+          img="/assets/images/khalafi-M.png"
+        />
+        <ListItem
+          link={"/dashboard/Inquiry/negative-inquery-cerficate"}
+          title="استعلام نمره منفی"
+          img="/assets/images/nomre manfi.png"
+        />
+        <ListItem
+          link={"/dashboard/Inquiry/inquiryrecords"}
+          title="سوابق استعلام"
+          img="/assets/images/maliat.png"
+        />
+        <ListItem
+          link={"/dashboard/Inquiry/vehicledocuments"}
+          title="استعلام مدارک خودرو"
+          img="/assets/images/madarek.png"
+        />
+        <ListItem
+          link={"/dashboard/Inquiry/certificate"}
+          title="استعلام گواهینامه"
+          img="/assets/images/vaziat.png"
+        />
+        <ListItem
+          link={"/dashboard/Inquiry/plates"}
+          title="پلاک های من"
+          img="/assets/images/vaziat.png"
+        />
       </section>
     </>
   );

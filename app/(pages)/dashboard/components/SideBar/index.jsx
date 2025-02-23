@@ -112,12 +112,7 @@ export default function Index() {
           >
             <span>اعلام خسارت</span>
           </Link>
-          <Link
-            href="/dashboard/collaboration"
-            className={`${pathname === "/dashboard/collaboration" ? "text-blue" : ""}  flex h-[48px] items-center gap-[12px] pr-[14.5px] dark:text-white`}
-          >
-            <span>لیست همکاری</span>
-          </Link>
+
           <button
             onClick={() => {
               setOpenInquiry(!openInquiry);

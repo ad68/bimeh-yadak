@@ -45,6 +45,9 @@ export const api = {
     editCollaborationAdmin: baseUrl + "collaboration-in-marketing/edit/",
     getCollaborationList: baseUrl + "collaboration-in-marketing/search-with-pageable",
     deleteCollaboration: baseUrl + "collaboration-in-marketing/delete/",
+    getPreRegistrationInsuranceList: baseUrl + "pre-registration-insurance/search-with-pageable",
+    deletePreRegistrationInsuranceList: baseUrl + "pre-registration-insurance/delete/",
+    editPreRegistrationInsuranceList: baseUrl + "pre-registration-insurance/edit/",
   },
   payment: {
     requestPayment: baseUrl + "payment/request",
