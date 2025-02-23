@@ -34,7 +34,7 @@ export default function Index() {
       mobileNumber: data?.mobileNumber ? data?.mobileNumber : mobileNumber,
     };
     axios
-      .post("https://api.tazminmashin.com/tazmin/notification/send-otp", params)
+      .post("https://api.tazminmashin.com/tazmin/notification/bime-yadak-send-otp", params)
       .then((res) => {
         setActionLoading(false);
         setPanelMode("login");

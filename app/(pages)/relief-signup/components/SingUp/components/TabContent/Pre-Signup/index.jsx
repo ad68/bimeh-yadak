@@ -621,6 +621,7 @@ export default function Index({ setActiveTab }) {
                         <Select
                             options={warrantyList}
                             state={value}
+                            search={false}
                             setState={onChange}
                             optionValue="value"
                             optionTitle="label"

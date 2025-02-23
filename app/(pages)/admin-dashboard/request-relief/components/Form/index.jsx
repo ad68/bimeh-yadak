@@ -17,7 +17,7 @@ export default function Index() {
   const Map = useMemo(
     () =>
       dynamic(
-        () => import("@/(pages)/dashboard/request-relief/components/Form/components/Map"),
+        () => import("@/(pages)/admin-dashboard/request-relief/components/Form/components/Map"),
         {
           loading: () => <p>A map is loading</p>,
           ssr: false,

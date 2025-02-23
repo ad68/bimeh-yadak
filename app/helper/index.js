@@ -256,15 +256,8 @@ export const decrypt = (encryptedRole) => {
   const bytes = CryptoJS.AES.decrypt(encryptedRole, secretKey); // رمزگشایی داده
   return bytes.toString(CryptoJS.enc.Utf8);
 };
-export const isAdmin = () => {
-  let roles = decrypt(localStorage.getItem("ur")).split(",");
-  if (roles.includes("admin")) {
-    return true;
-  } else {
-    return false;
-  }
-};
-export const isDoctor = () => {
+
+/* export const isDoctor = () => {
   let roles = decrypt(localStorage.getItem("ur")).split(",");
   if (roles.includes("doctor")) {
     return true;
@@ -279,10 +272,10 @@ export const isCoach = () => {
   } else {
     return false;
   }
-};
-export const isAdminDoctor = () => {
+}; */
+export const isAdmin = () => {
   let roles = decrypt(localStorage.getItem("ur")).split(",");
-  if (roles.includes("admin_doctor")) {
+  if (roles.includes("client_admin")) {
     return true;
   } else {
     return false;

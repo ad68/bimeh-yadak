@@ -5,7 +5,6 @@ import React, {
   useMemo,
   useCallback,
 } from "react";
-
 import {
   MapContainer,
   Marker,

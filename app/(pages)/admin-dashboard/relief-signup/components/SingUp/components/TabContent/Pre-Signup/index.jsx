@@ -608,6 +608,7 @@ export default function Index() {
                         <Select
                             options={warrantyList}
                             state={value}
+                            search={false}
                             setState={onChange}
                             optionValue="value"
                             optionTitle="label"
@@ -634,7 +635,6 @@ export default function Index() {
                 />
                 <ErrorMessage>{errors?.referralCode?.message}</ErrorMessage>
             </section>
-
             {/* -------------------Submit------------------- */}
             <section className="xl:col-span-4 flex gap-4">
 

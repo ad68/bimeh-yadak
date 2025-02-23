@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
-import Avatar from "../../../../../../../public/assets/icons/avatar.svg";
-import ArrowDown from "../../../../../../../public/assets/icons/fillArrowDown.svg";
-import Image from "next/image";
+
 import Link from "next/link";
 import {
 
   IconLogin,
 
 } from "@/common/icons";
-import { isEmptyObject } from "@/helper";
+
 //
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
@@ -63,7 +61,6 @@ function ProfileBtn({ authInfo, authStatus }) {
               {authStatus === "userInfoComplete" &&
                 authInfo?.firstName + " "}
               عزیز خوش آمدید
-
             </span>
           </section>
         )}

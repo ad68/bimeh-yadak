@@ -4,14 +4,13 @@ import { Button, ErrorMessage, TextBox } from "@/common";
 import { Regex } from "@/enums";
 import { useAxios } from "@/hooks";
 import dynamic from "next/dynamic";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 
 export default function Index() {
   const {
     handleSubmit,
     control,
-
     formState: { errors },
   } = useForm(/* {
     defaultValues: {
@@ -32,6 +31,11 @@ export default function Index() {
   const [actionLoading, setActionLoading] = useState(false);
   const [longData, setLongData] = useState(-308.5904);
   const [latData, setLatData] = useState(35.7249);
+  useEffect(() => {
+    console.log("lat", latData)
+    console.log("long", longData)
+  }, [latData, longData])
+
   const onSubmit = (data) => {
     let params = {
       firstName: data.firstName,
@@ -177,7 +181,6 @@ export default function Index() {
             </section>
           </section>
           <section className="flex justify-center mt-6">
-
             <Button
               loading={actionLoading}
               className=" h-[48px] w-[93%] border-none text-lg font-bold leading-[27.9px] text-white xl:mb-0 xl:w-[280px] "

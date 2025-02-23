@@ -24,6 +24,8 @@ export default function Index({
   // ─── Global Variable ────────────────────────────────────────────────────────────
   const router = useRouter();
   const updateAuthInfo = useAuthStore((state) => state.updateAuthInfo);
+
+
   const {
     handleSubmit,
     control,
@@ -49,8 +51,17 @@ export default function Index({
       .then((res) => {
         setActionLoading(false);
         localStorage.token = `Bearer ${res?.data?.token}`;
-        updateAuthInfo(res?.data);
+
         let roles = res.data.role;
+
+        if (roles.includes("client_admin")) {
+          console.log("admin")
+          updateAuthInfo({ ...res?.data, dashboardLink: "/admin-dashboard" });
+        }
+        else if (roles.includes("client_user")) {
+          console.log("user")
+          updateAuthInfo({ ...res?.data, dashboardLink: "/dashboard" });
+        }
         localStorage.ur = encrypt(roles.toString());
         router.push("/", { scroll: false });
       })

@@ -3,7 +3,7 @@ import React from "react";
 import Modal from "../Modal";
 import { IconLogout } from "../icons";
 import { useAuthStore } from "@/store/auth/login";
-import { useRouter } from "next/navigation";
+
 
 //
 // ────────────────────────────────────────────────────────── I ──────────
@@ -14,16 +14,22 @@ import { useRouter } from "next/navigation";
 export default function Index({ open, onClose, title }) {
   // ─── Global Variable ────────────────────────────────────────────────────────────
   const clearAuthInfo = useAuthStore((state) => state.clearAuthInfo);
-  const router = useRouter();
+
   // ─── States ─────────────────────────────────────────────────────────────────────
 
   // ─── Life Cycle ─────────────────────────────────────────────────────────────────
 
   // ─── Functions ──────────────────────────────────────────────────────────────────
   const logOut = () => {
-    localStorage.clear();
-    clearAuthInfo();
     location.href = "/login";
+    setTimeout(() => {
+      clearAuthInfo();
+      localStorage.clear();
+    }, 1000);
+
+
+
+
   };
   //
   // ──────────────────────────────────────────────────── I ──────────
