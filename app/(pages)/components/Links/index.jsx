@@ -40,7 +40,7 @@ export default function Index() {
           />
         </section>
         <section>
-          <LinkItem img={Api} title="اعلام خسارت" href="/api-sell" />
+          <LinkItem img={Api} title="اعلام خسارت" href="/damage-intro" />
         </section>
       </section>
       <section className="flex justify-center xl:gap-[164px] gap-x-10">

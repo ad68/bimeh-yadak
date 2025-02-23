@@ -7,7 +7,8 @@ import EditProfileSideBar from "./components/EditProfile";
 import { useAuthStore } from "@/store/auth/login";
 import { isEmptyObject } from "@/helper";
 import { usePathname } from "next/navigation";
-import { IconDamage, IconHome, IconInquiry2, IconLogout } from "@/common/icons";
+import { IconLogout } from "@/common/icons";
+import MenuLink from './components/MenuLink'
 import { LogoutModal } from "@/common";
 import { useSideBarStore } from "@/store/dashboard/sidebar";
 // ────────────────────────────────────────────────────────── I ──────────
@@ -72,48 +73,14 @@ export default function Index() {
               />
             </button>
           </section>
-          <section className="mt-[22px] flex items-center">
-            <Image
-              src="/assets/icons/Ellipse.svg"
-              width={8}
-              height={8}
-              alt=""
-            />
-            <span className="ml-[24px] mr-[6px] text-sm dark:text-white">
-              پلاک‌های من
-            </span>
-            <Link
-              href="/dashboard/Inquiry/plates"
-              className="flex items-center gap-[6px]"
-            >
-              <span className="text-xs text-[#4E94EA] dark:text-white">
-                مشاهده پلاک‌ها
-              </span>
-              <Image
-                src="/assets/icons/arrow-left.svg"
-                width={12}
-                height={12}
-                alt=""
-              />
-            </Link>
-          </section>
+          <span className="block mt-5 text-[14px] font-bold">به داشبورد بیمه یدک خوش آمدید</span>
         </section>
         <section className="mx-6 mt-4 flex h-auto flex-col  justify-start">
-          <Link
-            href="/dashboard"
-            className={`${pathname === "/dashboard" ? "text-blue" : ""} flex h-[48px] w-full items-center gap-[12px] pr-[14.5px] dark:text-white`}
-          >
+          <MenuLink title="داشبورد" link="/admin-dashboard" />
+          <MenuLink title="اعلام خسارت" link="/admin-dashboard/declaration-damage" />
+          <MenuLink title="درخواست های همکاری" link="/admin-dashboard/collaboration" />
 
-            <span>داشبورد</span>
-          </Link>
-          <Link
-            href="/dashboard/declaration-damage"
-            className={`${pathname === "/dashboard/declaration-damage" ? "text-blue" : ""}  flex h-[48px] items-center gap-[12px] pr-[14.5px] dark:text-white`}
-          >
-            <span>اعلام خسارت</span>
-          </Link>
-
-          <button
+          {/*   <button
             onClick={() => {
               setOpenInquiry(!openInquiry);
             }}
@@ -172,7 +139,7 @@ export default function Index() {
               link={"/dashboard/Inquiry/vehicledocuments"}
               title="استعلام مدارک خودرو"
             />
-          </section>
+          </section> */}
         </section>
         <button
           onClick={() => setLogOutModal(true)}
