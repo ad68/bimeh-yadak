@@ -1,11 +1,11 @@
 "use client";
 import React, { useState, useContext, useEffect } from "react";
 import LinkItem from "./components/LinkItem";
-import Repair from "../../../../public/icons/Group 4.png";
-import Api from "../../../../public/icons/Group 8.png";
-import Store from "../../../../public/icons/Group 6.png";
-import Money from "../../../../public/icons/Group 10.png";
-import Chart from "../../../../public/icons/Layer_1.png";
+import Repair from "../../../../public/icons/Group 4.svg";
+import Api from "../../../../public/icons/Group 8.svg";
+import Store from "../../../../public/icons/Group 6.svg";
+import Money from "../../../../public/icons/Group 10.svg";
+import Chart from "../../../../public/icons/Layer_1.svg";
 //
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
@@ -13,7 +13,7 @@ import Chart from "../../../../public/icons/Layer_1.png";
 //
 
 export default function Index() {
-  // ─── Global Variable ────────────────────────────────────────────────────────────
+  // ─── Global Variable ────────────────────────────────────────────────────────────v
 
   // ─── States ─────────────────────────────────────────────────────────────────────
 

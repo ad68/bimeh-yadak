@@ -17,10 +17,10 @@ export default function Index({ stepNumber, activeType }) {
             return "border-primary text-primary bg-white"
         }
         if (activeType === "passed") {
-            return "border-primary text-[gray] bg-primary"
+            return "border-primary text-[black] bg-primary"
         }
         if (activeType === "notActive") {
-            return "border-silver text-[gray] bg-white"
+            return "border-black text-[black] bg-white"
         }
     }
     // ─── Life Cycle ─────────────────────────────────────────────────────────────────
@@ -30,7 +30,7 @@ export default function Index({ stepNumber, activeType }) {
     //   :::::: R E N D E R : :  :   :    :     :        :          :
     // ──────────────────────────────────────────────────────────────
     //
-    return <span className={`w-[50px] h-[50px] ${getStepStyle()} flex border border-1  rounded-full  justify-center items-center`}>
+    return <span className={`w-[50px] h-[50px] ${getStepStyle()} flex border border-1   rounded-full  justify-center items-center`}>
         {stepNumber}
     </span>;
 }

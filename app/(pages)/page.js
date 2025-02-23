@@ -2,7 +2,7 @@
 import CalculateBoxMobile from "./components/CalculateBoxMobile"; */
 import Image from "next/image";
 import Links from "./components/Links";
-import Logo from "../../public/icons/Group 13.png";
+import Logo from "../../public/icons/Group 13.svg";
 //
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :

@@ -53,7 +53,7 @@ export default function Index({
       type={type ? type : "submit"}
       disabled={loading || disabled}
       onClick={onClick}
-      className={`relative flex h-12 ${loading && "pl-10"} items-center justify-center rounded-[10px] ${dark ? "border border-[gray]  bg-[#ffffff1a] text-white" : getColor()} px-5 transition-all duration-700 disabled:opacity-50 ${className}`}
+      className={`relative flex h-12 ${loading && "pl-10"} items-center justify-center rounded-[10px] ${dark ? "border border-[gray]  bg-[#ffffff1a] text-white" : getColor()} px-5 transition-all duration-700 disabled:opacity-50 ${className} hover:shadow-2xl focus:shadow-none`}
     >
       {children}
       <div className={`btnLoader  ${loading ? "opacity-1" : "opacity-0"}`}>

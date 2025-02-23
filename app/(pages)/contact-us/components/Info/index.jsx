@@ -33,7 +33,7 @@ export default function Index() {
           />
           <span className="text-base xl:text-xl">تلفن:</span>
           <span className="text-sm xl:text-xl">
-            ( هزار خط ) 999 الی 84229000-021
+          ۰۲۱۹۱۰۱۱۵۹۳
           </span>
         </section>
         <section className="flex items-start gap-4">
@@ -45,7 +45,7 @@ export default function Index() {
             className="h-7 w-7 xl:h-12 xl:w-12"
           />
           <span className="text-base xl:text-xl">ایمیل:</span>
-          <span className="text-base xl:text-xl"> info@tazminmashin.com </span>
+          <span className="text-base xl:text-xl"> info@emdadkhodro1593.ir </span>
         </section>
 
         <section className="flex items-start gap-4">
@@ -58,8 +58,7 @@ export default function Index() {
           />
           <span className="text-base xl:text-xl">آدرس:</span>
           <span className="text-sm xl:w-[550px] xl:text-xl">
-            تهران، ولی عصر ، ابتدای یوسف آباد ، خیابان سید جمال الدین اسد آبادی
-            ، خیابان هفتم ، پلاک ۱۴ ، ساختمان ایرانیان پوشش
+          تهران،کیانشهر، خیابان شهید سید عیوض روانبخش، بن بست چهارم، پلاک ۴، طبقه دوم
           </span>
         </section>
       </section>

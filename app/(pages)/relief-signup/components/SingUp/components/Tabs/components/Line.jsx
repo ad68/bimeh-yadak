@@ -20,7 +20,7 @@ export default function Index() {
     //   :::::: R E N D E R : :  :   :    :     :        :          :
     // ──────────────────────────────────────────────────────────────
     //
-    return <span className="bg-silver w-[20%] xl:w-[40%] h-[1px]">
+    return <span className="bg-black w-[20%] xl:w-[40%] h-[1px]">
 
     </span>;
 }

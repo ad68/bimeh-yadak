@@ -88,11 +88,11 @@ export default function Index({ setOpen, open, setLogOutModal }) {
                 className="flex h-9 min-w-[154px] items-center justify-center gap-2  rounded-full  bg-primary  px-4 py-[10px] font-medium leading-normal text-[white]  md:h-[42px] md:w-[154px] dark:text-darkText-500 dark:hover:bg-darkBtn-200 "
                 href="/login"
               >
-                <p className="mb-[2px] align-middle text-[#505050] md:text-[15px]">
+                <p className="mb-[2px] align-middle text-black md:text-[15px]">
                   ورود | ثبت نام
                 </p>
                 <span className="">
-                  <IconLogin color="#505050" strokeWidth="2" />
+                  <IconLogin color="black" strokeWidth="2" />
                 </span>
               </Link>
             )}
