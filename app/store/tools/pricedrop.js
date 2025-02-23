@@ -13,7 +13,7 @@ export const usePriceDropStore = create(
     updateReplacedParts: (data) => set({ replacedParts: data }),
   }))
   /*  {
-      name: "price-drop-storage",
+      name: ".....price-drop-storage",
     }
   ) */
 );
