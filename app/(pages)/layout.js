@@ -121,10 +121,10 @@ export default function RootLayout({ children }) {
       <body className="dark:bg-darkBg-200 dark:text-darkText-100">
         <TopLoader />
         <ToastProvider />
-        <ScrollTop />
+        {/* <ScrollTop /> */}
         <Header />
         <main>{children}</main>
-        {/*  <Footer /> */}
+         <Footer />
       </body>
     </html>
   );

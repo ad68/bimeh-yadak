@@ -24,7 +24,7 @@ export default function Index({ setActiveTab }) {
     // ──────────────────────────────────────────────────────────────
     //
     return (
-        <section className="mt-[40px] px-3 py-2">
+        <section className="mt-[40px] px-3 py-2 text-justify">
             <h1 className="font-bold text-[20px]">
                 چرا حمل در امداد خودرو رایگان می شود؟
             </h1>

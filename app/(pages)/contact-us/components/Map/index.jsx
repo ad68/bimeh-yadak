@@ -19,7 +19,7 @@ import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import { RadiusBottomleftOutlined } from "@ant-design/icons";
-const center = [35.7249, -308.5904];
+const center = [35.64462017925794,51.44945740699769];
 const zoom = 16;
 function DisplayPosition({ map }) {
   const [position, setPosition] = useState(() => map.getCenter());
