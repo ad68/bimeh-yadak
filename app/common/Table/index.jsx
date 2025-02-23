@@ -3,20 +3,17 @@ import Tables from "./components/Tables";
 import TableLoading from "./components/TableLoading";
 import NoRecord from "./components/NoRecord";
 import { ConfigProvider, Pagination } from "antd";
-
-
 import { useAxiosWithToken } from "@/hooks";
 import { objectToQueryString } from "@/helper";
 
 // ─── Life Cycle ─────────────────────────────────────────────────────────────────
 
 // ─── Functions ──────────────────────────────────────────────────────────────────
-function Index({ cols, api, apiDel, pageSize, queries, actions, reload }) {
+function Index({ cols, api, apiDel, pageSize, queries, actions, reload, setRowData }) {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
   const [total, setTotal] = useState();
   const [currentPage, setCurrentPage] = useState(1);
-
   const getList = (myCurrentPage = 1) => {
     setLoading(true);
     useAxiosWithToken
@@ -39,19 +36,20 @@ function Index({ cols, api, apiDel, pageSize, queries, actions, reload }) {
 
   useEffect(() => {
     getList(currentPage);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage, reload]);
   useEffect(() => {
     getList();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [queries]);
 
   return (
     <section className="w-full min-h-[600px] h-auto mt-10 overflow-x-auto">
-
       {loading ? (
         <TableLoading />
       ) : total ? (
         <section className="flex justify-center items-center flex-col">
-          <Tables apiDel={apiDel} data={data} cols={cols} getList={() => getList(currentPage)} actions={actions} />
+          <Tables setRowData={setRowData} apiDel={apiDel} data={data} cols={cols} getList={() => getList(currentPage)} actions={actions} />
           {data.elements?.length > 0 && (
             <ConfigProvider
               theme={{

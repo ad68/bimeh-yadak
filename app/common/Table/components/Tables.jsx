@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Actions from "./Actions";
 import moment from "moment-jalaali";
 import DeleteModal from "../../DeleteModal";
-export default function Index({ cols, data, apiDel, getList, actions }) {
+export default function Index({ cols, data, apiDel, getList, actions, setRowData }) {
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
   const [deleteId, setDeleteId] = useState();
   const hideDeleteModal = () => {
@@ -41,7 +41,7 @@ export default function Index({ cols, data, apiDel, getList, actions }) {
                 {renderCell(colItem.type, rowItem[colItem.field], colItem?.conditions)}
               </td>
             ))}
-            <Actions item1={rowItem} actions={actions} showDeleteModal={showDeleteModal} setDeleteId={setDeleteId} />
+            <Actions rowItem={rowItem} setRowData={setRowData} actions={actions} showDeleteModal={showDeleteModal} setDeleteId={setDeleteId} />
           </tr>
         ))}
       </tbody>

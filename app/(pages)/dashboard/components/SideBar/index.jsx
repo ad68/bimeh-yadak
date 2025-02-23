@@ -21,9 +21,7 @@ export default function Index() {
   const authInfo = useAuthStore((state) => state.authInfo);
   const pathname = usePathname();
   const [logOutModal, setLogOutModal] = useState(false);
-
   // ─── States ─────────────────────────────────────────────────────────────────────
-
   const [authStatus, setAuthStatus] = useState(false);
   const [openInquiry, setOpenInquiry] = useState(false);
   // ─── Functions ──────────────────────────────────────────────────────────────────
@@ -103,55 +101,31 @@ export default function Index() {
         <section className="mx-6 mt-4 flex h-auto flex-col  justify-start">
           <Link
             href="/dashboard"
-            className={`${pathname === "/dashboard" ? "text-blue" : ""} mb-2 flex h-12 w-full items-center gap-[12px] pr-[14.5px] dark:text-white`}
+            className={`${pathname === "/dashboard" ? "text-blue" : ""} flex h-[48px] w-full items-center gap-[12px] pr-[14.5px] dark:text-white`}
           >
-            <IconHome
-              color={pathname === "/dashboard" ? "#0165e1" : "#3E4151"}
-              fill={pathname === "/dashboard" ? "#0165e1" : "#3E4151"}
-            />
+
             <span>داشبورد</span>
           </Link>
           <Link
             href="/dashboard/declaration-damage"
-            className={`${pathname === "/dashboard/declaration-damage" ? "text-blue" : ""} mb-2 flex h-[48px] items-center gap-[12px] pr-[14.5px] dark:text-white`}
+            className={`${pathname === "/dashboard/declaration-damage" ? "text-blue" : ""}  flex h-[48px] items-center gap-[12px] pr-[14.5px] dark:text-white`}
           >
-            <IconDamage
-              color={
-                pathname === "/dashboard/declaration-damage"
-                  ? "#0165e1"
-                  : "#3E4151"
-              }
-              fill={
-                pathname === "/dashboard/declaration-damage"
-                  ? "#0165e1"
-                  : "#3E4151"
-              }
-            />
             <span>اعلام خسارت</span>
+          </Link>
+          <Link
+            href="/dashboard/collaboration"
+            className={`${pathname === "/dashboard/collaboration" ? "text-blue" : ""}  flex h-[48px] items-center gap-[12px] pr-[14.5px] dark:text-white`}
+          >
+            <span>لیست همکاری</span>
           </Link>
           <button
             onClick={() => {
               setOpenInquiry(!openInquiry);
             }}
-            className={`${openInquiry || pathname === "/dashboard" ? "border-[#CCE0F9] bg-[#E6F0FC]" : "border-none"} mb-[16px] flex h-[48px] items-center justify-between rounded-lg border border-solid   pr-[14.5px]`}
+            className={`mb-[16px] flex h-[48px] items-center justify-between rounded-lg  pr-[14.5px]`}
           >
             <section className="flex items-center">
-              <IconInquiry2
-                color={
-                  openInquiry || pathname === "/dashboard"
-                    ? "#0165e1"
-                    : "#3E4151"
-                }
-                fill={
-                  openInquiry || pathname === "/dashboard"
-                    ? "#0165e1"
-                    : "#3E4151"
-                }
-                className="ml-[12px]"
-              />
-
               <span
-                className={`${openInquiry || pathname === "/dashboard" ? "text-[#0165E1]" : ""} w-[117px] text-right `}
               >
                 استعلام
               </span>

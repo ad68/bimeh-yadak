@@ -41,6 +41,8 @@ export const api = {
   },
   collaboration: {
     addCollaboration: baseUrl + "collaboration-in-marketing/add",
+    addCollaborationAdmin: baseUrl + "collaboration-in-marketing/add-token",
+    editCollaborationAdmin: baseUrl + "collaboration-in-marketing/edit/",
     getCollaborationList: baseUrl + "collaboration-in-marketing/search-with-pageable",
     deleteCollaboration: baseUrl + "collaboration-in-marketing/delete/",
   },
