@@ -139,7 +139,7 @@ export default function Index() {
                 </Link>
               </nav>
             </section>
-            <section className="grid ">
+            <section className=" ">
               <h2 className="text-[#170F49]  xl:text-[20px] text-[14px] font-bold leading-[22px]">
                 آشنایی با ما
               </h2>
