@@ -37,10 +37,11 @@ export default function Index() {
       mobileNumber: data.phone,
       email: data.email,
       description: data.description,
+      contactUsType: "BIME_YADAK",
     };
     setLoading(true);
     useAxios
-      .post(api.contactUs, params)
+      .post(api.contactUs.addContactUs, params)
       .then((res) => {
         setLoading(false);
         reset();

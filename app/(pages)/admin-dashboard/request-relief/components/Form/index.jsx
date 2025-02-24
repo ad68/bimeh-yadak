@@ -39,7 +39,7 @@ export default function Index() {
     };
     setActionLoading(true);
     useAxios
-      .post(api.contactUs, params)
+      .post(api.contactUs.addContactUs, params)
       .then((res) => {
         setActionLoading(false);
         reset({
