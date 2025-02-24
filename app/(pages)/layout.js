@@ -3,7 +3,6 @@ import { Figtree } from "next/font/google";
 import localFont from "next/font/local";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import ScrollTop from "./components/ScrollTop";
 import TopLoader from "@/providers/TopLoader";
 import ToastProvider from "@/providers/ToasterProvider";
 const figtree = Figtree({
@@ -48,7 +47,7 @@ const yekanbakh = localFont({
   ],
   variable: "--font-yekanbakh",
 });
-const APP_NAME = "PWA App";
+const APP_NAME = "Bime-Yadak PWA";
 const APP_DEFAULT_TITLE = "بیمه یدک";
 const APP_TITLE_TEMPLATE = "بیمه یدک | صفحه اصلی";
 const APP_DESCRIPTION = "بانک اطلاعات خودروئی";
@@ -86,10 +85,9 @@ export const metadata = {
     },
     description: APP_DESCRIPTION,
   },
+  viewport: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
 };
-export const viewport = {
-  themeColor: "#0165e1",
-};
+
 //
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
@@ -124,7 +122,7 @@ export default function RootLayout({ children }) {
         {/* <ScrollTop /> */}
         <Header />
         <main>{children}</main>
-         <Footer />
+        <Footer />
       </body>
     </html>
   );
