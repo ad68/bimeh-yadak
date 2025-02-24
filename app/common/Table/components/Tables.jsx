@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import Actions from "./Actions";
 import moment from "moment-jalaali";
 import DeleteModal from "../../DeleteModal";
+import { Modal } from "@/common";
 export default function Index({ cols, data, apiDel, getList, actions, setRowData }) {
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
   const [deleteId, setDeleteId] = useState();
+  const [descriptionModal, setDescriptionModal] = useState(false)
+  const [descriptionInfo, setDescriptionInfo] = useState("")
   const hideDeleteModal = () => {
     setOpenDeleteModal(false);
   };
@@ -16,7 +19,11 @@ export default function Index({ cols, data, apiDel, getList, actions, setRowData
       return moment(value).format("jYYYY/jMM/jDD");
     } else if (type === "condition") {
       return conditions.find((el) => el.value === value)?.replace;
-    } else {
+    }
+    else if (type === "description") {
+      return <span onClick={() => { setDescriptionModal(true); setDescriptionInfo(value) }} className="text-blue cursor-pointer font-bold">نمایش</span>
+    }
+    else {
       return value;
     }
   };
@@ -48,6 +55,9 @@ export default function Index({ cols, data, apiDel, getList, actions, setRowData
       <DeleteModal open={openDeleteModal} onClose={hideDeleteModal} api={apiDel} id={deleteId} onSuccess={getList}>
         آیا مایلید رکورد مورد نظر حذف شود؟
       </DeleteModal>
+      <Modal onClose={() => setDescriptionModal(false)} open={descriptionModal}>
+        {descriptionInfo}
+      </Modal>
     </table>
   );
 }

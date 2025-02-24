@@ -166,10 +166,7 @@ export default function Index() {
           <textarea
             {...register("description", {
               required: "فیلد توضیحات نباید خالی باشد",
-              maxLength: {
-                value: 10,
-                message: "توضیحات نباید بیشتر از 400 کاراکتر باشد",
-              },
+
             })}
             placeholder="توضیحات"
             className="mt-[5px] h-[78px] w-full rounded-lg border border-solid border-[#8B929A36] px-2 py-2 text-sm"

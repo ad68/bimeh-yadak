@@ -81,7 +81,7 @@ export default function Index() {
           <MenuLink title="درخواست های همکاری" link="/admin-dashboard/collaboration" />
           <MenuLink title="پیش ثبت نام های بیمه" link="/admin-dashboard/relief-signup" />
           <MenuLink title="درخواست های امداد" link="/admin-dashboard/request-relief" />
-
+          <MenuLink title="تماس با ما" link="/admin-dashboard/contact-us" />
 
           {/*   <button
             onClick={() => {
