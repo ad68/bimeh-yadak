@@ -22,7 +22,7 @@ export default function Index() {
   //
   return (
     <section>
-      <section className="xl:my-[80px] flex xl:h-[150px] h-[100px] w-full items-center justify-center bg-primary font-bold  ">
+      <section className="xl:my-[80px] mt-[60px] flex xl:h-[150px] h-[100px] w-full items-center justify-center bg-primary font-bold  ">
         <h3 className="xl:text-[40px] text-[24px] font-bold text-center px-10">
           پیش ثبت نام بیمه امداد حمل رایگان
         </h3>
