@@ -2,7 +2,7 @@
 import { api } from "@/api";
 import { Button, Modal, Table } from "@/common";
 import { useState } from "react";
-/* import AddEditModal from "./components/Modals/AddEditModal"; */
+import AddEditModal from "./components/Modals/AddEditModal";
 import Image from "next/image";
 import AddIcon from "../../../../public/assets/icons/add.svg";
 export default function Index() {
@@ -11,6 +11,13 @@ export default function Index() {
     { title: "شناسه", field: "id" },
     { title: "نام", field: "firstName" },
     { title: "نام خانوادگی", field: "lastName" },
+    {title:'کدملی', field:'nationalCode'},
+    {title:'تلفن همراه', field:'mobileNumber'},
+    {title:'سال ساخت', field:'modelYear'},
+    {title:'رنگ', field:'color'},
+    {title:'شهر', field:'provinceName'},
+    {title:'میزان تعهدات', field:'coverageAmount'},
+    {title:'کد معرف', field:'referralCode'},
   ];
   const actions = [{ type: "delete" }, { type: "edit", onClick: () => setAddEditModal(true) }];
   // ─── States ─────────────────────────────────────────────────────────────────────
@@ -45,9 +52,9 @@ export default function Index() {
         </Button>
       </section>
       <Table rowData={rowData} setRowData={setRowData} cols={cols} reload={reload} apiDel={api.collaboration.deletePreRegistrationInsuranceList} actions={actions} api={api.collaboration.getPreRegistrationInsuranceList} />
-      {/*<Modal width={800} open={addEditModal} onClose={closeModal}>
+      <Modal width={'90%'} open={addEditModal} onClose={closeModal}>
         <AddEditModal rowData={rowData} reloadTable={reloadTable} closeModal={closeModal} />
-      </Modal> */}
+      </Modal>
     </>
   );
 }
