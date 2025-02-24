@@ -10,7 +10,7 @@ import {
   TextBox,
 } from "@/common";
 import { NotifyMessage, Regex } from "@/enums";
-import { jalaliToGregorian, notify, numberWithCommas } from "@/helper";
+import { jalaliToGregorian, notify, numberWithCommas, scrollToTop } from "@/helper";
 import { useAxios } from "@/hooks";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -29,6 +29,44 @@ export default function Index({ setActiveTab }) {
     setValue,
     watch,
   } = useForm({});
+  const colors = [
+    {
+      "id": 8,
+      "parameter": "رنگ سفید",
+      "autoDepreciationTypeEnum": "COLOR",
+      "needToCheckBox": false
+    },
+    {
+      "id": 9,
+      "parameter": "رنگ مشکی",
+      "autoDepreciationTypeEnum": "COLOR",
+      "needToCheckBox": false
+    },
+    {
+      "id": 10,
+      "parameter": "رنگ نوک مدادی",
+      "autoDepreciationTypeEnum": "COLOR",
+      "needToCheckBox": false
+    },
+    {
+      "id": 11,
+      "parameter": "رنگ قرمز",
+      "autoDepreciationTypeEnum": "COLOR",
+      "needToCheckBox": false
+    },
+    {
+      "id": 12,
+      "parameter": "رنگ نقره ای",
+      "autoDepreciationTypeEnum": "COLOR",
+      "needToCheckBox": false
+    },
+    {
+      "id": 13,
+      "parameter": "سایر رنگ ها",
+      "autoDepreciationTypeEnum": "COLOR",
+      "needToCheckBox": false
+    }
+  ]
   const generateArray = (start, end, step) => {
     return Array.from({ length: (end - start) / step + 1 }, (_, i) => {
       const value = start + i * step;
@@ -55,7 +93,7 @@ export default function Index({ setActiveTab }) {
   const [yearsLoading, setYearsLoading] = useState(false);
   const [types, setTypes] = useState([]);
   const [typesLoading, setTypesLoading] = useState(false);
-  const [colors, setColors] = useState([]);
+  /* const [colors, setColors] = useState([]); */
   const [colorsLoading, setColorsLoading] = useState(false);
   const [provinces, setProvinces] = useState([]);
   const [provincesLoading, setProvincesLoading] = useState(false);
@@ -113,18 +151,18 @@ export default function Index({ setActiveTab }) {
         setTypesLoading(false);
       });
   };
-  const getColors = () => {
-    setColorsLoading(true);
-    useAxios
-      .get(api.colors.getColors)
-      .then((res) => {
-        setColorsLoading(false);
-        setColors(res.data);
-      })
-      .catch((err) => {
-        setColorsLoading(false);
-      });
-  };
+  /*  const getColors = () => {
+     setColorsLoading(true);
+     useAxios
+       .get(api.colors.getColors)
+       .then((res) => {
+         setColorsLoading(false);
+         setColors(res.data);
+       })
+       .catch((err) => {
+         setColorsLoading(false);
+       });
+   }; */
   const getProvinces = () => {
     setProvincesLoading(true);
     useAxios
@@ -166,12 +204,13 @@ export default function Index({ setActiveTab }) {
       modelYear: data?.yearId?.value,
       numberInsurance: data?.insuranceThird,
       expireDateInsurance: jalaliToGregorian(expireDate),
-      provinceName: data?.province?.value,
-      cityName: data?.province?.value,
+      provinceId: data?.province?.value,
+      cityId: data?.city?.value,
       coverageAmount: data.amountWarranty.value,
       color: data?.colorId.value,
       referralCode: data?.referralCode,
     };
+
     useAxios
       .post(api.insurance.preRegistration, params)
       .then((res) => {
@@ -187,7 +226,7 @@ export default function Index({ setActiveTab }) {
   // ─── Life Cycle ─────────────────────────────────────────────────────────────────
   useEffect(() => {
     getBrands();
-    getColors();
+    /*  getColors(); */
     getProvinces();
   }, []);
   useEffect(() => {
@@ -235,6 +274,11 @@ export default function Index({ setActiveTab }) {
     setValue("referralCode", searchParams.get("referralCode"));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
+  useEffect(() => {
+    if (errors) {
+      scrollToTop()
+    }
+  }, [errors])
   //
   // ──────────────────────────────────────────────────── I ──────────
   //   :::::: R E N D E R : :  :   :    :     :        :          :
@@ -462,7 +506,7 @@ export default function Index({ setActiveTab }) {
                 loading={colorsLoading}
                 state={value}
                 setState={onChange}
-                optionValue="id"
+                optionValue="parameter"
                 optionTitle="parameter"
                 placeHolder="رنگ"
               />

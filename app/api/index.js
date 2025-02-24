@@ -76,12 +76,15 @@ export const api = {
     searchDepartments: "https://api.tazminmashin.com/tazmin/ticket-department/search-departments",
     searchMessages: "https://api.tazminmashin.com/tazmin/ticket-message/search-messages",
   },
-  contactUs:{
-    getContactUsList: baseUrl+"contact-us/search-with-pagination",
-    deleteContactUs: baseUrl+"contact-us/delete/",
+  contactUs: {
+    getContactUsList: baseUrl + "contact-us/search-with-pagination",
+    deleteContactUs: baseUrl + "contact-us/delete/",
     addContactUs: baseUrl + "contact-us/add",
-    editContactUs: baseUrl+"contact-us/edit/"
+    editContactUs: baseUrl + "contact-us/edit/",
   },
-  
+  preRegistrationInsurance: {
+    searchList: baseUrl + "pre-registration-insurance/search-with-list",
+  },
+
   wp: "https://tazminmashin.ir/wp-json/wp/v2/posts?_embed&per_page=10",
 };
