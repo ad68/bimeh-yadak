@@ -7,6 +7,7 @@ import { NotifyMessage, Regex } from "@/enums";
 import { useAxios } from "@/hooks";
 import { api } from "@/api";
 import { notify } from "@/helper";
+import Recaptcha from '../../components/FormWithRecaptcha'
 
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
@@ -176,7 +177,7 @@ export default function Index() {
             <ErrorMessage>{errors.description.message}</ErrorMessage>
           )}
         </section>
-
+        <Recaptcha setIsVerified={setCaptcha} />
         <section className="col-span-2 flex w-full justify-end ">
           <Button
             loading={loading}
