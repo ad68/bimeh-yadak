@@ -3,7 +3,6 @@ import { Figtree } from "next/font/google";
 import localFont from "next/font/local";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import ScrollTop from "./components/ScrollTop";
 import TopLoader from "@/providers/TopLoader";
 import ToastProvider from "@/providers/ToasterProvider";
 const figtree = Figtree({
@@ -48,7 +47,7 @@ const yekanbakh = localFont({
   ],
   variable: "--font-yekanbakh",
 });
-const APP_NAME = "PWA App";
+const APP_NAME = "BimeYadak pwa";
 const APP_DEFAULT_TITLE = "بیمه یدک";
 const APP_TITLE_TEMPLATE = "بیمه یدک | صفحه اصلی";
 const APP_DESCRIPTION = "بانک اطلاعات خودروئی";
