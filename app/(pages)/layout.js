@@ -47,7 +47,7 @@ const yekanbakh = localFont({
   ],
   variable: "--font-yekanbakh",
 });
-const APP_NAME = "BimeYadak pwa";
+const APP_NAME = "Bime-Yadak PWA";
 const APP_DEFAULT_TITLE = "بیمه یدک";
 const APP_TITLE_TEMPLATE = "بیمه یدک | صفحه اصلی";
 const APP_DESCRIPTION = "بانک اطلاعات خودروئی";
