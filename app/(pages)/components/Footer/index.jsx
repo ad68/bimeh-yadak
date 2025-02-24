@@ -29,9 +29,9 @@ export default function Index() {
   return (
     <>
       {pathName === "/" ||
-      pathName === "/login" ||
-      pathName === "/dashboard" ||
-      pathName.startsWith("/dashboard/") ? (
+        pathName === "/login" ||
+        pathName === "/dashboard" ||
+        pathName.startsWith("/dashboard/") ? (
         ""
       ) : (
         <footer className="w-full xl:pt-[56px] pr-6 pt-[32px] bg-[#FFC727] xl:mt-[139px] mt-[59px]  xl:block relative rounded-t-[60px]  xl:rounded-t-[100px] h-auto max-w-full m-auto   ">
@@ -130,7 +130,7 @@ export default function Index() {
                 <Link href="/api-sell" className="hover:opacity-50">
                   اعلام خسارت
                 </Link>
-                <Link href="/agency" className="hover:opacity-50">
+                <Link href="/price-calculate" className="hover:opacity-50">
                   ارزش روز خودرو
                 </Link>
 
@@ -153,7 +153,7 @@ export default function Index() {
                   <button className="hover:opacity-50">اخبار</button>
                 </li>
                 <li>
-                  
+
                   <Link href="/article" className="hover:opacity-50">
                     مقالات
                   </Link>
