@@ -174,7 +174,7 @@ export default function Index({ reloadTable, closeModal, rowData }) {
                             onChange={onChange}
                             value={value}
                             placeholder="تلفن همراه را وارد کنید"
-                            type="phone"
+
                             className="  h-[48px]  rounded-lg border border-solid "
                         />
                     )}

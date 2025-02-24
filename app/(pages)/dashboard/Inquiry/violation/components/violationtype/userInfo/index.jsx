@@ -141,7 +141,7 @@ export default function Index({ setStep }) {
             render={({ field: { onChange, value } }) => (
               <TextBox
                 onChange={onChange}
-                type="phone"
+
                 value={value}
                 placeholder="9xxxxxxxxx"
               />

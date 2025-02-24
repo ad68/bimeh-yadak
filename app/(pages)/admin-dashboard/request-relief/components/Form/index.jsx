@@ -132,7 +132,7 @@ export default function Index() {
                     <TextBox
                       onChange={onChange}
                       value={value}
-                      type="phone"
+
                       className="  h-[48px]  rounded-lg border"
                     />
                   )}

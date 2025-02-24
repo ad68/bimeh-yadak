@@ -42,7 +42,7 @@ export default function Index({ open, setLogOutModal }) {
   //
   return (
     <section
-      className={`mobileMenu fixed flex flex-col  ${open ? "right-0" : "right-[-100%]"} top-[63px]  z-[1000] h-full w-full bg-white  transition-all duration-500 ease-in-out`}
+      className={`mobileMenu fixed flex flex-col  ${open ? "right-0" : "right-[-100%]"} top-[63px]  z-[1001] h-full w-full bg-white  transition-all duration-500 ease-in-out`}
     >
       <section className="flex flex-col pb-5 ">
         {authStatus !== "notLoggedIn" && <section className="px-[15px]">

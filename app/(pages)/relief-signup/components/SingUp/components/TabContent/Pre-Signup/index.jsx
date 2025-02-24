@@ -349,7 +349,7 @@ export default function Index({ setActiveTab }) {
                 onChange={onChange}
                 value={value}
                 placeholder="تلفن همراه را وارد کنید"
-                type="phone"
+
                 className="  h-[48px]  rounded-lg border border-solid "
               />
             )}

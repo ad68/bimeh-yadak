@@ -115,7 +115,7 @@ export default function Index() {
                   onChange={onChange}
                   value={value}
                   disabled={true}
-                  type="phone"
+
                   className="  h-[48px]  rounded-lg border border-solid border-[#F6F6F6] bg-[#F6F6F6] "
                 />
               )}
