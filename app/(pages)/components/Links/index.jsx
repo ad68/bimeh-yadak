@@ -45,7 +45,7 @@ export default function Index() {
       </section>
       <section className="flex justify-center xl:gap-[164px] gap-x-10">
         <section>
-          <LinkItem img={Money} title="ارزش روز خودرو" href="/" />
+          <LinkItem img={Money} title="ارزش روز خودرو" href="/price-calculate" />
         </section>
         <section>
           <LinkItem

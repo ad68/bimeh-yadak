@@ -64,15 +64,12 @@ function ProfileBtn({ authInfo, mode, setLogOutModal }) {
           className={`profileMenuDesc absolute left-0  mr-[-1px] mt-[4px] h-auto w-[200px] overflow-hidden rounded-xl bg-white shadow-xl transition-all [&>*]:transition-all [&>span:hover]:bg-slate-200 ${menuShow ? "block" : "hidden"}`}
         >
           <span className="block cursor-pointer px-5 py-2">
-            {authInfo && <Link href={authInfo?.dashboardLink} className="flex items-center">
+            {authInfo && <Link href={authInfo?.dashboardLink ? authInfo?.dashboardLink : ""} className="flex items-center">
               <IconDashboardprofile />
               <span className="mr-2">داشبورد</span>
               <IconArrowdown className="mr-auto h-[20px] w-[20px] rotate-90" />
             </Link>}
-
-
           </span>
-
           <span
             onClick={() => {
               setLogOutModal(true);
