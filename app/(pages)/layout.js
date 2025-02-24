@@ -86,10 +86,9 @@ export const metadata = {
     },
     description: APP_DESCRIPTION,
   },
+  viewport: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
 };
-export const viewport = {
-  themeColor: "#0165e1",
-};
+
 //
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
@@ -124,7 +123,7 @@ export default function RootLayout({ children }) {
         {/* <ScrollTop /> */}
         <Header />
         <main>{children}</main>
-         <Footer />
+        <Footer />
       </body>
     </html>
   );
