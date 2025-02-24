@@ -85,7 +85,13 @@ export const metadata = {
     },
     description: APP_DESCRIPTION,
   },
-  viewport: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
+};
+export const viewport = {
+  initialScale: 1,
+  width: "device-width",
+  maximumScale: 1,
+  userScalable: "no",
+  viewportFit: "cover",
 };
 
 //
