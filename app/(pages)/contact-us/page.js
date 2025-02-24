@@ -7,7 +7,6 @@ import dynamic from "next/dynamic";
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
 // ────────────────────────────────────────────────────────────────────
 //
-
 export default function Index() {
   // ─── Global Variable ────────────────────────────────────────────────────────────
   const Map = useMemo(
