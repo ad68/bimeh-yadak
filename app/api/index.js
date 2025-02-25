@@ -82,6 +82,9 @@ export const api = {
     addContactUs: baseUrl + "contact-us/add",
     editContactUs: baseUrl + "contact-us/edit/",
   },
+  transactions:{
+    getTransactionsList: baseUrl+"inquiry/bills-transactions"
+  },
   preRegistrationInsurance: {
     searchList: baseUrl + "pre-registration-insurance/search-with-list",
   },
