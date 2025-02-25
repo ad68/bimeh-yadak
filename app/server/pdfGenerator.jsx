@@ -1,10 +1,14 @@
 // server/pdfGenerator.js
-import { Document, Page, Text, StyleSheet } from "@react-pdf/renderer";
-
+import { Document, Page, Text, StyleSheet, Font } from "@react-pdf/renderer";
+Font.register({
+  family: "vazir",
+  src: "/fonts/vazir/vazir.ttf",
+});
 const styles = StyleSheet.create({
   page: {
     flexDirection: "row",
     backgroundColor: "#E4E4E4",
+    fontFamily: "vazir"
   },
   text: {
     fontSize: 12,

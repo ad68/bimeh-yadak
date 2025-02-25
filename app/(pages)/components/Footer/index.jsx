@@ -51,7 +51,7 @@ export default function Index() {
             <section className="xl:w-[310px] w-[90%] ">
               <Link href="/" className="flex gap-3 items-center ">
                 <Image
-                  src="/icons/Group 13.svg"
+                  src="/icons/logo.svg"
                   width={133.89}
                   height={89}
                   alt=""

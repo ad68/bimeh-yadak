@@ -1,11 +1,11 @@
 "use server";
-// app/api/downloadPdf/route.js
+
 import { NextResponse } from "next/server";
 import { pdf } from "@react-pdf/renderer";
 import MyDocument from "../../server/pdfGenerator";
 
 export async function POST(request) {
-  const { title, content } = await request.json(); // دریافت داده‌ها از بدن درخواست
+  const { title, content } = await request.json();
 
   try {
     const data = { title, content };

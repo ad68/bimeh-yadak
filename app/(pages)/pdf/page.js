@@ -1,36 +1,37 @@
 "use client";
-import axios from "axios";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import PDFTemplate from "./template/PDFTemplate";
+import moment from "moment-jalaali";
+import { numberWithCommas } from "@/helper";
+const MyApp = () => {
+  const [ReactPDF, setReactPDF] = useState(null);
 
-const DownloadButton = () => {
-  const handleDownload = async () => {
-    const data = {
-      title: "title",
-      content: "content",
-    };
-    try {
-      const response = await axios.post("/api/downloadPdf", data, {
-        responseType: "blob",
-      });
+  useEffect(() => {
+    import("@react-pdf/renderer").then((module) => {
+      setReactPDF(module);
+    });
+  }, []);
 
-      if (response.status === 200) {
-        const blob = new Blob([response.data], { type: "application/pdf" });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = "example.pdf";
-        link.click();
-      }
-    } catch (error) {
-      console.error("Error generating PDF:", error);
-    }
+  if (!ReactPDF) return <div>در حال بارگذاری...</div>;
+
+  const { PDFDownloadLink } = ReactPDF;
+  const doctorInfo = {
+    name: "دکتر علی محمدی",
+    numberInsurance: 454555,
+    regDate: moment("2025-02-21T20:31:25.041119").format("jYYYY/jMM/jDD"),
+    coverageAmount: numberWithCommas(5000000),
+    alphabetCode: "الف",
+    licenseCode1: "39",
+    licenseCode2: "328",
+    provinceCode: "30",
   };
-
   return (
-    <button className="mt-[400px]" onClick={handleDownload}>
-      دانلود PDF
-    </button>
+    <section className="mt-[100px] h-[400px] bg-slate-100 flex justify-center items-center">
+      <PDFDownloadLink document={<PDFTemplate {...doctorInfo} />} fileName="doctor-info.pdf">
+        {({ loading }) => (loading ? "در حال بارگذاری..." : "دانلود PDF")}
+      </PDFDownloadLink>
+    </section>
   );
 };
 
-export default DownloadButton;
+export default MyApp;
