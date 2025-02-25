@@ -81,6 +81,7 @@ export default function Index() {
           <MenuLink title="پیش ثبت نام های بیمه" link="/admin-dashboard/relief-signup" />
           <MenuLink title="درخواست های امداد" link="/admin-dashboard/request-relief" />
           <MenuLink title="تراکنش ها" link="/admin-dashboard/transactions" />
+          <MenuLink title="تراکنش‌های استعلام" link="/admin-dashboard/inquiry-transactions"/>
           <MenuLink title="تماس با ما" link="/admin-dashboard/contact-us" />
 
           {/*   <button
