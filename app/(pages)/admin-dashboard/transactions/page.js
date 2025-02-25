@@ -10,8 +10,8 @@ import { Table } from "@/common";
 export default function Index() {
   // ─── Global Variable ────────────────────────────────────────────────────────────
   const cols = [
-    { title: "قیمت", field: "amount" },
-    { title: " وضعیت", field: "status" },
+    { title: "قیمت", field: "amount", type: "price" },
+    { title: " وضعیت", field: "status" /* , type: "condition", conditions: [{ value: "G00000", replace: "ali" }] */ },
     { title: "تاریخ", field: "regDate", type: "date" },
     { title: "شناسه", field: "uniqueIdentifier" },
   ];
@@ -23,7 +23,6 @@ export default function Index() {
 
   // ─── Functions ──────────────────────────────────────────────────────────────────
 
-
   //
   // ──────────────────────────────────────────────────── I ──────────
   //   :::::: R E N D E R : :  :   :    :     :        :          :
@@ -33,13 +32,7 @@ export default function Index() {
     <>
       <section className="mt-[10px] w-full mb-[200px] xl:mb-0 xl:w-full max-w-full flex flex-col justify-center items-center">
         <section className=" justify-center w-[90%]  flex flex-col items-center">
-          <Table
-            cols={cols}
-            rowData={rowData}
-            setRowData={setRowData}
-            api={api.transactions.getTransactionsList}
-            reload={reload}
-          />
+          <Table cols={cols} rowData={rowData} setRowData={setRowData} api={api.transactions.getTransactionsList} reload={reload} />
         </section>
       </section>
     </>

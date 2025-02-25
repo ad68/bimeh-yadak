@@ -3,6 +3,7 @@ import Actions from "./Actions";
 import moment from "moment-jalaali";
 import DeleteModal from "../../DeleteModal";
 import { Modal } from "@/common";
+import { numberWithCommas } from "@/helper";
 export default function Index({ cols, data, apiDel, getList, actions, setRowData }) {
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
   const [deleteId, setDeleteId] = useState();
@@ -19,6 +20,9 @@ export default function Index({ cols, data, apiDel, getList, actions, setRowData
       return moment(value).format("jYYYY/jMM/jDD");
     } else if (type === "condition") {
       return conditions.find((el) => el.value === value)?.replace;
+    }
+    else if (type === "price") {
+      return numberWithCommas(value);
     }
     else if (type === "description") {
       return <span onClick={() => { setDescriptionModal(true); setDescriptionInfo(value) }} className="text-blue cursor-pointer font-bold">نمایش</span>

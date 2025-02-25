@@ -1,8 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import ListItem from "./components/ListItem";
+
 import EditProfileSideBar from "./components/EditProfile";
 import { useAuthStore } from "@/store/auth/login";
 import { isEmptyObject } from "@/helper";
@@ -24,7 +23,7 @@ export default function Index() {
   const [logOutModal, setLogOutModal] = useState(false);
   // ─── States ─────────────────────────────────────────────────────────────────────
   const [authStatus, setAuthStatus] = useState(false);
-  const [openInquiry, setOpenInquiry] = useState(false);
+
   // ─── Functions ──────────────────────────────────────────────────────────────────
   const getAuthStatus = () => {
     if (!isEmptyObject(authInfo)) {
@@ -81,6 +80,7 @@ export default function Index() {
           <MenuLink title="درخواست های همکاری" link="/admin-dashboard/collaboration" />
           <MenuLink title="پیش ثبت نام های بیمه" link="/admin-dashboard/relief-signup" />
           <MenuLink title="درخواست های امداد" link="/admin-dashboard/request-relief" />
+          <MenuLink title="تراکنش ها" link="/admin-dashboard/transactions" />
           <MenuLink title="تماس با ما" link="/admin-dashboard/contact-us" />
 
           {/*   <button
