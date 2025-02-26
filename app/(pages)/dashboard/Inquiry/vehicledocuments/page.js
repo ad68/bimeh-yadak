@@ -2,6 +2,8 @@
 import React from "react";
 import PlateInfo from "./components/PlateInfo";
 import MisconductBg from "./components/MisconductBg";
+import Link from "next/link";
+import Image from "next/image";
 
 
 // ────────────────────────────────────────────────────────── I ──────────
@@ -26,6 +28,9 @@ export default function Index() {
   return (
     <>
       <section className="w-full ">
+      <Link href={'../'} className="text-blue text-[12px] flex gap-1 items-center mb-2">
+    <Image src={'/assets/icons/arrow-left.svg'} className="size-3 rotate-180" width={12} height={12} alt=""/>
+    <section>برگشت</section></Link>
         <header className="m-[24px] xl:mb-10 flex items-center gap-2">
           <h2 className="text-[16px] font-semibold text-[#505050] xl:text-[28px]">
             لیست استعلام
