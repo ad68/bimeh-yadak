@@ -3,6 +3,7 @@ import { api } from "@/api";
 import React, { useState } from "react";
 import { Table } from "@/common";
 import Edit from "./components/EditDescr";
+import { Button } from "antd";
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
 // ────────────────────────────────────────────────────────────────────
@@ -22,7 +23,7 @@ export default function Index() {
   const [reload, setReload] = useState(false);
   const [editModal, setEditModal] = useState(false);
   const [rowData, setRowData] = useState({});
-  const [queries, _] = useState({
+  const [queries, setQueries] = useState({
     contactUsType: "BIME_YADAK",
   });
 
@@ -56,6 +57,16 @@ export default function Index() {
           <Table cols={cols} rowData={rowData} setRowData={setRowData} api={api.contactUs.getContactUsList} actions={actions} queries={queries} apiDel={api.contactUs.deleteContactUs} reload={reload} />
         </section>
         <Edit reloadTable={reloadTable} rowData={rowData} hideModal={hideModal} open={editModal} />
+        <Button
+          onClick={() =>
+            setQueries({
+              contactUsType: "BIME_ALI",
+            })
+          }
+        >
+          ali
+        </Button>
+        <Button onClick={reloadTable}>reload</Button>
       </section>
     </>
   );

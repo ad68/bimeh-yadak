@@ -2,7 +2,7 @@
 import { api } from "@/api";
 import { Button, ErrorMessage, TextBox } from "@/common";
 import { Regex } from "@/enums";
-import { useAxios } from "@/hooks";
+import { useAxios, useAxiosWithToken } from "@/hooks";
 import dynamic from "next/dynamic";
 import { useEffect, useMemo, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
@@ -33,7 +33,7 @@ export default function Index() {
             nationalCode: data.nationalCode,
         };
         setActionLoading(true);
-        useAxios
+        useAxiosWithToken
             .get(api.preRegistrationInsurance.searchList, { params: { ...params } })
             .then((res) => {
                 setActionLoading(false);

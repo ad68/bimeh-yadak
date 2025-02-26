@@ -24,13 +24,13 @@ export default function Index() {
     // ──────────────────────────────────────────────────────────────
     //
     return <>
-        <section className={`${active === 1 ? `visible` : `hidden`}`}>
+        <section className={`${active === 1 ? `visible w-full` : `hidden`}`}>
             <RequestForm />
         </section>
-        <section className={`${active === 2 ? `visible` : `hidden`}`}>
+        <section className={`${active === 2 ? `visible w-full` : `hidden`}`}>
             <SelectPlate />
         </section>
-        <section className={`${active === 3 ? `visible` : `hidden`}`}>
+        <section className={`${active === 3 ? `visible w-full` : `hidden`}`}>
             <SelectLocation />
         </section>
     </>;
