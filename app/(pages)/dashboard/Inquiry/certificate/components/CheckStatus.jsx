@@ -1,5 +1,6 @@
+'use client'
 import React from "react";
-import Image from "next/image";
+import { Button } from "@/common";
 
 //
 // ────────────────────────────────────────────────────────── I ──────────
@@ -24,13 +25,14 @@ export default function Index() {
   return (
     <section className=" mt-[37px] max-w-full rounded-[12px] p-[32px]  shadow-[-4px_-4px_4px_0px_#F6F6FBCC,4px_4px_12px_0px_#F6F6FBCC] md:px-[79px] md:py-8 xl:mr-6 xl:h-[416px] xl:w-[407px] xl:px-8">
       <section className="mb-8 flex items-start gap-2">
-        <Image
+        {/* <Image
           src="/assets/icons/Ellipse.svg"
           width={8}
           height={8}
           className="mt-[12px]"
           alt=""
-        />
+        /> */}
+        <section className="w-3 h-2 rounded-full bg-primary mt-3"></section>
         <p className="leading-[27.64px] text-[#3E4151]">
           برای مشاهده وضعیت گواهینامه اطلاعات ذیل را تکمیل نمایید.
         </p>
@@ -58,9 +60,9 @@ export default function Index() {
           />
         </section>
         <section className="text-center">
-          <button className="mx-auto mt-6 w-full max-w-full rounded-xl bg-[#0165E1] px-[125px] py-[10px] text-center text-xl font-semibold text-white hover:bg-[#99C1F3] hover:text-[#0165E1] xl:w-[280px]">
+          <Button className="mx-auto mt-6 w-full max-w-full xl:w-[280px]">
             ثبت
-          </button>
+          </Button>
         </section>
       </form>
     </section>

@@ -28,7 +28,7 @@ export default function Index() {
           لیست استعلام
           <span className="mr-2 text-[28px] text-[#8B929A36]">|</span>
         </h2>
-        <h2 className="text-sm font-semibold text-[#0165E1] xl:text-2xl">
+        <h2 className="text-sm font-semibold text-primary xl:text-2xl">
           استعلام نمره منفی
         </h2>
       </section>

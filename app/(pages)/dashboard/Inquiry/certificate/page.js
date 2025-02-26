@@ -28,7 +28,7 @@ export default function Index() {
           لیست استعلام
         </h2>
         <section className="h-8 w-[1px] bg-[#8B929A36]"></section>
-        <h2 className="text-[14px] font-semibold text-[#0165E1] xl:text-2xl ">
+        <h2 className="text-[14px] font-semibold text-primary xl:text-2xl ">
           استعلام وضعیت گواهینامه
         </h2>
       </section>

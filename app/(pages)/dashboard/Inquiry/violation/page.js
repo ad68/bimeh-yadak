@@ -30,7 +30,7 @@ export default function Index() {
       <section className='mx-6 flex items-center gap-2 xl:mx-0 '>
         <h2 className='font-semibold text-[#505050] xl:text-[28px]'>لیست استعلام</h2>
         <section className='h-8 w-[1px] bg-[#8B929A36]'></section>
-        <h2 className='text-sm font-semibold text-[#0165E1] xl:text-2xl'>استعلام خلافی</h2>
+        <h2 className='text-sm font-semibold text-primary xl:text-2xl'>استعلام خلافی</h2>
       </section>
       <section className='flex  flex-wrap gap-[48px] xl:gap-[93px]'>
         {step === 1 ? (

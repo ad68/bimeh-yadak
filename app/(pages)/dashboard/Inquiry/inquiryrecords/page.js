@@ -54,7 +54,7 @@ export default function Index() {
           alt=""
         />
 
-        <section className="flex h-12 rounded-xl bg-[#4E94EA] p-[12px] text-white xl:w-[88px] xl:rounded-[20px]">
+        <section className="flex h-12 rounded-xl bg-primary p-[12px] text-white xl:w-[88px] xl:rounded-[20px]">
           <span className="hidden xl:block">فیلتر</span>
           <Image
             src="/assets/images/filter.png"

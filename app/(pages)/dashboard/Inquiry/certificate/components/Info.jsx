@@ -29,7 +29,7 @@ export default function Index() {
         height={300}
         className="mx-auto h-auto w-[60%] xl:h-[300px] xl:w-[460px]"
       />
-      <section className="borde-solid mt-11 h-auto border-r-[2px] border-[#4E94EA]">
+      <section className="borde-solid mt-11 h-auto border-r-[2px] border-primary">
         <p className="mx-auto mr-3 text-[14px] leading-[27.64px] text-[#3E4151] xl:mr-2 xl:text-[16px]">
           برای استعلام جریمه‌ها و پرداخت آنها کافی است، شماره پلاک وسیله نقلیه
           خود را در این بخش وارد کنید و با انتخاب روش مناسب به‌روزترین مبلغ

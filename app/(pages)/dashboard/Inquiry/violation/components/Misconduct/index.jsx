@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Radio } from "antd";
 import OffenseList from "./components/OffenseList";
-import { ComponentLoading, CycleLicensePlate, ErrorMessage } from "@/common";
+import { Button, ComponentLoading, CycleLicensePlate, ErrorMessage } from "@/common";
 import WithoutPlate from "./components/WithoutPlate";
 import { CarLicensePlate } from "@/common";
 import { useAxiosWithToken } from "@/hooks";
@@ -115,13 +115,7 @@ export default function Index({ setStep }) {
     <>
       <section className="mx-auto mt-[37px] max-w-full rounded-xl  p-8 shadow-[-4px_-4px_4px_0px_#F6F6FBCC,4px_4px_12px_0px_#F6F6FBCC] md:w-[80%] md:px-[79px] xl:mr-6 xl:w-[407px] xl:px-8 ">
         <section className="mb-8 flex items-start gap-2">
-          <Image
-            src="/assets/icons/Ellipse.svg"
-            width={8}
-            height={8}
-            className="mt-[12px]"
-            alt=""
-          />
+          <section className="w-3 h-2 rounded-full bg-primary mt-3"></section>
           <p className="leading-[27.64px] text-[#3E4151]">
             برای مشاهده خلافی شماره پلاک خود را وارد کنید یا از لیست “ پلاک‌های
             من” پلاک مد نظر خود را انتخاب نمایید.
@@ -208,12 +202,12 @@ export default function Index({ setStep }) {
             ""
           )}
 
-          <button
+          <Button
             onClick={goToNextStep}
-            className=" mt-6 h-[48px] w-full  max-w-full rounded-lg bg-[#0165E1] text-lg font-semibold text-[#FFFFFF] hover:bg-[#99C1F3] hover:text-[#0165E1] xl:w-[315px]"
+            className="  h-[48px] w-full  max-w-full xl:w-[315px]"
           >
             ثبت
-          </button>
+          </Button>
         </section>
       </section>
     </>
