@@ -4,7 +4,7 @@ import Image from "next/image";
 import Plate from "./plate";
 import OffenseList from "./OffenseList";
 import WithoutPlate from "./WithoutPlate";
-import { CarLicensePlate } from "@/common";
+import { Button, CarLicensePlate } from "@/common";
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
 // ────────────────────────────────────────────────────────────────────
@@ -30,14 +30,15 @@ export default function Index() {
   return (
     <>
       <section className="mx-auto w-full rounded-[12px] p-8 shadow-md md:w-[80%] md:px-[79px] xl:w-[407px] xl:px-8 xl:shadow-xl">
-        <section className="mb-[32px]">
-          <Image
+        <section className="mb-[32px] flex gap-2">
+          {/* <Image
             src="/assets/images/dot.png"
             width={8}
             height={8}
             alt=""
             className="ml-1 inline"
-          />
+          /> */}
+          <section className="w-3 h-2 rounded-full bg-primary mt-2"></section>
           <p className="inline text-justify text-[16px] font-normal">
             برای پیگیری مدارک خودرو ، شماره پلاک خود را وارد کنید یا از لیست “
             پلاک‌های من” پلاک مد نظر را انتخاب نمایید.
@@ -67,9 +68,9 @@ export default function Index() {
         </section>
         {/* <WithoutPlate /> */}
         <section className="mx-auto xl:px-8">
-          <button className=" mt-6 h-[48px] w-full  max-w-full rounded-lg bg-[#0165E1] text-lg font-semibold text-[#FFFFFF] hover:bg-[#99C1F3] hover:text-[#0165E1] xl:w-[280px]">
+          <Button className=" mt-6 h-[48px] w-full  max-w-full  xl:w-[280px]">
             ثبت
-          </button>
+          </Button>
         </section>
       </section>
     </>

@@ -9,6 +9,8 @@ import Header from "./components/Header";
 import { api } from "@/api";
 import { usePlatesStore } from "@/store/dashboard/plates";
 import { Pagination } from "antd";
+import Link from "next/link";
+import Image from "next/image";
 //
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
@@ -57,6 +59,9 @@ export default function Index() {
   //
   return (
     <>
+    <Link href={'../'} className="text-blue text-[12px] flex gap-1 items-center mb-2">
+    <Image src={'/assets/icons/arrow-left.svg'} className="size-3 rotate-180" width={12} height={12} alt=""/>
+    <section>برگشت</section></Link>
       <CreateEditPlate />
       <span className='hidden text-[28px] font-semibold text-[#505050] lg:block dark:text-white'>پلاک های من</span>
       <section className='mt-[33px] xl:mr-[87px] xl:mt-7 xl:w-[836px] 2xl:mr-[87px] 2xl:mt-7  2xl:w-[836px]  '>
@@ -74,16 +79,19 @@ export default function Index() {
               </section>
             )}
             {plateList.length > 0 && (
-              <Pagination
-                className='ltr sans mt-5 text-center'
-                defaultCurrent={1}
-                showSizeChanger={false}
-                current={currentPage}
-                pageSize={8}
-                onChange={(value) => setCurrentPage(value)}
-                total={total}
-                rootClassName='dark:text-white'
-              />
+              <section className="flex justify-center mt-3">
+
+                <Pagination
+                  className='ltr sans mt-5 text-center'
+                  defaultCurrent={1}
+                  showSizeChanger={false}
+                  current={currentPage}
+                  pageSize={8}
+                  onChange={(value) => setCurrentPage(value)}
+                  total={total}
+                  rootClassName='dark:text-white'
+                />
+              </section>
             )}
           </>
         )}

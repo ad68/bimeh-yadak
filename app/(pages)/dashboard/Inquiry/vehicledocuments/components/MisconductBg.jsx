@@ -30,7 +30,7 @@ export default function Index() {
           height={300}
           className="mx-auto w-[60%] md:w-[70%] xl:w-full"
         />
-        <p className="h- border-r-[2px] border-[#4E94EA] px-2 text-justify text-[16px]  font-normal xl:mb-[80px]">
+        <p className="h- border-r-[2px] border-primary px-2 text-justify text-[16px]  font-normal xl:mb-[80px]">
           برای پیگیری مدارک خودرو کافی است، شماره پلاک، کد ملی و تلفن همراه
           متعلق به کد ملی را وارد کنید تا وضعیت به‌روز صدور و ارسال مدارک خودرو
           را مشاهده کنید.

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { Button } from "@/common";
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
 // ────────────────────────────────────────────────────────────────────
@@ -24,13 +25,14 @@ export default function Index() {
     <>
       <section className="mb-[48px] h-auto w-full rounded-lg pb-8 shadow-[-4px_-4px_4px_0px_#F6F6FBCC,4px_4px_12px_0px_#F6F6FBCC] md:px-[79px] xl:mb-0 xl:h-[528px] xl:w-[407px] xl:px-8 xl:pb-0">
         <section className=" mx-auto mb-8 flex w-[90%]  items-start gap-2 pt-8 text-justify leading-[27.64px] xl:w-full xl:px-8">
-          <Image
+          {/* <Image
             src="/assets/icons/Ellipse.svg"
             width={8}
             height={8}
             className="mt-[12px]"
             alt=""
-          />
+          /> */}
+          <section className="w-3 h-2 rounded-full bg-primary mt-3"></section>
           <p className="leading-[27.64px] text-[#3E4151]">
             اطلاعات مربوط به صاحب گواهینامه را تکمیل نمایید.
           </p>
@@ -67,9 +69,9 @@ export default function Index() {
             />
           </section>
           <section className="text-center">
-            <button className="mx-auto w-full max-w-full rounded-xl bg-[#0165E1] py-[10px] text-center text-lg font-bold leading-[27.9px] text-[#FFFFFF] xl:w-[280px]">
+            <Button className="mx-auto w-full max-w-full xl:w-[280px]">
               ثبت
-            </button>
+            </Button>
           </section>
         </form>
       </section>
