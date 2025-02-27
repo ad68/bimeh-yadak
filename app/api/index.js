@@ -82,11 +82,11 @@ export const api = {
     addContactUs: baseUrl + "contact-us/add",
     editContactUs: baseUrl + "contact-us/edit/",
   },
-  transactions:{
-    getTransactionsList: baseUrl+"inquiry/bills-transactions"
+  transactions: {
+    getTransactionsList: baseUrl + "inquiry/bills-transactions",
   },
   preRegistrationInsurance: {
-    searchList: baseUrl + "pre-registration-insurance/search-with-list",
+    searchList: baseUrl + "registration-insurance/search-with-list",
   },
 
   wp: "https://tazminmashin.ir/wp-json/wp/v2/posts?_embed&per_page=10",
