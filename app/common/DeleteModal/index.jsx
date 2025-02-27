@@ -68,12 +68,12 @@ export default function Index({
   };
 
   return (
-    <section ref={modalWrapper} className="fixed h-full w-full top-0 left-0 hidden items-center justify-center z-[500]">
+    <section ref={modalWrapper} className="fixed h-full w-full top-0 left-0 hidden items-center justify-center z-[1005]">
       <section ref={modalOverlay} onClick={onClose} className="absolute w-full h-full top-0 opacity-0 transition-all duration-300 left-0 backdrop-blur-sm z-[150] bg-[#4d4d4d7e]"></section>
       <section className="relative left-0 top-0 flex h-full w-full items-center justify-center">
         <section
           ref={modalBox}
-          className="h-auto py-[30px] px-[30px] min-h-[100px] bg-white mx-auto z-[1000] rounded-[10px] scale-0 transition-all duration-300"
+          className="h-auto py-[30px] px-[30px] max-w-[95%] max-h-[95%] bg-white mx-auto z-[1000] rounded-[10px] scale-0  transition-all duration-300"
           style={{ width: width ? width : 399, transform: "scale(0)" }}
         >
           <span

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
+
+import MenuLink from './components/MenuLink'
 import ProfileBtn from "./components/ProfileBtn";
 import { useAuthStore } from "@/store/auth/login";
 import { isEmptyObject } from "@/helper";
@@ -13,9 +13,7 @@ import CollapseItem from './components/CollapseItem'
 //
 export default function Index({ open, setLogOutModal }) {
   // ─── Global Variable ────────────────────────────────────────────────────────────
-  const pathname = usePathname();
   const authInfo = useAuthStore((state) => state.authInfo);
-
   // ─── States ─────────────────────────────────────────────────────────────────────
   const [authStatus, setAuthStatus] = useState(false);
   // ─── Life Cycle ─────────────────────────────────────────────────────────────────
@@ -70,39 +68,22 @@ export default function Index({ open, setLogOutModal }) {
             ]}
           />
         </section>}
-
-        <Link
-          className={`px-[15px] py-2 ${pathname === "/" ? "text-blue" : ""}`}
-          href="/"
-        >
-          صفحه اصلی
-        </Link>
-        <Link
-          className={`${pathname === "/inquiry-intro" ? "text-blue" : ""} px-[15px] py-2`}
-          href="/inquiry-intro "
-        >
-          استعلامات
-        </Link>
-        <Link
-          className={`${pathname === "/contact-us" ? "text-blue" : ""} px-[15px] py-2`}
-          href="/contact-us"
-        >
-          تماس با ما
-        </Link>
-        <Link
-          className={`${pathname === "/about" ? "text-blue" : ""} px-[15px] py-2`}
-          href="/about"
-        >
-          درباره ما
-        </Link>
-        <button
+        <nav className="mt-1">
+          <MenuLink title="خانه" link="/" />
+          <MenuLink title="خرید بیمه نامه" link="/relief-signup" />
+          <MenuLink title="درخواست امداد خودرو" link="/request-relief" />
+          <MenuLink title="همکاری در بازاریابی" link="/marketing" />
+          <MenuLink title="درباره ما" link="/about" />
+          <MenuLink title="تماس با ما" link="/contact-us" />
+        </nav>
+        {authStatus !== "notLoggedIn" && <button
           onClick={() => setLogOutModal(true)}
           className={`px-[15px] py-2 w-[100px] text-right flex justify-center items-center`}
           href="/about"
         >
           <IconLogout className="m-auto stroke-[gray]" width={30} height={30} />
           خروج
-        </button>
+        </button>}
         <ProfileBtn
           authInfo={authInfo}
           authStatus={authStatus}

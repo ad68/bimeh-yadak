@@ -567,10 +567,10 @@ export default function Index({ setActiveTab }) {
             control={control}
             name="insuranceThird"
             rules={{
-              required: "شماره بیمه ثالث است",
+              required: "شماره بیمه ثالث اجباری است",
               pattern: {
                 value: Regex.INSURANCE_THIRD,
-                message: "شماره بیمه ثالث را به درستی وارد کنید",
+                message: "شماره بیمه ثالث باید 10 رقم کنید",
               },
             }}
             render={({ field: { onChange, value } }) => (
@@ -662,6 +662,7 @@ export default function Index({ setActiveTab }) {
               <Select
                 options={warrantyList}
                 state={value}
+                search={false}
                 setState={onChange}
                 optionValue="value"
                 optionTitle="label"
