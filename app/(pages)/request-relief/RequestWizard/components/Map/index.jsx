@@ -35,7 +35,6 @@ function DisplayPosition({ map, setLongData, setLatData }) {
 
 export default function MyMap({ setLongData, setLatData, latData, longData }) {
   const [map, setMap] = useState(null);
-
   const displayMap = useMemo(() => (
     <section className="relative xl:w-full">
       <MapContainer center={center} zoom={zoom} scrollWheelZoom={true} ref={setMap}>

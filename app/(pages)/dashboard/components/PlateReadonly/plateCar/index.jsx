@@ -27,7 +27,7 @@ export default function Index({
   //
   return (
     <>
-      <section className="flex h-[48px] w-[219.93px] max-w-full rounded">
+      <section className="flex h-[48px] w-[219.93px] max-w-full rounded transition-all duration-500">
         <section className="flex  rounded-r  border-y-[0.4px] border-r-[0.4px] border-solid border-[#A6A9BD] bg-white">
           <section className="flex h-full w-[43.79px] max-w-full items-center justify-center border-l-[0.4px] border-solid border-[#A6A9BD]">
             {platePart4}

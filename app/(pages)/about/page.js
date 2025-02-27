@@ -1,9 +1,5 @@
-import Section1 from "./components/Section1";
-import Section2 from "./components/Section2";
-import Section3 from "./components/Section3";
-import Section4 from "./components/Section4";
-import Items from './components/Items'
-import Service from './components/Service'
+import Items from "./components/Items";
+import Service from "./components/Service";
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
 // ────────────────────────────────────────────────────────────────────
@@ -29,27 +25,36 @@ export default function Index() {
           <h1 className="xl:text-[40px] text-[36px]"> درباره بیمه یدک </h1>
         </section>
         <section className="xl:w-[1366px] w-[90%] m-auto max-w-full">
-          <p className="xl:text-center text-justify leading-10">مجموعه امداد خودرو کشوری با چندین سال سابقه در امر امداد رسانی آماده ارائه خدمات به مشتریان در سراسر ایران می باشد. امدادخودرو ۱۵۹۳ با ارایه خدمات خودرو بری، حمل خودرو، یدک کش، کفی خودرو آماده امداد رسانی به شما عزیزان می باشد.حمل و جابجایی خودروهای لوکس و گران قیمت خود را با خیال راحت به ما بسپارید.</p>
-        <section className="mt-8 xl:flex justify-center grid gap-6 xl:gap-[80px]">
-          <section className="grid gap-6">
-          <Items text={'چندین سال سابقه'}/>
-          <Items text={'بروزترین دستگاه ها'}/>
-          <Items text={'حضور سریع امدادگران'}/>
-          <Items text={'عیب یابی و تعمیر وسیله نقلیه'}/>
+          <section>
+            <p className="leading-10">
+              بیمه یدک یک محصول و خدمت جديد بیمه ای است که توسط کارگزاری رسمی بيمه برخط مباشر ‫با شماره پروانه فعالیت ١٨٧٨ تحت نظارت بیمه مرکزی‌ جمهوری اسلامی ایران با همکاری انجمن امداد خودرو کشوری ره اندازی شده است.‬ این خدمت بعنوان یک محصول بیمه ای مكمل براي هموطنان گرامي و مالكین محترم وسایل نقلیه موتوری زمینی می باشد که موجب آرامش خاطر در زمان بروز حوادث و نقص هاي فني(غیر قابل تعمیر) ميگردد که از یک سو از تحميل هزينه هاي نامتعارف مازاد جلوگیری نموده و از سوی دیگر از سوءداستفاده افراد فرصت طلب خودداری می کند که این پوشش در اکثر کشورها متداول و در حال
+              ارائه است .
+            </p>
+            <p className="leading-10">با توجه به مشكلات و شکایت‌های متعدد دارندگان خودرو و عدم رعايت تعرفه مصوب نرخ حمل و امداد از عملکرد و نحوه خدمات خودروهای امدادگرنما (یدک کش و چرخگیر نیسان و کامیونت‌های خودرو بر )در زمان نیاز ، برای پيشگيري از عدم رعايت استاندارد هاي امداد و يا حمل غير اصولي توسط امدادگران فاقد صلاحيت و سود جو و متخلف در کشور برای اولین بار بمناسبت ۲۲ بهمن «بیمه یدک» رونمایی شده است .</p>
+            <p className="leading-10">دارنده گان وسایل نقلیه موتوری زمینی می توانند ریسک حمل خودرو خود را در اثر حوادث غير مترقبه ، نقص هاي فني منجر به توقف یا تصادف (در صورتي كه مقصر باشند )بمدت یکسال از سقف ۵۰ میلیون ریال تا ۲۵۰ میلیون ریال با حق بيمه اي ناچيز به شرکت بیمه رازی منتقل نمایند. </p>
+            <p className="leading-10">در طول مدت این بیمه نامه دارنده گان خودرو‌ بعنوان بیمه گذار برای خودرو خود تعهدات تا سقف پوشش مورد درخواست خریداری نموده و هیچ مبلغی را براي امداد پرداخت نمی نمايند.</p>
+            <p className="leading-10">بنابراين تمام هزینه های حمل در امداد با تایید تعاونی امداد‌خودرو کشوری آتیه سازان سبز بعنوان عامل خدمات رسانی از طرف انجمن صنفی امداد خودرو کشور ، خدمات رسانی و یا فاکتور امدادگر تایید می گردد که این هزینه توسط بیمه رازی مستقیم بحساب امداد گر واریز خواهد شد .</p>
           </section>
-          <section className="grid gap-4">
-            <Items text={'کادر مجرب و متخصص'}/>
-            <Items text={'دارای مجوز رسمی از سازمان ترافیک'}/>
-            <Items text={'جوابگویی بصورت ۲۴ ساعته'}/>
-            <Items text={'حمل خودرو به نزدیکترین تعمیرگاه'}/>
+          <section className="mt-8 xl:flex justify-center grid gap-6 xl:gap-[80px]">
+            <section className="grid gap-6">
+              <Items text={"چندین سال سابقه"} />
+              <Items text={"بروزترین دستگاه ها"} />
+              <Items text={"حضور سریع امدادگران"} />
+              <Items text={"عیب یابی و تعمیر وسیله نقلیه"} />
+            </section>
+            <section className="grid gap-4">
+              <Items text={"کادر مجرب و متخصص"} />
+              <Items text={"دارای مجوز رسمی از سازمان ترافیک"} />
+              <Items text={"جوابگویی بصورت ۲۴ ساعته"} />
+              <Items text={"حمل خودرو به نزدیکترین تعمیرگاه"} />
+            </section>
           </section>
         </section>
-        </section>
-        <section className="xl:w-[1366px] w-[90%] m-auto max-w-full xl:flex justify-center xl:gap-16 mt-14 grid grid-cols-2 justify-items-center  gap-6"> 
-          <Service text={'قیمت مناسب'} img={'/icons/قیمت.png'}/>
-          <Service text={'اعزام سریع'} img={'/icons/عازم-سریع.png'}/>
-          <Service text={'دارای تخصص'} img={'/icons/متخصص.png'}/>
-          <Service text={'۲۴/۷ پشتیبانی'} img={'/icons/پشتیبانی.png'}/>
+        <section className="xl:w-[1366px] w-[90%] m-auto max-w-full xl:flex justify-center xl:gap-16 mt-14 grid grid-cols-2 justify-items-center  gap-6">
+          <Service text={"قیمت مناسب"} img={"/icons/قیمت.png"} />
+          <Service text={"اعزام سریع"} img={"/icons/عازم-سریع.png"} />
+          <Service text={"دارای تخصص"} img={"/icons/متخصص.png"} />
+          <Service text={"۲۴/۷ پشتیبانی"} img={"/icons/پشتیبانی.png"} />
         </section>
       </section>
     </>

@@ -2,7 +2,7 @@
 import { useState, useContext, useEffect } from "react";
 import RequestForm from './components/Steps/RequestForm'
 import SelectPlate from './components/Steps/SelectPlate'
-import SelectLocation from './components/Steps/SelectLocation'
+
 //
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
@@ -14,6 +14,8 @@ export default function Index() {
 
     // ─── States ─────────────────────────────────────────────────────────────────────
     const [active, setActive] = useState(1)
+    const [userInfo, setUserInfo] = useState([])
+
     // ─── Functions ──────────────────────────────────────────────────────────────────
 
     // ─── Life Cycle ─────────────────────────────────────────────────────────────────
@@ -25,13 +27,11 @@ export default function Index() {
     //
     return <>
         <section className={`${active === 1 ? `visible w-full` : `hidden`}`}>
-            <RequestForm />
+            <RequestForm setActive={setActive} setUserInfo={setUserInfo} />
         </section>
         <section className={`${active === 2 ? `visible w-full` : `hidden`}`}>
-            <SelectPlate />
+            <SelectPlate userInfo={userInfo} />
         </section>
-        <section className={`${active === 3 ? `visible w-full` : `hidden`}`}>
-            <SelectLocation />
-        </section>
+
     </>;
 }

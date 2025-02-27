@@ -1,5 +1,4 @@
-import dynamic from "next/dynamic";
-import { useState, useContext, useEffect, useMemo } from "react";
+
 
 //
 // ────────────────────────────────────────────────────────── I ──────────
@@ -7,19 +6,9 @@ import { useState, useContext, useEffect, useMemo } from "react";
 // ────────────────────────────────────────────────────────────────────
 //
 
-export default function Index({ latData, setLatData, longData, setLongData }) {
+export default function Index({ label, value }) {
     // ─── Global Variable ────────────────────────────────────────────────────────────
-    const Map = useMemo(
-        () =>
-            dynamic(
-                () => import("@/(pages)/request-relief/RequestWizard/components/Map"),
-                {
-                    loading: () => <p>A map is loading</p>,
-                    ssr: false,
-                },
-            ),
-        [],
-    );
+
     // ─── States ─────────────────────────────────────────────────────────────────────
 
     // ─── Functions ──────────────────────────────────────────────────────────────────
@@ -31,14 +20,8 @@ export default function Index({ latData, setLatData, longData, setLongData }) {
     //   :::::: R E N D E R : :  :   :    :     :        :          :
     // ──────────────────────────────────────────────────────────────
     //
-    return <>
-        <section className="w-[100%] flex justify-center items-center">
-            <Map
-                setLongData={setLongData}
-                setLatData={setLatData}
-                latData={latData}
-                longData={longData}
-            />
-        </section>
-    </>;
+    return <section className="flex gap-1 items-center text-right" >
+        <span>{label}:</span>
+        <span className="font-bold">{value}</span>
+    </section>;
 }

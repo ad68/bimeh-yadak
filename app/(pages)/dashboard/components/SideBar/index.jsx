@@ -7,7 +7,8 @@ import EditProfileSideBar from "./components/EditProfile";
 import { useAuthStore } from "@/store/auth/login";
 import { isEmptyObject } from "@/helper";
 import { usePathname } from "next/navigation";
-import { IconDamage, IconHome, IconInquiry2, IconLogout } from "@/common/icons";
+import { IconLogout } from "@/common/icons";
+import MenuLink from './components/MenuLink'
 import { LogoutModal } from "@/common";
 import { useSideBarStore } from "@/store/dashboard/sidebar";
 // ────────────────────────────────────────────────────────── I ──────────
@@ -99,20 +100,8 @@ export default function Index() {
           </section>
         </section>
         <section className="mx-6 mt-4 flex h-auto flex-col  justify-start">
-          <Link
-            href="/dashboard"
-            className={`${pathname === "/dashboard" ? "text-blue" : ""} flex h-[48px] w-full items-center gap-[12px] pr-[14.5px] dark:text-white`}
-          >
-
-            <span>داشبورد</span>
-          </Link>
-          <Link
-            href="/dashboard/declaration-damage"
-            className={`${pathname === "/dashboard/declaration-damage" ? "text-blue" : ""}  flex h-[48px] items-center gap-[12px] pr-[14.5px] dark:text-white`}
-          >
-            <span>اعلام خسارت</span>
-          </Link>
-
+          <MenuLink title="داشبورد" link="/dashboard" />
+          <MenuLink title="اعلام خسارت" link="/dashboard/declaration-damage" />
           <button
             onClick={() => {
               setOpenInquiry(!openInquiry);

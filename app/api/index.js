@@ -36,7 +36,7 @@ export const api = {
     getCities: baseUrl + "basic-information/search-cities",
   },
   insurance: {
-    preRegistration: baseUrl + "pre-registration-insurance/add",
+    preRegistration: baseUrl + "registration-insurance/add",
     adminPreRegistration: baseUrl + "pre-registration-insurance/admin/add",
   },
   collaboration: {
@@ -81,6 +81,10 @@ export const api = {
     deleteContactUs: baseUrl + "contact-us/delete/",
     addContactUs: baseUrl + "contact-us/add",
     editContactUs: baseUrl + "contact-us/edit/",
+  },
+  roadSideAssistance: {
+    addRoadSideAssistance: baseUrl + "road-side-assistance/add",
+    /*  getRoadSideAssistance: baseUrl + "road-side-assistance/add", */
   },
 
   transactions: {

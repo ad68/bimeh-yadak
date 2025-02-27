@@ -219,7 +219,7 @@ export default function Index({ setActiveTab }) {
         setActiveTab(3);
       })
       .catch((e) => {
-        notify.Error(NotifyMessage.GLOBAL_ERROR);
+
         setActionLoading(false);
       });
   };
@@ -490,7 +490,7 @@ export default function Index({ setActiveTab }) {
               />
             )}
           />
-          <ErrorMessage>{errors?.yearId?.message}</ErrorMessage>
+          <ErrorMessage>{errors?.typeId?.message}</ErrorMessage>
         </section>
         <section className="flex w-full flex-col gap-[2px]  text-sm">
           <label className="pt-[6px] ">رنگ</label>

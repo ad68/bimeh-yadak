@@ -447,7 +447,7 @@ export default function Index({ reloadTable, closeModal }) {
               />
             )}
           />
-          <ErrorMessage>{errors?.yearId?.message}</ErrorMessage>
+          <ErrorMessage>{errors?.typeId?.message}</ErrorMessage>
         </section>
         <section className="flex w-full flex-col gap-[2px]  text-sm">
           <label className="pt-[6px] ">رنگ</label>
