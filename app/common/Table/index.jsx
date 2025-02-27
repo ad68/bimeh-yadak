@@ -4,7 +4,8 @@ import TableLoading from "./components/TableLoading";
 import NoRecord from "./components/NoRecord";
 import { ConfigProvider, Pagination } from "antd";
 import { useAxiosWithToken } from "@/hooks";
-import { objectToQueryString } from "@/helper";
+import { notify, objectToQueryString } from "@/helper";
+import { NotifyMessage } from "@/enums";
 
 // ─── Life Cycle ─────────────────────────────────────────────────────────────────
 
@@ -30,6 +31,10 @@ function Index({ cols, api, apiDel, pageSize, queries, actions, reload, setRowDa
         setTotal(res.data?.totalElements);
       })
       .catch((error) => {
+        setData([]);
+        setTotal(0);
+
+        notify.Error(NotifyMessage.GLOBAL_ERROR)
         setLoading(false);
       });
   };
@@ -39,7 +44,9 @@ function Index({ cols, api, apiDel, pageSize, queries, actions, reload, setRowDa
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage, reload]);
   useEffect(() => {
-    getList();
+    if (queries) {
+      getList();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [queries]);
 

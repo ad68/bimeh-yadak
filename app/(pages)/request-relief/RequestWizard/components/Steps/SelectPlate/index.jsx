@@ -1,5 +1,5 @@
-import { useState, useContext, useEffect } from "react";
 
+import PlateCar from '@/(pages)/dashboard/components/PlateReadonly/plateCar'
 //
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
@@ -20,5 +20,8 @@ export default function Index() {
     //   :::::: R E N D E R : :  :   :    :     :        :          :
     // ──────────────────────────────────────────────────────────────
     //
-    return <></>;
+    return <section className='w-[600px] max-w-full m-auto'>
+        <PlateCar platePart1="36" platePart2="ن" platePart3="497" platePart4="55" />
+
+    </section>
 }
