@@ -37,7 +37,7 @@ export default function page() {
             <Image src={Logo} width={88} height={88} alt="" />
             <section className="text-[#303030] xl:text-[48px] text-[36px] font-bold">بیمه یدک</section>
           </section>
-          <section className="xl:mt-[27px] mt-4 text-[#303030] xl:text-[20px] text-[16px] font-bold text-center">معتبرترین پلتفرم درخواست امداد خودرو به همراه فروش بیمه نامه</section>
+          <section className="xl:mt-[27px] mt-4 text-[#303030] xl:text-[20px] text-[16px] font-bold text-center px-10 xl:px-0">معتبرترین پلتفرم درخواست امداد خودرو به همراه فروش بیمه نامه</section>
         </section>
         <Links />
       </section>
