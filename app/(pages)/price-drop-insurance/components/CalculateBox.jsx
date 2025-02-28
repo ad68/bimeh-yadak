@@ -268,7 +268,7 @@ export default function Index({
             }}
             disabled={!carId || !colorId}
           >
-            محاسبه افت قیمت بیمه
+            تایید و ادامه
           </Button>
         </section>
       </section>

@@ -6,6 +6,8 @@ import Result from "./components/Result";
 import moment from "moment-jalaali";
 import { api } from "@/api";
 import { useAxios, useAxiosWithToken } from "@/hooks";
+import { notify } from "@/helper";
+import { NotifyMessage } from "@/enums";
 
 //
 // ────────────────────────────────────────────────────────── I ──────────
@@ -40,6 +42,7 @@ export default function Index() {
       })
       .catch((err) => {
         setButtonLoading(false);
+        notify.Error(NotifyMessage.GLOBAL_ERROR);
       });
   };
   const getChart = () => {
