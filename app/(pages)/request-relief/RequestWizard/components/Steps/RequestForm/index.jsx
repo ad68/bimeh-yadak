@@ -97,7 +97,7 @@ export default function Index({ setUserInfo, setActive }) {
                             loading={actionLoading}
                             className=" h-[48px] w-full border-none text-lg font-bold leading-[27.9px] text-white xl:mb-0  "
                         >
-                            ذخیره
+                            مرحله بعد
                         </Button>
                     </section>
                 </section>

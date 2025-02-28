@@ -30,7 +30,7 @@ export default function Index() {
   const calculatePrice = () => {
     setButtonLoading(true);
     let params = calculateBox;
-    useAxiosWithToken
+    useAxios
       .post(api.car.calculatePriceInsurance, params)
       .then((res) => {
         setButtonLoading(false);
