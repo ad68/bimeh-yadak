@@ -42,7 +42,7 @@ const MyDocument = ({
     const styles = StyleSheet.create({
         page: {
             padding: 20, fontSize: 10, fontFamily: 'yekan', direction: 'rtl', textAlign: 'justify',
-            borderWidth: 5,
+            borderWidth: 15,
             borderColor: "#F3C401",
         },
 
@@ -51,22 +51,30 @@ const MyDocument = ({
         plateBox: { display: "flex", fontFamily: "yekan-bold", flexDirection: "row", textAlign: 'right', gap: "2px", marginLeft: 5 },
         bold: { fontFamily: "yekan-bold" },
         link: { color: 'blue', textDecoration: 'underline' },
-        px5: { paddingLeft: 2, paddingRight: 2 }
+        px5: { paddingLeft: 2, paddingRight: 2 },
+        line: { width: "100%", borderBottom: "4px solid #ffeda2", heigh: "1px", marginBottom: 25, marginTop: 25 },
+        footer: { position: "absolute", bottom: 0, width: "100%", display: "flex", flexDirection: "row", justifyContent: "center" }
     });
     return <>
         <Document>
             <Page size="A4" style={styles.page}>
                 <View>
-                    <View style={{ display: "flex", justifyContent: "center", flexDirection: "row" }}>
+                    {/*  <View style={{ display: "flex", justifyContent: "center", flexDirection: "row" }}>
                         <Text style={{ fontFamily: "yekan-bold", fontSize: 20 }}>بسمه تعالی</Text>
+                    </View> */}
+                    <View style={{ display: "flex", flexDirection: "row-reverse", gap: 10, alignItems: "center" }}>
+                        <View>
+
+                            <Image alt="" src="/icons/logo.png" style={{ width: 40 }} />
+                            <Text style={{ fontSize: 10, fontFamily: "yekan-bold" }}>بیمه یدکی</Text>
+                        </View>
+                        <Text style={{ fontSize: 14, fontFamily: "yekan-bold", color: "#616161" }}>بیمه گذار محترم آقا یا خانم <Text >{name}</Text></Text>
+
+
                     </View>
-                    <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-                        <Text style={{ fontSize: 10, fontFamily: "yekan-bold" }}>بیمه یدکی</Text>
-                        <Image alt="" src="/icons/logo.png" style={{ width: 40 }} />
-                    </View>
-                    <View style={styles.section}>
-                        <Text style={{ fontSize: 14, fontFamily: "yekan-bold" }}>بیمه گذار محترم آقا یا خانم <Text >{name}</Text></Text>
-                    </View>
+                    <View style={styles.line}></View>
+
+
                     <View style={styles.section}>
                         <Text style={styles.textBox}>بیمه نامه امداد با شماره </Text>
                         <Text style={{ ...styles.bold, ...styles.px10 }}> {numberInsurance} </Text>
@@ -143,7 +151,10 @@ const MyDocument = ({
                         <Text>توسط شرکت کارگزاری مباشر</Text>
                     </View>
                 </View>
+                <View style={styles.footer}>
+                    <Text>  (سناپ) توسعه داده شده توسط شرکت سامانه نوآوری ایرانیان پوشش</Text>
 
+                </View>
             </Page>
         </Document >
     </>

@@ -57,16 +57,6 @@ export default function Index() {
           <Table cols={cols} rowData={rowData} setRowData={setRowData} api={api.contactUs.getContactUsList} actions={actions} queries={queries} apiDel={api.contactUs.deleteContactUs} reload={reload} />
         </section>
         <Edit reloadTable={reloadTable} rowData={rowData} hideModal={hideModal} open={editModal} />
-        <Button
-          onClick={() =>
-            setQueries({
-              contactUsType: "BIME_ALI",
-            })
-          }
-        >
-          ali
-        </Button>
-        <Button onClick={reloadTable}>reload</Button>
       </section>
     </>
   );

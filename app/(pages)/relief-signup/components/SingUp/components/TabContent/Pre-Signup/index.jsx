@@ -20,7 +20,7 @@ import { useForm, Controller } from "react-hook-form";
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
 // ────────────────────────────────────────────────────────────────────
 //
-export default function Index({ setActiveTab }) {
+export default function Index({ setActiveTab, setPreRegisterData }) {
   // ─── Global Variable ────────────────────────────────────────────────────────────
   const {
     handleSubmit,
@@ -210,16 +210,15 @@ export default function Index({ setActiveTab }) {
       color: data?.colorId.value,
       referralCode: data?.referralCode,
     };
-
     useAxios
       .post(api.insurance.preRegistration, params)
       .then((res) => {
         setActionLoading(false);
         notify.Success("درخواست شما با موفقیت ثبت شد");
         setActiveTab(3);
+        setPreRegisterData(params)
       })
       .catch((e) => {
-
         setActionLoading(false);
       });
   };
