@@ -105,7 +105,7 @@ export default function Index() {
                   />
                 </button>
                 <button className="hover:scale-110 hover:transition-all ">
-                  {" "}
+
                   <Image
                     src={"/icons/Facebook.svg"}
                     width={30}
@@ -121,20 +121,20 @@ export default function Index() {
                 خدمات
               </h2>
               <nav className="xl:mt-10 mt-4 xl:flex flex-col xl:gap-6 grid gap-4 xl:text-[16px] text-[14px]  font-medium leading-[20px]">
-                <Link href="/part-order" className="hover:opacity-50">
+                <Link href="/relief-signup" className="hover:opacity-50">
                   خرید بیمه‌نامه
                 </Link>
-                <Link href="/website-sell" className="hover:opacity-50">
+                <Link href="/request-relief" className="hover:opacity-50">
                   درخواست امداد خودرو
                 </Link>
-                <Link href="/api-sell" className="hover:opacity-50">
-                  اعلام خسارت
+                <Link href="/marketing" className="hover:opacity-50">
+                  همکاری در بازاریابی
                 </Link>
                 <Link href="/price-calculate" className="hover:opacity-50">
                   ارزش روز خودرو
                 </Link>
 
-                <Link href="/price-drop" className="hover:opacity-50">
+                <Link href="/price-drop-insurance" className="hover:opacity-50">
                   محاسبه افت بازار و بیمه خودرو
                 </Link>
               </nav>

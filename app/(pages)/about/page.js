@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Items from "./components/Items";
 import Service from "./components/Service";
 // ────────────────────────────────────────────────────────── I ──────────
@@ -21,13 +22,21 @@ export default function Index() {
   return (
     <>
       <section className="">
-        <section className="my-[80px] flex h-[150px] w-full items-center justify-center bg-primary font-bold  ">
+        <section className="mt-[80px] mb-[40px] flex h-[150px] w-full items-center justify-center bg-primary font-bold  ">
           <h1 className="xl:text-[40px] text-[36px]"> درباره بیمه یدک </h1>
         </section>
-        <section className="xl:w-[1366px] w-[90%] m-auto max-w-full">
-          <section>
+        <section className="flex items-center justify-center gap-2">
+          <Image src={"/icons/photo_2025-02-23_19-18-27.jpg"} width={80} height={80} className="xl:w-[80px] xl:h-[110px] w-[60px] h-[75px] place-self-end mt-2" alt="" />
+          <Image src={"/icons/ase.png"} width={80} height={80} className="xl:w-[80px] xl:h-[110px] w-[60px] h-[75px] place-self-end mt-2" alt="" />
+          <Image src={"/icons/mobasher.png"} width={110} height={110} className="xl:h-[110px] xl:w-[110px] w-[75px]  h-[75px] place-self-end mt-2" alt="" />
+          <section className="bg-white h-[75px] xl:h-[110px] mt-2">
+            <Image src={"/icons/sanap.svg"} width={110} height={110} className="xl:h-[100px] xl:w-[110px] w-[75px]  h-[60px] place-self-end mt-2" alt="" />
+          </section>
+        </section>
+        <section className="xl:w-[1366px] w-[90%] m-auto max-w-full mt-5">
+          <section className="text-justify">
             <p className="leading-10">
-              بیمه یدک یک محصول و خدمت جديد بیمه ای است که توسط کارگزاری رسمی بيمه برخط مباشر ‫با شماره پروانه فعالیت ١٨٧٨ تحت نظارت بیمه مرکزی‌ جمهوری اسلامی ایران با همکاری انجمن امداد خودرو کشوری ره اندازی شده است.‬ این خدمت بعنوان یک محصول بیمه ای مكمل براي هموطنان گرامي و مالكین محترم وسایل نقلیه موتوری زمینی می باشد که موجب آرامش خاطر در زمان بروز حوادث و نقص هاي فني(غیر قابل تعمیر) ميگردد که از یک سو از تحميل هزينه هاي نامتعارف مازاد جلوگیری نموده و از سوی دیگر از سوءداستفاده افراد فرصت طلب خودداری می کند که این پوشش در اکثر کشورها متداول و در حال
+              بیمه یدک یک محصول و خدمت جديد بیمه ای است که توسط کارگزاری رسمی بيمه برخط مباشر شماره پروانه فعالیت ١٨٧٨ تحت نظارت بیمه مرکزی‌ جمهوری اسلامی ایران با همکاری انجمن امداد خودرو کشوری راه اندازی شده است. این خدمت بعنوان یک محصول بیمه ای مكمل براي هموطنان گرامي و مالكین محترم وسایل نقلیه موتوری زمینی می باشد که موجب آرامش خاطر در زمان بروز حوادث و نقص هاي فني(غیر قابل تعمیر) ميگردد که از یک سو از تحميل هزينه هاي نامتعارف مازاد جلوگیری نموده و از سوی دیگر از سوءداستفاده افراد فرصت طلب خودداری می کند که این پوشش در اکثر کشورها متداول و در حال
               ارائه است .
             </p>
             <p className="leading-10">با توجه به مشكلات و شکایت‌های متعدد دارندگان خودرو و عدم رعايت تعرفه مصوب نرخ حمل و امداد از عملکرد و نحوه خدمات خودروهای امدادگرنما (یدک کش و چرخگیر نیسان و کامیونت‌های خودرو بر )در زمان نیاز ، برای پيشگيري از عدم رعايت استاندارد هاي امداد و يا حمل غير اصولي توسط امدادگران فاقد صلاحيت و سود جو و متخلف در کشور برای اولین بار بمناسبت ۲۲ بهمن «بیمه یدک» رونمایی شده است .</p>
