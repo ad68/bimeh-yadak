@@ -87,7 +87,7 @@ export const api = {
   roadSideAssistance: {
     addRoadSideAssistance: baseUrl + "road-side-assistance/add",
     getRoadSideAssistanceList: baseUrl + "road-side-assistance/search-with-pageable",
-    /*  getRoadSideAssistance: baseUrl + "road-side-assistance/add", */
+    /////*  getRoadSideAssistance: baseUrl + "road-side-assistance/add", */
   },
 
   transactions: {
