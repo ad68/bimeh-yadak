@@ -25,7 +25,7 @@ export default function Index({ setActiveTab, setPreRegisterData }) {
   const {
     handleSubmit,
     control,
-    formState: { errors },
+    formState: { errors, isValid },
     setValue,
     watch,
   } = useForm({});
@@ -210,6 +210,7 @@ export default function Index({ setActiveTab, setPreRegisterData }) {
       color: data?.colorId.value,
       referralCode: data?.referralCode,
     };
+
     useAxios
       .post(api.insurance.preRegistration, params)
       .then((res) => {
@@ -221,6 +222,9 @@ export default function Index({ setActiveTab, setPreRegisterData }) {
       .catch((e) => {
         setActionLoading(false);
       });
+  };
+  const onInvalid = (errors) => {
+    scrollToTop()
   };
   // ─── Life Cycle ─────────────────────────────────────────────────────────────────
   useEffect(() => {
@@ -273,11 +277,7 @@ export default function Index({ setActiveTab, setPreRegisterData }) {
     setValue("referralCode", searchParams.get("referralCode"));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
-  useEffect(() => {
-    if (errors) {
-      scrollToTop()
-    }
-  }, [errors])
+
   //
   // ──────────────────────────────────────────────────── I ──────────
   //   :::::: R E N D E R : :  :   :    :     :        :          :
@@ -286,7 +286,7 @@ export default function Index({ setActiveTab, setPreRegisterData }) {
   return (
     <>
       <form
-        onSubmit={handleSubmit((data) => preSignUp(data))}
+        onSubmit={handleSubmit((data) => preSignUp(data), onInvalid)}
         className="grid grid-cols-1 xl:grid-cols-4 px-3 mt-10 gap-4 py-10"
       >
         {/*  <section className="xl:col-span-4">
