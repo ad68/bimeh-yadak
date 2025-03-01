@@ -73,35 +73,11 @@ export default function Index() {
               />
             </button>
           </section>
-          <section className="mt-[22px] flex items-center">
-            <Image
-              src="/assets/icons/Ellipse.svg"
-              width={8}
-              height={8}
-              alt=""
-            />
-            <span className="ml-[24px] mr-[6px] text-sm dark:text-white">
-              پلاک‌های من
-            </span>
-            <Link
-              href="/dashboard/Inquiry/plates"
-              className="flex items-center gap-[6px]"
-            >
-              <span className="text-xs text-[#4E94EA] dark:text-white">
-                مشاهده پلاک‌ها
-              </span>
-              <Image
-                src="/assets/icons/arrow-left.svg"
-                width={12}
-                height={12}
-                alt=""
-              />
-            </Link>
-          </section>
+          <span className="block mt-5 text-[14px] font-bold">به داشبورد بیمه یدک خوش آمدید</span>
         </section>
         <section className="mx-6 mt-4 flex h-auto flex-col  justify-start">
           <MenuLink title="داشبورد" link="/dashboard" />
-          <MenuLink title="اعلام خسارت" link="/dashboard/declaration-damage" />
+
           <button
             onClick={() => {
               setOpenInquiry(!openInquiry);
@@ -144,11 +120,11 @@ export default function Index() {
               link={"/dashboard/Inquiry/plates"}
               title="پلاک های من"
             />
-            <ListItem
+            {/*    <ListItem
               isActive={pathname === "/dashboard/Inquiry/inquiryrecords"}
               link={"/dashboard/Inquiry/inquiryrecords"}
               title="سوابق استعلام"
-            />
+            /> */}
             <ListItem
               isActive={
                 pathname === "/dashboard/Inquiry/negative-inquery-cerficate"

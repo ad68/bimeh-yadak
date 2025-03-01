@@ -68,7 +68,12 @@ export default function Index() {
             نام:
           </label>
           <input
-            {...register("name", { required: "فیلد نام نباید خالی باشد" })}
+            {...register("name", {
+              required: "فیلد نام نباید خالی باشد", pattern: {
+                value: Regex.PERSIAN_NAME,
+                message: "نام  فقط باید شامل حروف فارسی باشد",
+              },
+            })}
             type="text"
             placeholder="نام"
             className="mt-[5px] h-[40px] w-full rounded-lg border border-solid border-[#8B929A36] px-8 text-sm xl:h-[48px]"
@@ -90,6 +95,10 @@ export default function Index() {
           <input
             {...register("family", {
               required: "فیلد نام خانوادگی نباید خالی باشد",
+              pattern: {
+                value: Regex.PERSIAN_NAME,
+                message: "نام خانوادگی فقط باید شامل حروف فارسی باشد",
+              },
             })}
             type="text"
             placeholder="نام خانوادگی"
@@ -102,6 +111,7 @@ export default function Index() {
             height={24}
             className="absolute right-2 top-[40px] h-5 w-5 xl:h-6 xl:w-6"
           />
+
           {errors.family && (
             <ErrorMessage>{errors.family.message}</ErrorMessage>
           )}

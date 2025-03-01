@@ -58,7 +58,6 @@ export default function Index() {
                   className="xl:w-[133.89px] xl:h-[89px] w-[40px] h-[48px]"
                 />
                 <h2 className="xl:text-[32px] text-[24px] font-bold  xl:mr-[-20px]">
-                  {" "}
                   بیمه یدک
                 </h2>
               </Link>
@@ -116,8 +115,8 @@ export default function Index() {
                 </button>
               </section>
             </section>
-            <section className="">
-              <h2 className="text-[#170F49] xl:text-[20px] text-[14px] font-bold leading-[22px]">
+            <section>
+              <h2 className="text-[#170F49] xl:text-[16px] text-[14px] font-bold leading-[22px]">
                 خدمات
               </h2>
               <nav className="xl:mt-10 mt-4 xl:flex flex-col xl:gap-6 grid gap-4 xl:text-[16px] text-[14px]  font-medium leading-[20px]">
@@ -139,8 +138,8 @@ export default function Index() {
                 </Link>
               </nav>
             </section>
-            <section className=" ">
-              <h2 className="text-[#170F49]  xl:text-[20px] text-[14px] font-bold leading-[22px]">
+            <section className="xl:w-[100px]">
+              <h2 className="text-[#170F49]  xl:text-[16px] text-[14px] font-bold leading-[22px]">
                 آشنایی با ما
               </h2>
               <ul className="xl:mt-10 mt-4 flex flex-col xl:gap-6 gap-4 xl:text-[16px]  text-[14px]  font-medium leading-[20px]">
@@ -161,7 +160,7 @@ export default function Index() {
               </ul>
             </section>
             <section className="">
-              <h2 className="text-[#170F49]  xl:text-[20px] text-[14px] font-bold leading-[22px]">
+              <h2 className="text-[#170F49]  xl:text-[16px] text-[14px] font-bold leading-[22px]">
                 تماس با ما
               </h2>
               <ul className="xl:mt-10 mt-4 flex flex-col xl:w-[286px] xl:gap-6 gap-4 xl:text-[16px] text-[14px]  font-medium leading-[20px]">

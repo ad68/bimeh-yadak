@@ -46,7 +46,7 @@ export default function Index() {
   //
   return (
     <>
-      <section className="relative mb-0 mt-32 flex h-[700px] w-full items-center  rounded-2xl bg-[#0b0b0b] bg-[url('/assets/images/sportCarBlur.png')]  bg-cover bg-center bg-no-repeat md:w-[95%]">
+      <section className="relative mb-0 mt-10 flex h-[700px] w-full items-center  rounded-2xl bg-[#0b0b0b] bg-[url('/assets/images/sportCarBlur.png')]  bg-cover bg-center bg-no-repeat md:w-[95%]">
         <FilterImage vehicleState={vehicleState} showResult={animate} />
         {calculateResultShow && (
           <section className="absolute left-[5%] top-0 h-[100%] w-[55%] p-5 transition-all duration-1000 ease-in-out">

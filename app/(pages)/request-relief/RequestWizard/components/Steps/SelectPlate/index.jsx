@@ -22,6 +22,7 @@ export default function Index({ userInfo }) {
 
     // ─── States ─────────────────────────────────────────────────────────────────────
     const [currentPlate, setCurrentPlat] = useState({})
+    const [actionLoading, setActionLoading] = useState(false)
     const [longData, setLongData] = useState(-308.5904);
     const [latData, setLatData] = useState(35.7249);
     const [showSuccess, setShowSuccess] = useState(false)
@@ -33,6 +34,7 @@ export default function Index({ userInfo }) {
         }
     }, [userInfo])
     const saveInfo = () => {
+        setActionLoading(true)
         let params = {
             registrationInsuranceId: currentPlate.id,
             latitude: latData,
@@ -40,15 +42,18 @@ export default function Index({ userInfo }) {
         }
         useAxios.post(api.roadSideAssistance.addRoadSideAssistance, params).then(res => {
             setShowSuccess(true)
+            setActionLoading(false)
         }
-        )
+        ).catch(err => {
+            setActionLoading(false)
+        })
     }
     //
     // ──────────────────────────────────────────────────── I ──────────
     //   :::::: R E N D E R : :  :   :    :     :        :          :
     // ──────────────────────────────────────────────────────────────
     //
-    return <section className='w-[800px] max-w-full m-auto'>
+    return <section className='w-[900px] max-w-[90%] m-auto'>
         <section className='text-center border border-silver rounded-lg p-4 text-green-600'>
             کاربر گرامی، پلاک‌های زیر دارای بیمه‌نامه معتبر هستند. لطفاً پلاک موردنظر خود را برای درخواست امداد خودرو انتخاب کرده و سپس موقعیت مکانی خود را روی نقشه مشخص کنید.
         </section>
@@ -79,7 +84,7 @@ export default function Index({ userInfo }) {
                 <SelectLocation longData={longData} setLongData={setLongData} latData={latData} setLatData={setLatData} />
             </section>
             <section className='xl:col-span-2'>
-                <Button className='w-full mt-10' onClick={saveInfo}>ثبت درخواست</Button>
+                <Button loading={actionLoading} className='w-full mt-10' onClick={saveInfo}>ثبت درخواست</Button>
             </section>
         </section>
         <Modal open={showSuccess} onClose={() => setShowSuccess(false)}>

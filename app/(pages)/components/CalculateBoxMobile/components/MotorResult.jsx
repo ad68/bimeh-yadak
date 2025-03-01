@@ -27,13 +27,9 @@ export default function Index({ hideResult, result }) {
       <section>
         <section className="mt-3">
           <section className="">
-            <span className="block text-xl font-bold text-white">
-              {/* {result?.carName} */}
-              نام موتور
-            </span>
-            <span className="block font-normal text-white">
-              {/*    {result?.colorName} */}
-              مدل موتور
+            <span className="flex gap-2 text-xl font-bold text-white">
+              <span> نام موتور:</span>
+              {result?.brandName}
             </span>
           </section>
           {result?.imageUrl ? (
@@ -56,27 +52,26 @@ export default function Index({ hideResult, result }) {
         <section className="mr-[9px] flex flex-col items-center justify-between border-b border-white py-[16px] text-sm font-bold text-white">
           <span>قیمت کارشناسی ما :</span>
           <span className="text-md font-bold">
-            {numberWithCommas(result?.price)}
+            {numberWithCommas(result?.basePrice)}
           </span>
         </section>
         <section className="mr-[9px] flex flex-col items-center justify-between border-b border-white py-[16px] text-sm font-bold text-white">
           <span>حداکثر قیمت در بازار:</span>
-          <span className="mt-1">{numberWithCommas(result?.priceUp)}</span>
+          <span className="mt-1">{numberWithCommas(result?.upperLimit)}</span>
         </section>
         <section className="mr-[9px] flex flex-col items-center justify-between border-b border-white py-[16px] text-sm font-bold text-white">
           <span>حداقل قیمت در بازار:</span>
-          <span className="mt-1">{numberWithCommas(result?.priceDown)}</span>
+          <span className="mt-1">{numberWithCommas(result?.lowerLimit)}</span>
         </section>
       </section>
       <section className="mt-[20px] rounded-[4px] bg-[#ff797926] p-1 px-4 text-[#fff2f1]">
-        <section>
-          <span>کاهش قیمت بر اساس سال: </span>
-          <span>{numberWithCommas(750000)}</span>
-        </section>
-        <section>
-          <span>کاهش قیمت بر اساس کیلومتر: </span>
-          <span>{numberWithCommas(750000)}</span>
-        </section>
+        {result?.detailsOutputDtos.map((item, index) => (
+          <section key={index}>
+            <span>{item.reason} : </span>
+            <span>{numberWithCommas(item?.depreciationPrice)}</span>
+          </section>
+        ))}
+
       </section>
       <section className="mt-[20px] rounded-[4px] bg-[#ffffff26] p-1 px-4 text-[#fff2f1]">
         قیمت های نمایشی برای موتور سیکلت مربوط به آخرین مدل موجود در بازار می
@@ -85,7 +80,7 @@ export default function Index({ hideResult, result }) {
       <section className="flex justify-end">
         <span
           onClick={hideResult}
-          className="mt-3 flex w-[130px] cursor-pointer items-center justify-end text-lg text-[#0165E1]"
+          className="mt-3 flex w-[130px] cursor-pointer items-center justify-end text-lg text-primary"
         >
           <IconArrowRight className="ml-2 mt-2" />
           <span>بازگشت</span>

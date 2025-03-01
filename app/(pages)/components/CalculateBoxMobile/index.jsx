@@ -40,7 +40,7 @@ export default function Index() {
   //
   return (
     <>
-      <section className="relative m-auto mb-32 mt-32 flex min-h-[671px] w-[90%] items-center rounded-2xl bg-[#0b0b0b]  bg-[url('/assets/images/sportCarBlur.png')] bg-cover bg-center bg-no-repeat">
+      <section className="relative m-auto mb-10 mt-10 flex min-h-[671px] w-[98%] items-center rounded-2xl bg-[#0b0b0b]  bg-[url('/assets/images/sportCarBlur.png')] bg-cover bg-center bg-no-repeat">
         {resultFormShow && (
           <section className="w-full p-5 transition-all duration-1000 ease-in-out">
             {vehicleState === "Car" && (

@@ -17,4 +17,5 @@ export const Regex = Object.freeze({
   EMAIL: new RegExp(/[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z1-9]+/),
   CAR_SHASI: new RegExp(/^[A-HJ-NPR-Z0-9]{17}$/),
   INSURANCE_THIRD: new RegExp(/^\d{10}$/),
+  PERSIAN_NAME: new RegExp(/^[ آابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهیئ\s]+$/),
 });

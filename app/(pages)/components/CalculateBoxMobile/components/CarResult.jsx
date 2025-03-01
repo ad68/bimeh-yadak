@@ -24,6 +24,7 @@ export default function Index({
   const [monthList, setMonthList] = useState([]);
   const [priceList, setPriceList] = useState([]);
   const [monthState, setMontState] = useState(6);
+
   const [modal, setModal] = useState(false);
   // ─── Life Cycle ─────────────────────────────────────────────────────────────────
   useEffect(() => {
@@ -35,6 +36,7 @@ export default function Index({
       setMonthList(chartMonthList);
       setPriceList(chartPriceList);
     }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [monthState]);
 
@@ -91,7 +93,6 @@ export default function Index({
         gradient: {
           shade: "dark",
           gradientToColors: ["#0491f4"],
-
           shadeIntensity: 1,
           type: "horizontal",
           opacityFrom: 0.6,
@@ -103,7 +104,7 @@ export default function Index({
         max: Math.max(...chartPriceList) + 50000000,
         min: Math.min(...chartPriceList) - 50000000,
         labels: {
-          offsetX: -60,
+          offsetX: -10,
           formatter: function (value) {
             return numberWithCommas(value);
           },
@@ -193,7 +194,8 @@ export default function Index({
           6 ماه
         </button>
       </section>
-      <section className=" flex items-center justify-center">
+
+      <section className="flex items-center justify-center">
         <ApexChart
           options={chartOption.options}
           series={chartOption.series}
@@ -205,12 +207,13 @@ export default function Index({
       <section className="flex justify-end">
         <span
           onClick={hideResult}
-          className="flex w-[130px] cursor-pointer items-center justify-end text-lg text-[#0165E1]"
+          className="flex w-[130px] cursor-pointer items-center justify-end text-lg text-primary"
         >
           <IconArrowRight className="ml-2 mt-2" />
           <span>بازگشت</span>
         </span>
       </section>
+
       <Modal
         open={modal}
         onClose={() => setModal(false)}

@@ -70,7 +70,10 @@ export default function Index() {
   //
   return (
     <>
-      <section className={`mt-20  mx-auto  max-w-[724px]  w-[95%]  `}>
+      <section className="mt-[80px] flex xl:h-[150px] h-[100px] w-full items-center justify-center bg-primary font-bold  ">
+        <h3 className="xl:text-[40px] text-[24px] font-bold text-center px-10">محاسبه افت بازار و بیمه خودرو</h3>
+      </section>
+      <section className={`mt-20  mx-auto  max-w-[724px]  w-[95%]`}>
         <CalculateBox setCalculateBox={setCalculateBox} calculateBox={calculateBox} setActiveTab={setActiveTab} activeTab={activeTab} buttonLoading={buttonLoading} setButtonLoading={setButtonLoading} typeId={typeId} setTypeId={setTypeId} />
         <DamageParts getChart={getChart} setButtonLoading={setButtonLoading} buttonLoading={buttonLoading} calculatePrice={calculatePrice} setCalculateBox={setCalculateBox} calculateBox={calculateBox} setActiveTab={setActiveTab} activeTab={activeTab} />
         <Result chartMonthList={chartMonthList} chartPriceList={chartPriceList} typeId={typeId} setTypeId={setTypeId} resultDataNew={resultDataNew} activeTab={activeTab} />
