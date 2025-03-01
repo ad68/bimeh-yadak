@@ -26,7 +26,7 @@ export default function Index() {
     <>
     <Link href={'../'} className="text-blue text-[12px] flex gap-1 items-center mb-2">
     <Image src={'/assets/icons/arrow-left.svg'} className="size-3 rotate-180" width={12} height={12} alt=""/>
-    <section>برگشت</section></Link>
+    <section>بازگشت</section></Link>
       <header className=" m-[24px] mb-6 text-[20px] font-semibold text-[#505050] xl:text-[28px]">
         سوابق استعلام
       </header>
