@@ -24,10 +24,10 @@ export default function Index({ link, title, isActive }) {
   //
   return (
     <Link href={link} className="mr-6 flex w-full items-center gap-[16px] ">
-      {/* <Image src="/assets/icons/Ellipse.svg" width={8} height={8} alt="" /> */}
-      <section className="w-2 h-2 rounded-full bg-primary mt-3"></section>
+
+      <section className="w-2 h-2 rounded-full bg-[#c3b722]"></section>
       <span
-        className={`${isActive ? "text-primary" : "text-gray"}  w-[150px] text-sm dark:text-white`}
+        className={`${isActive ? "text-[#c3b722]" : "text-gray"}  w-[150px] text-sm dark:text-white`}
       >
         {title}
       </span>

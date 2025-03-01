@@ -48,10 +48,10 @@ export default function Index({ setActiveTab }) {
                 </li>
             </ul>
             <section className="mt-5">
-                <Checkbox onChange={(e) => setRule(e.target.checked)}>با تمام قوانین بالا موافقم</Checkbox>
+                <Checkbox className="flex  items-center cursor-pointer" onChange={(e) => setRule(e.target.checked)}>با تمام قوانین بالا موافقم</Checkbox>
             </section>
             <section className="flex justify-center">
-                <Button disabled={!rule} onClick={() => setActiveTab(2)} className="mt-10 w-[280px]">مرحله بعد</Button>
+                <Button disabled={!rule} onClick={() => setActiveTab(2)} className="mt-10 w-[500px]">مرحله بعد</Button>
             </section>
         </section>
     )

@@ -42,7 +42,7 @@ const MyDocument = ({
     const styles = StyleSheet.create({
         page: {
             padding: 20, fontSize: 10, fontFamily: 'yekan', direction: 'rtl', textAlign: 'justify',
-            borderWidth: 5,
+            borderWidth: 20,
             borderColor: "#F3C401",
         },
 
@@ -57,10 +57,10 @@ const MyDocument = ({
         <Document>
             <Page size="A4" style={styles.page}>
                 <View>
-                    <View style={{ display: "flex", justifyContent: "center", flexDirection: "row" }}>
+                    {/*  <View style={{ display: "flex", justifyContent: "center", flexDirection: "row" }}>
                         <Text style={{ fontFamily: "yekan-bold", fontSize: 20 }}>بسمه تعالی</Text>
-                    </View>
-                    <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+                    </View> */}
+                    <View style={{ display: "flex", flexDirection: "columns", justifyContent: "space-between", alignItems: "center" }}>
                         <Text style={{ fontSize: 10, fontFamily: "yekan-bold" }}>بیمه یدکی</Text>
                         <Image alt="" src="/icons/logo.png" style={{ width: 40 }} />
                     </View>

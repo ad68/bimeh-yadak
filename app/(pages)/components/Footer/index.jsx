@@ -105,7 +105,7 @@ export default function Index() {
                   />
                 </button>
                 <button className="hover:scale-110 hover:transition-all ">
-                  {" "}
+
                   <Image
                     src={"/icons/Facebook.svg"}
                     width={30}
@@ -121,20 +121,20 @@ export default function Index() {
                 خدمات
               </h2>
               <nav className="xl:mt-10 mt-4 xl:flex flex-col xl:gap-6 grid gap-4 xl:text-[16px] text-[14px]  font-medium leading-[20px]">
-                <Link href="/part-order" className="hover:opacity-50">
+                <Link href="/relief-signup" className="hover:opacity-50">
                   خرید بیمه‌نامه
                 </Link>
-                <Link href="/website-sell" className="hover:opacity-50">
+                <Link href="/request-relief" className="hover:opacity-50">
                   درخواست امداد خودرو
                 </Link>
-                <Link href="/api-sell" className="hover:opacity-50">
-                  اعلام خسارت
+                <Link href="/marketing" className="hover:opacity-50">
+                  همکاری در بازاریابی
                 </Link>
                 <Link href="/price-calculate" className="hover:opacity-50">
                   ارزش روز خودرو
                 </Link>
 
-                <Link href="/price-drop" className="hover:opacity-50">
+                <Link href="/price-drop-insurance" className="hover:opacity-50">
                   محاسبه افت بازار و بیمه خودرو
                 </Link>
               </nav>
@@ -201,13 +201,39 @@ export default function Index() {
                 </li>
               </ul>
 
-              <Image
-                src={"/icons/photo_2025-02-23_19-18-27.jpg"}
-                width={80}
-                height={80}
-                className="xl:w-[80px] xl:h-[110px] w-[60px] h-[75px] place-self-end mt-2"
-                alt=""
-              />
+              <section className="flex items-center justify-center gap-2">
+                <Image
+                  src={"/icons/photo_2025-02-23_19-18-27.jpg"}
+                  width={80}
+                  height={80}
+                  className="xl:w-[80px] xl:h-[110px] w-[60px] h-[75px] place-self-end mt-2"
+                  alt=""
+                />
+                <Image
+                  src={"/icons/ase.png"}
+                  width={80}
+                  height={80}
+                  className="xl:w-[80px] xl:h-[110px] w-[60px] h-[75px] place-self-end mt-2"
+                  alt=""
+                />
+                <Image
+                  src={"/icons/mobasher.png"}
+                  width={110}
+                  height={110}
+                  className="xl:h-[110px] xl:w-[110px] w-[75px]  h-[75px] place-self-end mt-2"
+                  alt=""
+                />
+                <section className="bg-white h-[75px] xl:h-[110px] mt-2">
+                  <Image
+                    src={"/icons/sanap.svg"}
+                    width={110}
+                    height={110}
+                    className="xl:h-[100px] xl:w-[110px] w-[75px]  h-[60px] place-self-end mt-2"
+                    alt=""
+                  />
+                </section>
+
+              </section>
             </section>
             <section className="flex  mt-4 gap-[32px] justify-center items-center xl:hidden">
               <button className="hover:scale-110 hover:transition-all ">
@@ -224,7 +250,7 @@ export default function Index() {
                   src={"/icons/LinkedIn.svg"}
                   width={30}
                   height={30}
-                  className="xl:size-[20px] size-4"
+                  className="xl:size-[30px] size-4"
                   alt=""
                 />
               </button>
@@ -233,7 +259,7 @@ export default function Index() {
                   src={"/icons/Instagram.svg"}
                   width={30}
                   height={30}
-                  className="xl:size-[20px] size-4"
+                  className="xl:size-[30px] size-4"
                   alt=""
                 />
               </button>
@@ -242,22 +268,24 @@ export default function Index() {
                   src={"/icons/Twitter.svg"}
                   width={30}
                   height={30}
-                  className="xl:size-[20px] size-4"
+                  className="xl:size-[30px] size-4"
                   alt=""
                 />
               </button>
-              <button className="hover:scale-110 hover:transition-all ">
-                {" "}
+              <button className="hover:scale-110 hover:transition-all">
                 <Image
                   src={"/icons/Facebook.svg"}
                   width={30}
                   height={30}
-                  className="xl:size-[20px] size-4"
+                  className="xl:size-[30px] size-4"
                   alt=""
                 />
               </button>
             </section>
           </section>
+          <span className="block w-full text-center py-4 !border-t !border-primary">
+            توسعه داده شده توسط شرکت سامانه نوآوری ایرانیان پوشش (سناپ)
+          </span>
         </footer>
       )}
     </>

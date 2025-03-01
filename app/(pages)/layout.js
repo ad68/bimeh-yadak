@@ -50,7 +50,7 @@ const yekanbakh = localFont({
 const APP_NAME = "Bime-Yadak PWA";
 const APP_DEFAULT_TITLE = "بیمه یدک";
 const APP_TITLE_TEMPLATE = "بیمه یدک | صفحه اصلی";
-const APP_DESCRIPTION = "بانک اطلاعات خودروئی";
+const APP_DESCRIPTION = "معتبرترین پلتفرم درخواست امداد خودرو به همراه فروش بیمه نامه";
 export const metadata = {
   applicationName: APP_NAME,
   title: {

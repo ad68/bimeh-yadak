@@ -13,6 +13,7 @@ export const api = {
     getCarYearByModelInfo: baseUrl + "ex/car-type/get-car-year-by-model-info",
     searchCarTypeByCarModelAndYear: baseUrl + "ex/car-type/search-car-type-by-car-model-and-year",
     calculatePrice: baseUrl + "ex/car/calculate-price/v2",
+    calculatePriceInsurance: baseUrl + "ex/car/calculate-insurance-price",
     searchUniqueCar: baseUrl + "ex/car/search-unique-car",
     getCarPriceChartByTypeId: baseUrl + "car-price-chart/get-car-price-chart-by-type-id",
     searchCarByPrice: baseUrl + "car/searchCarByPrice",
@@ -22,6 +23,7 @@ export const api = {
     searchCarByPrice: baseUrl + "car/search-with-price",
     searchMotorByPrice: baseUrl + "motorcycle-price/search-with-price",
     carPriceList: baseUrl + "car/search-with-price-without-mongo?pageSize=200&pageNo=0",
+    depreciation: baseUrl + "ex/auto-depreciation/list-auto-depreciation?autoDepreciationTypeEnum=INSURANCE",
   },
   motor: {
     calculatePrice: baseUrl + "motorcycle-price/calculate-price",
@@ -36,7 +38,7 @@ export const api = {
     getCities: baseUrl + "basic-information/search-cities",
   },
   insurance: {
-    preRegistration: baseUrl + "pre-registration-insurance/add",
+    preRegistration: baseUrl + "registration-insurance/add",
     adminPreRegistration: baseUrl + "pre-registration-insurance/admin/add",
   },
   collaboration: {
@@ -45,9 +47,9 @@ export const api = {
     editCollaborationAdmin: baseUrl + "collaboration-in-marketing/edit/",
     getCollaborationList: baseUrl + "collaboration-in-marketing/search-with-pageable",
     deleteCollaboration: baseUrl + "collaboration-in-marketing/delete/",
-    getPreRegistrationInsuranceList: baseUrl + "pre-registration-insurance/search-with-pageable",
-    deletePreRegistrationInsuranceList: baseUrl + "pre-registration-insurance/delete/",
-    editPreRegistrationInsuranceList: baseUrl + "pre-registration-insurance/edit/",
+    getPreRegistrationInsuranceList: baseUrl + "registration-insurance/search-with-pageable",
+    deletePreRegistrationInsuranceList: baseUrl + "registration-insurance/delete/",
+    editPreRegistrationInsuranceList: baseUrl + "registration-insurance/edit/",
   },
   payment: {
     requestPayment: baseUrl + "payment/request",
@@ -81,6 +83,11 @@ export const api = {
     deleteContactUs: baseUrl + "contact-us/delete/",
     addContactUs: baseUrl + "contact-us/add",
     editContactUs: baseUrl + "contact-us/edit/",
+  },
+  roadSideAssistance: {
+    addRoadSideAssistance: baseUrl + "road-side-assistance/add",
+    getRoadSideAssistanceList: baseUrl + "road-side-assistance/search-with-pageable",
+    /////*  getRoadSideAssistance: baseUrl + "road-side-assistance/add", */
   },
 
   transactions: {

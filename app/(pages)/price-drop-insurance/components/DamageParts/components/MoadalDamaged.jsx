@@ -1,22 +1,28 @@
-"use client";
-import React from "react";
-import Image from "next/image";
+import { Select, Button, TextBox, Modal, Number } from "@/common";
+import React, { useState, useContext, useEffect } from "react";
+import { api } from "@/api";
+import moment from "moment-jalaali";
+import { useAxios, useAxiosWithToken } from "@/hooks";
+import { usePriceDropStore } from "@/store/tools/pricedrop";
+import { Checkbox, Radio } from "antd";
+
+//
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
 // ────────────────────────────────────────────────────────────────────
 //
 
 export default function Index({
-  platePart1,
-  platePart2,
-  platePart3,
-  platePart4,
+  closeModal,
+  open,
+  item,
+  handleSelection,
+  selectedOption,
+  handleConfirm,
 }) {
   // ─── Global Variable ────────────────────────────────────────────────────────────
 
   // ─── States ─────────────────────────────────────────────────────────────────────
-
-  // ─── Life Cycle ─────────────────────────────────────────────────────────────────
 
   // ─── Functions ──────────────────────────────────────────────────────────────────
 
@@ -27,31 +33,50 @@ export default function Index({
   //
   return (
     <>
-      <section className="flex h-[48px] w-[219.93px] max-w-full rounded transition-all duration-500">
-        <section className="flex  rounded-r  border-y-[0.4px] border-r-[0.4px] border-solid border-[#A6A9BD] bg-white">
-          <section className="flex h-full w-[43.79px] max-w-full items-center justify-center border-l-[0.4px] border-solid border-[#A6A9BD]">
-            {platePart4}
-          </section>
-          <section className=" flex h-full w-[143.3px]  items-center justify-center gap-2">
-            <section className="mr-[11.3px] dark:text-white ">
-              {platePart2}
+      <Modal
+        title={item.parameter}
+        px="px-6"
+        py="py-8"
+        open={open}
+        onClose={closeModal}
+      >
+        <section className="flex flex-col gap-4 mt-8">
+          {[
+            {
+              label: "عدم نیاز به صافکاری (جزئی)",
+              accidentCoefficient: "MINOR",
+            },
+            {
+              label: "نیاز به صافکاری (متوسط)",
+              accidentCoefficient: "MAJOR",
+            },
+            { label: "تعویض (شدید)", accidentCoefficient: "EXTREME" },
+          ].map(({ label, accidentCoefficient }, index) => (
+            <section key={index}>
+              <Radio
+                value={accidentCoefficient} // مقدار رادیو
+                checked={
+                  selectedOption?.accidentCoefficient === accidentCoefficient
+                }
+                onChange={() => {
+                  handleSelection(item.id, accidentCoefficient);
+                }}
+              >
+                {label}
+              </Radio>
             </section>
-            <section className="flex h-[32px] w-[52px]  items-center justify-center">
-              {platePart3}
-            </section>
-            <section className="flex h-[32px]  w-[52px] items-center justify-center">
-              {platePart1}
-            </section>
-          </section>
+          ))}
+          <Button
+            onClick={() => {
+              handleConfirm();
+              closeModal();
+            }}
+            className="mt-4"
+          >
+            تایید
+          </Button>
         </section>
-        <Image
-          src="/assets/images/plate.png"
-          width={32.84}
-          height={48.8}
-          className=""
-          alt=""
-        />
-      </section>
+      </Modal>
     </>
   );
 }

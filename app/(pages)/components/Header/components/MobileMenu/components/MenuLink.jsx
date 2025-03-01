@@ -1,5 +1,7 @@
-import dynamic from "next/dynamic";
-import { useState, useContext, useEffect, useMemo } from "react";
+'use client'
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 
 //
 // ────────────────────────────────────────────────────────── I ──────────
@@ -7,19 +9,9 @@ import { useState, useContext, useEffect, useMemo } from "react";
 // ────────────────────────────────────────────────────────────────────
 //
 
-export default function Index({ latData, setLatData, longData, setLongData }) {
+export default function Index({ link, title }) {
     // ─── Global Variable ────────────────────────────────────────────────────────────
-    const Map = useMemo(
-        () =>
-            dynamic(
-                () => import("@/(pages)/request-relief/RequestWizard/components/Map"),
-                {
-                    loading: () => <p>A map is loading</p>,
-                    ssr: false,
-                },
-            ),
-        [],
-    );
+    const pathname = usePathname()
     // ─── States ─────────────────────────────────────────────────────────────────────
 
     // ─── Functions ──────────────────────────────────────────────────────────────────
@@ -31,14 +23,10 @@ export default function Index({ latData, setLatData, longData, setLongData }) {
     //   :::::: R E N D E R : :  :   :    :     :        :          :
     // ──────────────────────────────────────────────────────────────
     //
-    return <>
-        <section className="w-[100%] flex justify-center items-center">
-            <Map
-                setLongData={setLongData}
-                setLatData={setLatData}
-                latData={latData}
-                longData={longData}
-            />
-        </section>
-    </>;
+    return <Link
+        href={link}
+        className={`${pathname === link ? "text-[#c3b722]" : ""} flex py-1 w-full items-center gap-[12px] pr-[14.5px] dark:text-white`}
+    >
+        <span>{title}</span>
+    </Link>;
 }

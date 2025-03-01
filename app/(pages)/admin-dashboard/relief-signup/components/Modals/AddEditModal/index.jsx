@@ -20,7 +20,7 @@ import { useForm, Controller } from "react-hook-form";
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
 // ────────────────────────────────────────────────────────────────────
 //
-export default function Index({ reloadTable,closeModal }) {
+export default function Index({ reloadTable, closeModal }) {
   // ─── Global Variable ────────────────────────────────────────────────────────────
   const {
     handleSubmit,
@@ -447,7 +447,7 @@ export default function Index({ reloadTable,closeModal }) {
               />
             )}
           />
-          <ErrorMessage>{errors?.yearId?.message}</ErrorMessage>
+          <ErrorMessage>{errors?.typeId?.message}</ErrorMessage>
         </section>
         <section className="flex w-full flex-col gap-[2px]  text-sm">
           <label className="pt-[6px] ">رنگ</label>
@@ -524,10 +524,10 @@ export default function Index({ reloadTable,closeModal }) {
             control={control}
             name="insuranceThird"
             rules={{
-              required: "شماره بیمه ثالث است",
+              required: "شماره بیمه ثالث اجباری است",
               pattern: {
                 value: Regex.INSURANCE_THIRD,
-                message: "شماره بیمه ثالث را به درستی وارد کنید",
+                message: "شماره بیمه ثالث باید 10 رقم کنید",
               },
             }}
             render={({ field: { onChange, value } }) => (
@@ -619,6 +619,7 @@ export default function Index({ reloadTable,closeModal }) {
               <Select
                 options={warrantyList}
                 state={value}
+                search={false}
                 setState={onChange}
                 optionValue="value"
                 optionTitle="label"

@@ -2,7 +2,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import LinkItem from "./components/LinkItem";
 import Repair from "../../../../public/icons/Group 4.svg";
-import Api from "../../../../public/icons/Group 8.svg";
+import Api from "../../../../public/icons/hands.svg";
 import Store from "../../../../public/icons/Group 6.svg";
 import Money from "../../../../public/icons/Group 10.svg";
 import Chart from "../../../../public/icons/Layer_1.svg";
@@ -40,7 +40,7 @@ export default function Index() {
           />
         </section>
         <section>
-          <LinkItem img={Api} title="اعلام خسارت" href="/damage-intro" />
+          <LinkItem img={Api} title="همکاری در بازاریابی" href="/marketing" />
         </section>
       </section>
       <section className="flex justify-center xl:gap-[164px] gap-x-10">
@@ -51,7 +51,7 @@ export default function Index() {
           <LinkItem
             img={Chart}
             title="محاسبه افت بازار و بیمه خودرو"
-            href="/price-drop"
+            href="/price-drop-insurance"
           />
         </section>
       </section>

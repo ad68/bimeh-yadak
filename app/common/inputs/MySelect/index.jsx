@@ -67,6 +67,7 @@ export default function Index({
     <Select
       options={myOptions}
       isLoading={loading}
+
       onChange={setState}
       isRtl={true}
       value={state}

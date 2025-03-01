@@ -13,6 +13,7 @@ export default function Index() {
   // ─── Global Variable ────────────────────────────────────────────────────────────
   // ─── States ─────────────────────────────────────────────────────────────────────
   const [activeTab, setActiveTab] = useState(1);
+  const [preRegisterData, setPreRegisterData] = useState({})
   // ─── Functions ──────────────────────────────────────────────────────────────────
   // ─── Life Cycle ─────────────────────────────────────────────────────────────────
   //
@@ -30,8 +31,8 @@ export default function Index() {
       <section className="  w-[1366px] max-w-full m-auto">
         <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
         {activeTab === 1 && <Rules setActiveTab={setActiveTab} />}
-        {activeTab === 2 && <PreSignup setActiveTab={setActiveTab} />}
-        {activeTab === 3 && <Success setActiveTab={setActiveTab} />}
+        {activeTab === 2 && <PreSignup setPreRegisterData={setPreRegisterData} setActiveTab={setActiveTab} />}
+        {activeTab === 3 && <Success preRegisterData={preRegisterData} setActiveTab={setActiveTab} />}
       </section>
     </section>
   );

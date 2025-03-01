@@ -20,7 +20,7 @@ import { useForm, Controller } from "react-hook-form";
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
 // ────────────────────────────────────────────────────────────────────
 //
-export default function Index({ setActiveTab }) {
+export default function Index({ setActiveTab, setPreRegisterData }) {
   // ─── Global Variable ────────────────────────────────────────────────────────────
   const {
     handleSubmit,
@@ -210,16 +210,15 @@ export default function Index({ setActiveTab }) {
       color: data?.colorId.value,
       referralCode: data?.referralCode,
     };
-
     useAxios
       .post(api.insurance.preRegistration, params)
       .then((res) => {
         setActionLoading(false);
         notify.Success("درخواست شما با موفقیت ثبت شد");
         setActiveTab(3);
+        setPreRegisterData(params)
       })
       .catch((e) => {
-        notify.Error(NotifyMessage.GLOBAL_ERROR);
         setActionLoading(false);
       });
   };
@@ -490,7 +489,7 @@ export default function Index({ setActiveTab }) {
               />
             )}
           />
-          <ErrorMessage>{errors?.yearId?.message}</ErrorMessage>
+          <ErrorMessage>{errors?.typeId?.message}</ErrorMessage>
         </section>
         <section className="flex w-full flex-col gap-[2px]  text-sm">
           <label className="pt-[6px] ">رنگ</label>
@@ -567,10 +566,10 @@ export default function Index({ setActiveTab }) {
             control={control}
             name="insuranceThird"
             rules={{
-              required: "شماره بیمه ثالث است",
+              required: "شماره بیمه ثالث اجباری است",
               pattern: {
                 value: Regex.INSURANCE_THIRD,
-                message: "شماره بیمه ثالث را به درستی وارد کنید",
+                message: "شماره بیمه ثالث باید 10 رقم کنید",
               },
             }}
             render={({ field: { onChange, value } }) => (
@@ -662,6 +661,7 @@ export default function Index({ setActiveTab }) {
               <Select
                 options={warrantyList}
                 state={value}
+                search={false}
                 setState={onChange}
                 optionValue="value"
                 optionTitle="label"

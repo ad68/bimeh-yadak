@@ -262,3 +262,6 @@ select__menu-list::-webkit-scrollbar-thumb:hover {
   -webkit-transform: rotate(-60deg);
   transform: rotate(-60deg);
 }
+.preReg .leaflet-container {
+  height: 320px;
+}
