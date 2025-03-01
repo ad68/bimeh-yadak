@@ -25,7 +25,7 @@ export default function page() {
   //
   return (
     <>
-      <section className="w-[1366px] max-w-full m-auto mt-[100px] xl:mt-[200px]">
+      <section className="w-[1366px] max-w-full m-auto mt-[100px] xl:mt-[120px]">
         {/* <section className="container hidden items-center justify-center lg:flex">
           <Calculate />
         </section>
