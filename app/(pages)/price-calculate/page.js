@@ -22,6 +22,9 @@ export default function Index() {
   //
   return (
     <>
+    <section className="mt-[80px] flex xl:h-[150px] h-[100px] w-full items-center justify-center bg-primary font-bold  ">
+        <h3 className="xl:text-[40px] text-[24px] font-bold text-center px-10">ارزش روز خودرو</h3>
+      </section>
       <section className="container hidden items-center justify-center lg:flex">
         <CalculateBox />
       </section>
