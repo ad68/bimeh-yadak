@@ -43,10 +43,10 @@ export default function Index({ setUserInfo, setActive }) {
     };
 
     return (
-        <section className="flex justify-center">
+        <section className="grid grid-cols-1 xl:grid-cols-2 w-[900px] max-w-full m-auto">
             <form onSubmit={handleSubmit(onSubmit)} className="w-full  xl:w-[350px]">
                 <section className="flex flex-col xl:gap-6 justify-center">
-                    <section className="flex w-[350px] flex-col gap-[2px]  text-sm">
+                    <section className="flex  flex-col gap-[2px]  text-sm">
                         <label className="pt-[6px] ">تلفن همراه </label>
                         <Controller
                             control={control}
@@ -69,7 +69,7 @@ export default function Index({ setUserInfo, setActive }) {
                         />
                         <ErrorMessage>{errors?.mobileNumber?.message}</ErrorMessage>
                     </section>
-                    <section className="flex w-[350px] flex-col gap-[2px] text-sm">
+                    <section className="flex  flex-col gap-[2px] text-sm">
                         <label className="pt-[6px]">کدملی </label>
                         <Controller
                             control={control}
@@ -95,12 +95,13 @@ export default function Index({ setUserInfo, setActive }) {
                     <section className="flex justify-center mt-6">
                         <Button
                             loading={actionLoading}
-                            className=" h-[48px] w-full border-none text-lg font-bold leading-[27.9px] text-white xl:mb-0  "
+                            className=" h-[48px] w-full border-none text-lg  leading-[27.9px] xl:mb-0  "
                         >
-                            ذخیره
+                            مرحله بعد
                         </Button>
                     </section>
                 </section>
+
 
                 <Modal open={showError} onClose={() => setShowError(false)}>
                     <Image src={Warning} alt="" className="w-[100px] h-[100px] m-auto" />
@@ -112,6 +113,18 @@ export default function Index({ setUserInfo, setActive }) {
                 </Modal>
 
             </form>
+            <section className="order-first xl:order-last">
+                <Image src="/assets/images/Group crash.svg" width={460} height={300} alt="" className="mx-auto h-[152px] w-full  xl:h-[200px]" />
+                <section className="mt-10">
+                    <span className="text-primary font-bold block text-center text-[20px]">
+                        کاربر گرامی!
+                    </span>
+                    <p className="text-justify font-light mt-5">
+                        فقط در صورت داشتن بیمه نامه قادر خواهید بود از این سرویس استفاده کنید.پس از ثبت درخواست کارشناسان ما در اسرع وقت با شما تماس گرفته و به محل اعزام خواهند شد.
+
+                    </p>
+                </section>
+            </section>
         </section>
     );
 }

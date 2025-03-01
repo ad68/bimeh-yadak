@@ -11,7 +11,13 @@ useAxios.interceptors.response.use(
   },
   function (error) {
     if (error?.response?.status === 500) {
-      notify.Error(NotifyMessage.GLOBAL_ERROR)
+      if (error.response.data.message) {
+        notify.Error(error.response.data.message)
+      }
+      else {
+        notify.Error(NotifyMessage.GLOBAL_ERROR)
+      }
+
     }
     return Promise.reject(error);
   },

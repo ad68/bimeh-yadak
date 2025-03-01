@@ -5,6 +5,7 @@ import { Regex } from "@/enums";
 import { notify } from "@/helper";
 import { useAxiosWithToken } from "@/hooks";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useForm, Controller } from "react-hook-form";
@@ -21,6 +22,7 @@ export default function Index() {
         formState: { errors },
         reset
     } = useForm();
+    const router = useRouter()
     // ─── States ─────────────────────────────────────────────────────────────────────
     const [actionLoading, setActionLoading] = useState(false)
     const [refUrl, setRefUrl] = useState(null)
@@ -45,6 +47,7 @@ export default function Index() {
                 /*  notify.Success("درخواست شما با موفقیت ثبت شد"); */
             })
             .catch((e) => {
+                setActionLoading(true);
                 notify.Error(NotifyMessage.GLOBAL_ERROR)
                 setActionLoading(false);
             });
@@ -57,123 +60,146 @@ export default function Index() {
     // ──────────────────────────────────────────────────────────────
     //
     return (
-        <><form
-            onSubmit={handleSubmit((data) => signUp(data))}
-            className="grid grid-cols-1 xl:grid-cols-2 gap-4 py-10"
-        >
-            <section className="flex w-full flex-col gap-[2px] text-sm">
-                <label className="pt-[6px]">نام </label>
-                <Controller
-                    control={control}
-                    name="firstName"
-                    rules={{
-                        required: "نام اجباری است",
-                        minLength: {
-                            value: 3,
-                            message: "نام نباید کمتر از 3 کاراکتر باشد",
-                        },
-                        maxLength: {
-                            value: 15,
-                            message: "نام نباید بیشتر از 15 کاراکتر باشد",
-                        },
-                    }}
-                    render={({ field: { onChange, value } }) => (
-                        <TextBox
-                            onChange={onChange}
-                            value={value}
-                            placeholder=" نام را وارد کنید"
-                            className="h-[48px] rounded-lg "
-                        />
-                    )}
-                />
-                <ErrorMessage>{errors?.firstName?.message}</ErrorMessage>
-            </section>
-            <section className="flex w-full flex-col gap-[2px]   text-sm">
-                <label className="pt-[6px]"> نام خانوادگی</label>
-                <Controller
-                    control={control}
-                    name="lastName"
-                    rules={{
-                        required: "نام خانوادگی اجباری است",
-                        minLength: {
-                            value: 3,
-                            message: "نام خانوادگی نباید کمتر از 3 کاراکتر باشد",
-                        },
-                        maxLength: {
-                            value: 15,
-                            message: "نام خانوادگی نباید بیشتر از 15 کاراکتر باشد",
-                        },
-                    }}
-                    render={({ field: { onChange, value } }) => (
-                        <TextBox
-                            onChange={onChange}
-                            value={value}
-                            placeholder="نام خانوادگی را وارد کنید"
-                            className="h-[48px] rounded-lg "
-                        />
-                    )}
-                />
-                <ErrorMessage>{errors?.lastName?.message}</ErrorMessage>
-            </section>
-            <section className="flex w-full flex-col gap-[2px]  text-sm">
-                <label className="pt-[6px]">کدملی </label>
-                <Controller
-                    control={control}
-                    name="nationalCode"
-                    rules={{
-                        required: "کد ملی اجباری است",
-                        pattern: {
-                            value: Regex.NATIONAL_CODE,
-                            message: "کد ملی را به درستی وارد کنید",
-                        },
-                    }}
-                    render={({ field: { onChange, value } }) => (
-                        <TextBox
-                            onChange={onChange}
-                            value={value}
-                            placeholder="کد ملی را وارد کنید"
-                            className="h-[48px] rounded-lg "
-                        />
-                    )}
-                />
-                <ErrorMessage>{errors?.nationalCode?.message}</ErrorMessage>
-            </section>
-            <section className="flex w-full flex-col gap-[2px]  text-sm">
-                <label className="pt-[6px] ">تلفن همراه </label>
-                <Controller
-                    control={control}
-                    rules={{
-                        required: "تلفن همراه اجباری است",
-                        pattern: {
-                            value: Regex.MOBILE,
-                            message: "تلفن همراه را به درستی وارد کنید",
-                        },
-                    }}
-                    name="mobileNumber"
-                    render={({ field: { onChange, value } }) => (
-                        <TextBox
-                            onChange={onChange}
-                            value={value}
-                            placeholder="تلفن همراه را وارد کنید"
+        <>
+            <section className="grid grid-cols-1 xl:grid-cols-2 gap-10  max-w-full">
+                <form
+                    onSubmit={handleSubmit((data) => signUp(data))}
 
-                            className="  h-[48px]  rounded-lg border border-solid "
-                        />
-                    )}
-                />
-                <ErrorMessage>{errors?.mobileNumber?.message}</ErrorMessage>
-
-            </section>
-            <section className="xl:col-span-2 flex justify-center gap-4">
-                <Button
-                    loading={actionLoading}
-                    className="mb-4 mt-[13px] h-[48px] w-[93%] text-lg leading-[27.9px] xl:mb-0 xl:w-[280px]"
                 >
-                    ذخیره
-                </Button>
+                    <section className="flex w-full flex-col gap-[2px] text-sm">
+                        <label className="pt-[6px]">نام </label>
+                        <Controller
+                            control={control}
+                            name="firstName"
+                            rules={{
+                                required: "نام اجباری است",
+                                minLength: {
+                                    value: 3,
+                                    message: "نام نباید کمتر از 3 کاراکتر باشد",
+                                },
+                                maxLength: {
+                                    value: 15,
+                                    message: "نام نباید بیشتر از 15 کاراکتر باشد",
+                                },
+                                pattern: {
+                                    value: Regex.PERSIAN_NAME,
+                                    message: "نام فقط باید شامل حروف فارسی باشد",
+                                },
+                            }}
+                            render={({ field: { onChange, value } }) => (
+                                <TextBox
+                                    onChange={onChange}
+                                    value={value}
+                                    placeholder=" نام را وارد کنید"
+                                    className="h-[48px] rounded-lg "
+                                />
+                            )}
+                        />
+                        <ErrorMessage>{errors?.firstName?.message}</ErrorMessage>
+                    </section>
+                    <section className="flex w-full flex-col gap-[2px]   text-sm">
+                        <label className="pt-[6px]"> نام خانوادگی</label>
+                        <Controller
+                            control={control}
+                            name="lastName"
+                            rules={{
+                                required: "نام خانوادگی اجباری است",
+                                minLength: {
+                                    value: 3,
+                                    message: "نام خانوادگی نباید کمتر از 3 کاراکتر باشد",
+                                },
+                                maxLength: {
+                                    value: 15,
+                                    message: "نام خانوادگی نباید بیشتر از 15 کاراکتر باشد",
+                                },
+                                pattern: {
+                                    value: Regex.PERSIAN_NAME,
+                                    message: "نام خانوادگی فقط باید شامل حروف فارسی باشد",
+                                },
+                            }}
+                            render={({ field: { onChange, value } }) => (
+                                <TextBox
+                                    onChange={onChange}
+                                    value={value}
+                                    placeholder="نام خانوادگی را وارد کنید"
+                                    className="h-[48px] rounded-lg "
+                                />
+                            )}
+                        />
+                        <ErrorMessage>{errors?.lastName?.message}</ErrorMessage>
+                    </section>
+                    <section className="flex w-full flex-col gap-[2px]  text-sm">
+                        <label className="pt-[6px]">کدملی </label>
+                        <Controller
+                            control={control}
+                            name="nationalCode"
+                            rules={{
+                                required: "کد ملی اجباری است",
+                                pattern: {
+                                    value: Regex.NATIONAL_CODE,
+                                    message: "کد ملی را به درستی وارد کنید",
+                                },
+                            }}
+                            render={({ field: { onChange, value } }) => (
+                                <TextBox
+                                    onChange={onChange}
+                                    value={value}
+                                    placeholder="کد ملی را وارد کنید"
+                                    className="h-[48px] rounded-lg "
+                                />
+                            )}
+                        />
+                        <ErrorMessage>{errors?.nationalCode?.message}</ErrorMessage>
+                    </section>
+                    <section className="flex w-full flex-col gap-[2px]  text-sm">
+                        <label className="pt-[6px] ">تلفن همراه </label>
+                        <Controller
+                            control={control}
+                            rules={{
+                                required: "تلفن همراه اجباری است",
+                                pattern: {
+                                    value: Regex.MOBILE,
+                                    message: "تلفن همراه را به درستی وارد کنید",
+                                },
+                            }}
+                            name="mobileNumber"
+                            render={({ field: { onChange, value } }) => (
+                                <TextBox
+                                    onChange={onChange}
+                                    value={value}
+                                    placeholder="تلفن همراه را وارد کنید"
+
+                                    className="  h-[48px]  rounded-lg border border-solid "
+                                />
+                            )}
+                        />
+                        <ErrorMessage>{errors?.mobileNumber?.message}</ErrorMessage>
+
+                    </section>
+                    <section >
+                        <Button
+                            loading={actionLoading}
+                            className="mt-5 w-[100%] text-lg "
+                        >
+                            ثبت نام
+                        </Button>
+                    </section>
+
+                </form>
+                <section className="order-first xl:order-last">
+                    <Image src="/assets/images/nego.svg" width={460} height={300} alt="" className="mx-auto h-[152px] w-full xl:h-[250px]" />
+                    <section className="mt-10">
+                        <span className="text-primary font-bold block text-center text-[20px]">
+                            همکار گرامی!
+                        </span>
+                        <p className="text-justify font-light mt-5">
+                            پس از ثبت نام یک لینک برای شما نمایش داده می شود و همچنین از طریق پیامک برای شما ارسال می شود که از طریق آن می توانید اقدام به فروش بیمه نامه نمایید.
+                        </p>
+                    </section>
+                </section>
             </section>
 
-        </form>
-            <Modal width={800} open={modalOpen} onClose={() => setModalOpen(false)}>
+            <Modal width={800} open={modalOpen} onClose={() => router.push("/")}>
                 <section className="flex justify-center">
                     <Image src="/assets/icons/check.png" width={60} height={60} alt="" />
                 </section>

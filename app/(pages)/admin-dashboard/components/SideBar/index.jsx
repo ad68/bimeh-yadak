@@ -76,12 +76,12 @@ export default function Index() {
         </section>
         <section className="mx-6 mt-4 flex h-auto flex-col  justify-start">
           <MenuLink title="داشبورد" link="/admin-dashboard" />
-          <MenuLink title="اعلام خسارت" link="/admin-dashboard/declaration-damage" />
+          {/*  <MenuLink title="اعلام خسارت" link="/admin-dashboard/declaration-damage" /> */}
           <MenuLink title="درخواست های همکاری" link="/admin-dashboard/collaboration" />
           <MenuLink title="پیش ثبت نام های بیمه" link="/admin-dashboard/relief-signup" />
           <MenuLink title="درخواست های امداد" link="/admin-dashboard/request-relief" />
           <MenuLink title="تراکنش ها" link="/admin-dashboard/transactions" />
-          <MenuLink title="تراکنش‌های استعلام" link="/admin-dashboard/inquiry-transactions"/>
+          <MenuLink title="تراکنش‌های استعلام" link="/admin-dashboard/inquiry-transactions" />
           <MenuLink title="تماس با ما" link="/admin-dashboard/contact-us" />
 
           {/*   <button

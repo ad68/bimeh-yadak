@@ -36,6 +36,7 @@ export default function Index({
       setMonthList(chartMonthList);
       setPriceList(chartPriceList);
     }
+    console.log(monthList)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [monthState]);
 
@@ -145,7 +146,7 @@ export default function Index({
       <section className="flex justify-end">
         <span
           onClick={hideResult}
-          className="flex w-[130px] cursor-pointer items-center justify-end text-lg text-[#0165E1]"
+          className="flex w-[130px] cursor-pointer items-center justify-end text-lg text-primary"
         >
           <IconArrowRight className="ml-2 mt-2" />
           <span>بازگشت</span>

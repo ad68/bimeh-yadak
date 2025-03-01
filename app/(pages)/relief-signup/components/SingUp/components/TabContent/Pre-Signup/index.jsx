@@ -210,6 +210,7 @@ export default function Index({ setActiveTab, setPreRegisterData }) {
       color: data?.colorId.value,
       referralCode: data?.referralCode,
     };
+
     useAxios
       .post(api.insurance.preRegistration, params)
       .then((res) => {
@@ -218,9 +219,13 @@ export default function Index({ setActiveTab, setPreRegisterData }) {
         setActiveTab(3);
         setPreRegisterData(params)
       })
-      .catch((e) => {
+      .catch((err) => {
         setActionLoading(false);
+
       });
+  };
+  const onInvalid = (errors) => {
+    scrollToTop()
   };
   // ─── Life Cycle ─────────────────────────────────────────────────────────────────
   useEffect(() => {
@@ -273,11 +278,7 @@ export default function Index({ setActiveTab, setPreRegisterData }) {
     setValue("referralCode", searchParams.get("referralCode"));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
-  useEffect(() => {
-    if (errors) {
-      scrollToTop()
-    }
-  }, [errors])
+
   //
   // ──────────────────────────────────────────────────── I ──────────
   //   :::::: R E N D E R : :  :   :    :     :        :          :
@@ -286,7 +287,7 @@ export default function Index({ setActiveTab, setPreRegisterData }) {
   return (
     <>
       <form
-        onSubmit={handleSubmit((data) => preSignUp(data))}
+        onSubmit={handleSubmit((data) => preSignUp(data), onInvalid)}
         className="grid grid-cols-1 xl:grid-cols-4 px-3 mt-10 gap-4 py-10"
       >
         {/*  <section className="xl:col-span-4">
@@ -312,6 +313,10 @@ export default function Index({ setActiveTab, setPreRegisterData }) {
               maxLength: {
                 value: 15,
                 message: "نام نباید بیشتر از 15 کاراکتر باشد",
+              },
+              pattern: {
+                value: Regex.PERSIAN_NAME,
+                message: "نام فقط باید شامل حروف فارسی باشد",
               },
             }}
             render={({ field: { onChange, value } }) => (
@@ -339,6 +344,10 @@ export default function Index({ setActiveTab, setPreRegisterData }) {
               maxLength: {
                 value: 15,
                 message: "نام خانوادگی نباید بیشتر از 15 کاراکتر باشد",
+              },
+              pattern: {
+                value: Regex.PERSIAN_NAME,
+                message: "نام خانوادگی فقط باید شامل حروف فارسی باشد",
               },
             }}
             render={({ field: { onChange, value } }) => (
@@ -694,7 +703,7 @@ export default function Index({ setActiveTab, setPreRegisterData }) {
           </h1>
           <ul className="text-[14px] list-decimal leading-10 pr-[40px] text-justify">
             <li>
-            در انتخاب تعهدات بیمه دقت نمایید هر مبلغی را که به عنوان بیمه امداد مشخص می‌کنید برای استفاده در طول سال است. پیشنهاد برای انتخاب تعهدات:
+              در انتخاب تعهدات بیمه دقت نمایید هر مبلغی را که به عنوان بیمه امداد مشخص می‌کنید برای استفاده در طول سال است. پیشنهاد برای انتخاب تعهدات:
               <ul>
                 <li>الف) برای خودروهای ایرانی از ۵ تا ۱۰ میلیون تومان یا بیشتر پوشش تعهدات انتخاب شود، مثال محاسباتی: برای ۵ میلیون پوشش تعهدات بیمه فقط مبلغ ۲۵۰ هزار تومان پرداخت می‌شود (یعنی ۵٪ تعهدات)</li>
                 <li>ب) برای خودرهای شاسی خارجی و چینی و ایرانی از ۱۵ تا ۲۵ میلیون تومان پوشش تعهدات انتخاب شود. مثال محاسباتی: برای ۲۵ میلیون تومان پوشش تعهدات فقط مبلغ ۱۲۵۰۰۰۰ حق بیمه امداد پرداخت می‌شود (یعنی ۵٪ حق بیمه تعهدات پوششی).</li>
@@ -702,13 +711,13 @@ export default function Index({ setActiveTab, setPreRegisterData }) {
             </li>
 
             <li>
-            حق بیمه ۵٪ از هزینه تعهدات تا پایان سال ۱۴۰۳ می‌باشد از شروع سال جدید ۱۴۰۴ به حق بیمه ۱۰٪ افزایش خواهد یافت پس دقت نمایید قبل از سال جدید تعهدات بیمه امداد خود را خریداری نمایید. (در نظر داشته باشید این تخفیف فقط به مناسبت ۲۲ بهمن و عید نوروز می‌باشد)
+              حق بیمه ۵٪ از هزینه تعهدات تا پایان سال ۱۴۰۳ می‌باشد از شروع سال جدید ۱۴۰۴ به حق بیمه ۱۰٪ افزایش خواهد یافت پس دقت نمایید قبل از سال جدید تعهدات بیمه امداد خود را خریداری نمایید. (در نظر داشته باشید این تخفیف فقط به مناسبت ۲۲ بهمن و عید نوروز می‌باشد)
             </li>
             <li>
-            طرح بیمه امداد در حمل خودرو برای اولین بار راه اندازی شده و هدف آن کوتاه کردن دستان افراد سودجو می‌باشد تا شما هزینه‌های هنگفت در زمان حمل به اجبار پرداخت ننمایید.
+              طرح بیمه امداد در حمل خودرو برای اولین بار راه اندازی شده و هدف آن کوتاه کردن دستان افراد سودجو می‌باشد تا شما هزینه‌های هنگفت در زمان حمل به اجبار پرداخت ننمایید.
             </li>
             <li>
-            تنها سامانه پیامکی امداد خودرو کشور ۱۰۰۰۰۱۵۹۳ بوده و سایر پیامک‌های از سامانه‌های دیگر فاقد اعتبار می‌باشد.
+              تنها سامانه پیامکی امداد خودرو کشور ۱۰۰۰۰۱۵۹۳ بوده و سایر پیامک‌های از سامانه‌های دیگر فاقد اعتبار می‌باشد.
             </li>
           </ul>
         </section>

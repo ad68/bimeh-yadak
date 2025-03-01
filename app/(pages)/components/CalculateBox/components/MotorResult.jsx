@@ -27,7 +27,7 @@ export default function Index({ hideResult, result }) {
       <section className="flex justify-end">
         <span
           onClick={hideResult}
-          className="flex w-[130px] cursor-pointer items-center justify-end text-lg text-[#0165E1]"
+          className="flex w-[130px] cursor-pointer items-center justify-end text-lg text-primary"
         >
           <IconArrowRight className="ml-2 mt-2" />
           <span>بازگشت</span>
@@ -35,15 +35,19 @@ export default function Index({ hideResult, result }) {
       </section>
       <section>
         <section className="mt-3 flex items-center justify-between">
-          <section className="mr-[66px]">
-            <span className="block text-xl font-bold text-white">
-              {/* {result?.carName} */}
-              نام موتور
+          <section >
+            <span className="flex text-xl gap-1 font-bold text-white">
+              <span>نام موتور:</span>
+              <span>
+                {result?.brandName}
+              </span>
+
+
             </span>
-            <span className="block font-normal text-white">
-              {/*    {result?.colorName} */}
+            {/*  <span className="block font-normal text-white">
+                 {result?.colorName}
               مدل موتور
-            </span>
+            </span> */}
           </section>
           {result?.imageUrl ? (
             <Image
@@ -65,7 +69,7 @@ export default function Index({ hideResult, result }) {
         <section className="mr-[9px] flex h-[40px]  flex-col items-center justify-between text-lg font-bold text-white">
           <span>قیمت کارشناسی ما :</span>
           <span className="text-md font-bold">
-            {numberWithCommas(result?.price)} تومان
+            {numberWithCommas(result?.basePrice)} تومان
           </span>
         </section>
       </section>
@@ -73,25 +77,25 @@ export default function Index({ hideResult, result }) {
         <section className="mr-[70px] flex h-[40px] flex-col items-center justify-center text-[16px] font-semibold text-[#ffa8a8]">
           <span>حداکثر قیمت در بازار:</span>
           <span className="mt-1">
-            {numberWithCommas(result?.priceUp)} تومان
+            {numberWithCommas(result?.upperLimit)} تومان
           </span>
         </section>
         <section className="ml-[55px] flex h-[40px] flex-col items-center justify-center text-[16px] font-semibold text-[#ceffce]">
           <span>حداقل قیمت در بازار:</span>
           <span className="mt-1">
-            {numberWithCommas(result?.priceDown)} تومان
+            {numberWithCommas(result?.lowerLimit)} تومان
           </span>
         </section>
       </section>
       <section className="mt-[20px] rounded-[4px] bg-[#ff797926] p-1 px-4 text-[#fff2f1]">
-        <section>
-          <span>کاهش قیمت بر اساس سال: </span>
-          <span>{numberWithCommas(750000)}</span>
-        </section>
-        <section>
-          <span>کاهش قیمت بر اساس کیلومتر: </span>
-          <span>{numberWithCommas(750000)}</span>
-        </section>
+        {result?.detailsOutputDtos.map((item, index) => (
+          <section key={index}>
+            <span>{item.reason} : </span>
+            <span>{numberWithCommas(item?.depreciationPrice)}</span>
+          </section>
+        ))}
+
+
       </section>
       <section className="mt-[20px] rounded-[4px] bg-[#ffffff26] p-1 px-4 text-[#fff2f1]">
         قیمت های نمایشی برای موتور سیکلت مربوط به آخرین مدل موجود در بازار می
