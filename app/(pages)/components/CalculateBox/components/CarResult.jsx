@@ -36,10 +36,9 @@ export default function Index({
       setMonthList(chartMonthList);
       setPriceList(chartPriceList);
     }
-    console.log(monthList)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [monthState]);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [monthState, chartMonthList, chartPriceList]);
   /* useEffect(() => {
     console.log("monthList:", monthList);
     console.log("priceList:", priceList);
