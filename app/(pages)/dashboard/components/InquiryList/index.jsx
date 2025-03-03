@@ -26,11 +26,11 @@ export default function Index() {
         داشبورد
       </header>
       <section className="mx-[24px] grid gap-4 md:mx-auto md:w-[80%] xl:w-full xl:grid-cols-3  xl:gap-6">
-        {/*   <ListItem
+        <ListItem
           link={"/dashboard/Inquiry/violation"}
           title="استعلام خلافی"
           img="/assets/images/khalafi-M.png"
-        /> */}
+        />
         <ListItem
           link={"/dashboard/Inquiry/negative-inquery-cerficate"}
           title="استعلام نمره منفی"
