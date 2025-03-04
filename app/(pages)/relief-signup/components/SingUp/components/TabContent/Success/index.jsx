@@ -51,7 +51,7 @@ export default function Index({ preRegisterData }) {
 
         </h2>
         <h2 className="text-[16px] px-4 xl:text-[20px] text-center mt-5">
-            منتظر ارسال لینک پرداخت حق بیمه امداد حمل رایگان از سامانه پیامکی ۱۰۰۰۰۱۵۹۳ باشید
+            منتظر ارسال لینک پرداخت حق بیمه امداد حمل رایگان از سامانه پیامکی 90006421 باشید
         </h2>
         <Pdf pdfData={preRegisterData} />
         <Link className='block w-[200px] text-center m-auto mt-10 underline text-primary' href="/">بازگشت به صفحه اصلی</Link>

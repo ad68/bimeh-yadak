@@ -33,7 +33,7 @@ export default function Index() {
           />
           <span className="text-base xl:text-xl">تلفن:</span>
           <span className="text-sm xl:text-xl">
-          ۰۲۱۹۱۰۱۱۵۹۳
+            ۰۲۱۹۱۰۱۱۵۹۳
           </span>
         </section>
         <section className="flex items-start gap-4">
@@ -58,7 +58,7 @@ export default function Index() {
           />
           <span className="text-base xl:text-xl">آدرس:</span>
           <span className="text-sm xl:w-[550px] xl:text-xl">
-          تهران،کیانشهر، خیابان شهید سید عیوض روانبخش، بن بست چهارم، پلاک ۴، طبقه دوم
+            انتهای یادگار امام خمینی - خیابان جرجانی روبروی دادسرای جنایی مجتمع پارس بلوک b1 طبقه 7واحد شرقی
           </span>
         </section>
       </section>
