@@ -62,7 +62,7 @@ export default function Index() {
                 </h2>
               </Link>
               <p className="xl:mt-6 mt-3   text-justify xl:leading-9 leading-[30px] xl:text-sm text-[12px] font-medium xl:pr-0 ">
-              بیمه یدک یک محصول و خدمت جديد بیمه‌ای است که توسط کارگزاری رسمی بيمه برخط مباشر شماره پروانه فعالیت ١٨٧٨ تحت نظارت بیمه مرکزی‌ جمهوری اسلامی ایران با همکاری انجمن امداد خودرو کشوری راه اندازی شده است.
+                بیمه یدک یک محصول و خدمت جديد بیمه‌ای است که توسط کارگزاری رسمی بيمه برخط مباشر شماره پروانه فعالیت ١٨٧٨ تحت نظارت بیمه مرکزی‌ جمهوری اسلامی ایران با همکاری انجمن امداد خودرو کشوری راه اندازی شده است.
               </p>
               <section className="xl:flex xl:mt-8 mt-4 xl:gap-6 gap-4 items-center hidden">
                 <button className="hover:scale-110 hover:transition-all ">
@@ -125,7 +125,7 @@ export default function Index() {
                   درخواست امداد خودرو
                 </Link>
                 <Link href="/marketing" className="hover:opacity-50">
-                  همکاری در بازاریابی
+                  مشاور و کارشناس فروش
                 </Link>
                 <Link href="/price-calculate" className="hover:opacity-50">
                   ارزش روز خودرو
