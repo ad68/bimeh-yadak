@@ -6,6 +6,9 @@ import Api from "../../../../public/icons/hands.svg";
 import Store from "../../../../public/icons/Group 6.svg";
 import Money from "../../../../public/icons/Group 10.svg";
 import Chart from "../../../../public/icons/Layer_1.svg";
+import Repair2 from "../../../../public/icons/repair.svg";
+import Bill from "../../../../public/icons/bill.svg";
+import Tow from "../../../../public/icons/tow.svg";
 //
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
@@ -28,7 +31,7 @@ export default function Index() {
   //
   return (
     <section>
-      <section className="w-[90%] mx-auto xl:w-full flex justify-center gap-x-10 xl:gap-[164px] gap-y-6 xl:gap-y-[20px] xl:mt-[75px] mt-[30px] ">
+      <section className="w-[90%] mx-auto xl:w-full flex justify-center gap-x-10 xl:gap-[164px] gap-y-6 xl:gap-y-[20px] xl:mt-[20px] mt-[30px] ">
         <section>
           <LinkItem img={Repair} title="خرید بیمه‌نامه" href="/relief-signup" />
         </section>
@@ -42,11 +45,12 @@ export default function Index() {
         <section>
           <LinkItem img={Api} title="مشاور و کارشناس فروش" href="/marketing" />
         </section>
-      </section>
-      <section className="flex justify-center xl:gap-[164px] gap-x-10">
         <section>
           <LinkItem img={Money} title="ارزش روز خودرو" href="/price-calculate" />
         </section>
+      </section>
+      <section className="flex justify-center xl:gap-[164px] gap-x-10">
+
         <section>
           <LinkItem
             img={Chart}
@@ -54,7 +58,30 @@ export default function Index() {
             href="/price-drop-insurance"
           />
         </section>
+        <section>
+          <LinkItem
+            img={Repair2}
+            title="بیمه تعمیرات"
+            href="#"
+          />
+        </section>
+        <section>
+          <LinkItem
+            img={Tow}
+            title="بیمه حمل و جابحایی خودرو"
+            href="#"
+          />
+        </section>
+        <section>
+          <LinkItem
+            img={Bill}
+            title="صدور بارنامه الکترونیکی"
+            href="#"
+          />
+        </section>
+
       </section>
+
     </section>
   );
 }
