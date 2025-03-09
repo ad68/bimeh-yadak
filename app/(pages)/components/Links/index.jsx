@@ -31,57 +31,38 @@ export default function Index() {
   //
   return (
     <section>
-      <section className="w-[90%] mx-auto xl:w-full flex justify-center gap-x-10 xl:gap-[164px] gap-y-6 xl:gap-y-[20px] xl:mt-[20px] mt-[30px] ">
-        <section>
+      <section className="w-[90%] mx-auto  xl:w-full flex justify-center gap-x-10 xl:gap-[164px] gap-y-6 xl:gap-y-[20px] xl:mt-[20px] mt-[30px] ">
+        <section className="grid grid-cols-3 gap-10 xl:grid-cols-4 justify-items-center">
           <LinkItem img={Repair} title="خرید بیمه‌نامه" href="/relief-signup" />
-        </section>
-        <section>
           <LinkItem
             img={Store}
             title="درخواست امداد خودرو"
             href="/request-relief"
           />
-        </section>
-        <section>
           <LinkItem img={Api} title="مشاور و کارشناس فروش" href="/marketing" />
-        </section>
-        <section>
           <LinkItem img={Money} title="ارزش روز خودرو" href="/price-calculate" />
-        </section>
-      </section>
-      <section className="flex justify-center xl:gap-[164px] gap-x-10">
-
-        <section>
           <LinkItem
             img={Chart}
             title="محاسبه افت بازار و بیمه خودرو"
             href="/price-drop-insurance"
           />
-        </section>
-        <section>
           <LinkItem
             img={Repair2}
             title="بیمه تعمیرات"
             href="#"
           />
-        </section>
-        <section>
           <LinkItem
             img={Tow}
             title="بیمه حمل و جابحایی خودرو"
             href="#"
           />
-        </section>
-        <section>
           <LinkItem
             img={Bill}
             title="صدور بارنامه الکترونیکی"
             href="#"
           />
         </section>
-
       </section>
-
     </section>
   );
 }

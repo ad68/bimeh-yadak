@@ -48,6 +48,7 @@ export const api = {
     getCollaborationList: baseUrl + "collaboration-in-marketing/search-with-pageable",
     deleteCollaboration: baseUrl + "collaboration-in-marketing/delete/",
     getPreRegistrationInsuranceList: baseUrl + "registration-insurance/search-with-pageable",
+    getPreRegistrationInsuranceMarketingList: baseUrl + "registration-insurance/search-with-pageable-marketing",
     deletePreRegistrationInsuranceList: baseUrl + "registration-insurance/delete/",
     editPreRegistrationInsuranceList: baseUrl + "registration-insurance/edit/",
   },

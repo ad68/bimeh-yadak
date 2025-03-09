@@ -76,75 +76,7 @@ export default function Index() {
         </section>
         <section className="mx-6 mt-4 flex h-auto flex-col  justify-start">
           <MenuLink title="داشبورد" link="/admin-dashboard" />
-          <MenuLink title="لیست معرفی شدگان" link="/admin-dashboard/Nominees" />
-          {/*  <MenuLink title="اعلام خسارت" link="/admin-dashboard/declaration-damage" /> */}
-          <MenuLink title="درخواست های همکاری" link="/admin-dashboard/collaboration" />
-          <MenuLink title="پیش ثبت نام های بیمه" link="/admin-dashboard/relief-signup" />
-          <MenuLink title="درخواست های امداد" link="/admin-dashboard/request-relief" />
-          <MenuLink title="تراکنش ها" link="/admin-dashboard/transactions" />
-          <MenuLink title="تراکنش‌های استعلام" link="/admin-dashboard/inquiry-transactions" />
-          <MenuLink title="تماس با ما" link="/admin-dashboard/contact-us" />
-
-          {/*   <button
-            onClick={() => {
-              setOpenInquiry(!openInquiry);
-            }}
-            className={`mb-[16px] flex h-[48px] items-center justify-between rounded-lg  pr-[14.5px]`}
-          >
-            <section className="flex items-center">
-              <span
-              >
-                استعلام
-              </span>
-            </section>
-            <span
-              className={`${openInquiry ? "" : "rotate-180"} ml-[15.33px] h-4 w-4 transition-all`}
-            >
-              <Image
-                src="/assets/icons/Chevron.svg"
-                width={16}
-                height={16}
-                className=""
-                alt=""
-              />
-            </span>
-          </button>
-          <section
-            className={`${openInquiry ? " h-[160px]" : " h-0"} flex flex-col  gap-2 overflow-hidden pr-5 transition-all `}
-          >
-            <ListItem
-              isActive={pathname === "/dashboard/Inquiry/violation"}
-              link={"/dashboard/Inquiry/violation"}
-              title="استعلام خلافی"
-            />
-            <ListItem
-              isActive={pathname === "/dashboard/Inquiry/certificate"}
-              link={"/dashboard/Inquiry/certificate"}
-              title="استعلام گواهینامه"
-            />
-            <ListItem
-              isActive={pathname === "/dashboard/Inquiry/plates"}
-              link={"/dashboard/Inquiry/plates"}
-              title="پلاک های من"
-            />
-            <ListItem
-              isActive={pathname === "/dashboard/Inquiry/inquiryrecords"}
-              link={"/dashboard/Inquiry/inquiryrecords"}
-              title="سوابق استعلام"
-            />
-            <ListItem
-              isActive={
-                pathname === "/dashboard/Inquiry/negative-inquery-cerficate"
-              }
-              link={"/dashboard/Inquiry/negative-inquery-cerficate"}
-              title="استعلام نمره منفی"
-            />
-            <ListItem
-              isActive={pathname === "/dashboard/Inquiry/vehicledocuments"}
-              link={"/dashboard/Inquiry/vehicledocuments"}
-              title="استعلام مدارک خودرو"
-            />
-          </section> */}
+          <MenuLink title="لیست معرفی شدگان" link="/marketer-dashboard/Nominees" />
         </section>
         <button
           onClick={() => setLogOutModal(true)}

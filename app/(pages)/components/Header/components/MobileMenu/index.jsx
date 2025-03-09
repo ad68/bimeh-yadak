@@ -73,6 +73,7 @@ export default function Index({ open, setLogOutModal }) {
           <MenuLink title="خرید بیمه نامه" link="/relief-signup" />
           <MenuLink title="درخواست امداد خودرو" link="/request-relief" />
           <MenuLink title="مشاور و کارشناس فروش" link="/marketing" />
+
           <MenuLink title="ارزش روز خودرو" link="/price-calculate" />
           <MenuLink title="محاسبه افت بازار و بیمه خودرو" link="/price-drop-insurance" />
           <MenuLink title="درباره ما" link="/about" />

@@ -127,6 +127,7 @@ export default function Index() {
                 <Link href="/marketing" className="hover:opacity-50">
                   مشاور و کارشناس فروش
                 </Link>
+
                 <Link href="/price-calculate" className="hover:opacity-50">
                   ارزش روز خودرو
                 </Link>
