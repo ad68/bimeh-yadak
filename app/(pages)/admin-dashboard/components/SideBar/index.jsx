@@ -77,7 +77,7 @@ export default function Index() {
         <section className="mx-6 mt-4 flex h-auto flex-col  justify-start">
           <MenuLink title="داشبورد" link="/admin-dashboard" />
           <MenuLink title="لیست معرفی شدگان" link="/admin-dashboard/Nominees" />
-          {/*  <MenuLink title="اعلام خسارت" link="/admin-dashboard/declaration-damage" /> */}
+          <MenuLink title="اعلام خسارت" link="https://emdad1593.ir/login" />
           <MenuLink title="درخواست های همکاری" link="/admin-dashboard/collaboration" />
           <MenuLink title="پیش ثبت نام های بیمه" link="/admin-dashboard/relief-signup" />
           <MenuLink title="درخواست های امداد" link="/admin-dashboard/request-relief" />

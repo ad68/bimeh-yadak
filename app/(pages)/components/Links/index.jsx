@@ -47,16 +47,19 @@ export default function Index() {
             href="/price-drop-insurance"
           />
           <LinkItem
+            comingSoon={true}
             img={Repair2}
             title="بیمه تعمیرات"
             href="#"
           />
           <LinkItem
+            comingSoon={true}
             img={Tow}
             title="بیمه حمل و جابحایی خودرو"
             href="#"
           />
           <LinkItem
+            comingSoon={true}
             img={Bill}
             title="صدور بارنامه الکترونیکی"
             href="#"

@@ -8,7 +8,7 @@ import Link from "next/link";
 // ────────────────────────────────────────────────────────────────────
 //
 
-export default function Index({ img, title, href }) {
+export default function Index({ img, title, href, comingSoon }) {
   // ─── Global Variable ────────────────────────────────────────────────────────────
 
   // ─── States ─────────────────────────────────────────────────────────────────────
@@ -25,8 +25,9 @@ export default function Index({ img, title, href }) {
   return (
     <Link
       href={href}
-      className="xl:w-[122px] w-[69px] flex justify-center m-auto hover:scale-105 transition-all duration-300"
+      className="xl:w-[122px] w-[69px] flex justify-center m-auto hover:scale-105 transition-all duration-300 relative"
     >
+      {comingSoon && <span className="absolute top-1 left-9 w-[50px] rounded-md text-[10px] p-1 bg-red text-white text-center z-[1]">به زودی</span>}
       <section className="flex flex-col justify-center items-center">
         {/* <section className="w-[80px] h-[80px]  flex justify-center items-center bg-[#F3C401] hover:bg-[#f3c3018a] transition-all duration-300 shadow-[0px_18px_40px_0px_#B070701F]  rounded-full p-2 cursor-pointer">
           <Image className="w-[50px] h-[50px]" src={img} alt="" />

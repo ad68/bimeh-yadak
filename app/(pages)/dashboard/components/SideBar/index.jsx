@@ -78,6 +78,7 @@ export default function Index() {
         <section className="mx-6 mt-4 flex h-auto flex-col  justify-start">
           <MenuLink title="داشبورد" link="/dashboard" />
           <MenuLink title="لیست معرفی شدگان" link="/dashboard/Nominees" />
+          <MenuLink title="اعلام خسارت" link="https://emdad1593.ir/login" />
           <button
             onClick={() => {
               setOpenInquiry(!openInquiry);
