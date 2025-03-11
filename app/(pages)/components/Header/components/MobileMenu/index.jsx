@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import MenuLink from './components/MenuLink'
 import ProfileBtn from "./components/ProfileBtn";
 import { useAuthStore } from "@/store/auth/login";
-import { isEmptyObject } from "@/helper";
+import { isAdmin, isEmptyObject, isUser } from "@/helper";
 import { IconLogout } from "@/common/icons";
 import CollapseItem from './components/CollapseItem'
 //
@@ -43,10 +43,12 @@ export default function Index({ open, setLogOutModal }) {
       className={`mobileMenu fixed flex flex-col  ${open ? "right-0" : "right-[-100%]"} top-[63px]  z-[1001] h-full w-full bg-white  transition-all duration-500 ease-in-out`}
     >
       <section className="flex flex-col pb-5 ">
-        {authStatus !== "notLoggedIn" && <section className="px-[15px]">
-          <CollapseItem
+        {authStatus === "userInfoNotComplete" || authStatus === "userInfoComplete" && <section className="px-[15px]">
+          {isUser() && <CollapseItem
             title="پنل کاربری"
             menuList={[
+              { title: "لیست معرفی شدگان", link: "/dashboard/Nominees" },
+
               { title: "استعلام خلافی", link: "/dashboard/Inquiry/violation" },
               {
                 title: "استعلام گواهینامه",
@@ -66,13 +68,30 @@ export default function Index({ open, setLogOutModal }) {
                 link: "/dashboard/Inquiry/vehicledocuments",
               },
             ]}
-          />
+          />}
+          {isAdmin() && <CollapseItem
+            title="پنل ادمین"
+            menuList={[
+              { "title": "داشبورد", "link": "/admin-dashboard" },
+              { "title": "لیست معرفی شدگان", "link": "/admin-dashboard/Nominees" },
+              { "title": "اعلام خسارت", "link": "https://emdad1593.ir/login" },
+              { "title": "درخواست های همکاری", "link": "/admin-dashboard/collaboration" },
+              { "title": "پیش ثبت نام های بیمه", "link": "/admin-dashboard/relief-signup" },
+              { "title": "درخواست های امداد", "link": "/admin-dashboard/request-relief" },
+              { "title": "تراکنش ها", "link": "/admin-dashboard/transactions" },
+              { "title": "تراکنش‌های استعلام", "link": "/admin-dashboard/inquiry-transactions" },
+              { "title": "تماس با ما", "link": "/admin-dashboard/contact-us" }
+            ]}
+          />}
+
+
         </section>}
         <nav className="mt-1">
           <MenuLink title="خانه" link="/" />
           <MenuLink title="خرید بیمه نامه" link="/relief-signup" />
           <MenuLink title="درخواست امداد خودرو" link="/request-relief" />
-          <MenuLink title="همکاری در بازاریابی" link="/marketing" />
+          <MenuLink title="مشاور و کارشناس فروش" link="/marketing" />
+          <MenuLink title="اعلام خسارت" link="https://emdad1593.ir/login" />
           <MenuLink title="ارزش روز خودرو" link="/price-calculate" />
           <MenuLink title="محاسبه افت بازار و بیمه خودرو" link="/price-drop-insurance" />
           <MenuLink title="درباره ما" link="/about" />

@@ -8,9 +8,11 @@ const TopNavigation = () => {
         <MenuLink title="خانه" link="/" />
         <MenuLink title="خرید بیمه نامه" link="/relief-signup" />
         <MenuLink title="درخواست امداد خودرو" link="/request-relief" />
-        <MenuLink title="همکاری در بازاریابی" link="/marketing" />
+        <MenuLink title="مشاور و کارشناس فروش" link="/marketing" />
+        <MenuLink title="اعلام خسارت" link="https://emdad1593.ir/login" />
         <MenuLink title="درباره ما" link="/about" />
         <MenuLink title="تماس با ما" link="/contact-us" />
+
       </ul>
     </>
   );

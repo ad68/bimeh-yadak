@@ -175,7 +175,7 @@ export default function Index({ setStep }) {
         <section className="mt-[40px]">
           <section className="flex  items-center mt-[24px]">
             <span className="block w-[12px] h-[12px] bg-[#4E94EA] rounded-full ml-2"></span>
-            هزینه ی هر بار استعلام خدمات پلیس 52,0000 ریال می باشد
+            هزینه ی هر بار استعلام خدمات پلیس 110,000 ریال می باشد
           </section>
           <section className="flex justify-center items-center mt-[24px]">
             <span className="block w-[12px] h-[12px] bg-[#4E94EA] rounded-full ml-2"></span>
@@ -192,7 +192,7 @@ export default function Index({ setStep }) {
         <hr className="border-[#CCE0F9] mt-[32px]" />
         <section>
           <Checkbox onChange={(e) => setRuleAccept(e.target.checked)} className="mt-[32px]" value="withoutColoredPart">قوانین و مقررات را می پذیرم</Checkbox>
-          <Button loading={actionLoading} disabled={!ruleAccept} onClick={requestPayment} className="mt-[32px] w-[280px] m-auto">پرداخت 52,000 ریال</Button>
+          <Button loading={actionLoading} disabled={!ruleAccept} onClick={requestPayment} className="mt-[32px] w-[280px] m-auto">پرداخت 110,000 ریال</Button>
         </section>
       </Modal>
     </>

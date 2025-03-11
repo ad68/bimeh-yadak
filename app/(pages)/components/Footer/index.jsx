@@ -62,7 +62,7 @@ export default function Index() {
                 </h2>
               </Link>
               <p className="xl:mt-6 mt-3   text-justify xl:leading-9 leading-[30px] xl:text-sm text-[12px] font-medium xl:pr-0 ">
-              بیمه یدک یک محصول و خدمت جديد بیمه‌ای است که توسط کارگزاری رسمی بيمه برخط مباشر شماره پروانه فعالیت ١٨٧٨ تحت نظارت بیمه مرکزی‌ جمهوری اسلامی ایران با همکاری انجمن امداد خودرو کشوری راه اندازی شده است.
+                بیمه یدک یک محصول و خدمت جديد بیمه‌ای است که توسط کارگزاری رسمی بيمه برخط مباشر شماره پروانه فعالیت ١٨٧٨ تحت نظارت بیمه مرکزی‌ جمهوری اسلامی ایران با همکاری انجمن امداد خودرو کشوری راه اندازی شده است.
               </p>
               <section className="xl:flex xl:mt-8 mt-4 xl:gap-6 gap-4 items-center hidden">
                 <button className="hover:scale-110 hover:transition-all ">
@@ -125,8 +125,9 @@ export default function Index() {
                   درخواست امداد خودرو
                 </Link>
                 <Link href="/marketing" className="hover:opacity-50">
-                  همکاری در بازاریابی
+                  مشاور و کارشناس فروش
                 </Link>
+
                 <Link href="/price-calculate" className="hover:opacity-50">
                   ارزش روز خودرو
                 </Link>
@@ -180,7 +181,7 @@ export default function Index() {
                     className="xl:size-[30px] size-6"
                     alt=""
                   />
-                  ۰۲۱۹۱۳۰۱۵۹۳
+                  02191306421
                 </li>
                 <li className="flex xl:gap-[6px] gap-[3px]  items-start  leading-[32px]">
                   <Image
@@ -192,8 +193,7 @@ export default function Index() {
                   />
 
                   <span className="xl:w-[260px] ">
-                    تهران،کیانشهر، خیابان شهید سید عیوض روانبخش، بن بست چهارم،
-                    پلاک ۴، طبقه دوم
+                    انتهای یادگار امام خمینی - خیابان جرجانی روبروی دادسرای جنایی مجتمع پارس بلوک b1 طبقه 7واحد شرقی
                   </span>
                 </li>
               </ul>
@@ -281,7 +281,7 @@ export default function Index() {
             </section>
           </section>
           <span className="block w-full text-center py-4 !border-t !border-primary">
-            توسعه داده شده توسط شرکت سامانه نوآوری ایرانیان پوشش (سناپ)
+            توسعه دهنده گروه برنامه نویسی بیمه یدک در سناپ
           </span>
         </footer>
       )}
