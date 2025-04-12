@@ -1,12 +1,11 @@
 'use client';
 
-import Image from 'next/image';
 import React, { useRef, useState } from 'react';
 import Webcam from 'react-webcam';
 
 const CameraComponent = () => {
     const webcamRef = useRef(null);
-
+    const [facingMode, setFacingMode] = useState('environment');
     const [image, setImage] = useState(null);
 
     const capture = () => {
@@ -14,7 +13,9 @@ const CameraComponent = () => {
         setImage(screenshot);
     };
 
-
+    const switchCamera = () => {
+        setFacingMode((prev) => (prev === 'user' ? 'environment' : 'user'));
+    };
 
     return (
         <div style={{ textAlign: 'center' }}>
@@ -23,7 +24,7 @@ const CameraComponent = () => {
                     ref={webcamRef}
                     audio={false}
                     screenshotFormat="image/jpeg"
-                    videoConstraints="user"
+                    videoConstraints={{ facingMode }}
                     style={{ width: '100%', maxWidth: 400, borderRadius: 8 }}
                 />
             )}
@@ -32,11 +33,13 @@ const CameraComponent = () => {
                 {!image ? (
                     <>
                         <button onClick={capture}>📸 گرفتن عکس</button>
-
+                        <button onClick={switchCamera} style={{ marginLeft: 10 }}>
+                            🔄 سوییچ دوربین
+                        </button>
                     </>
                 ) : (
                     <>
-                        <Image src={image} alt="Captured" style={{ width: '100%', maxWidth: 400, borderRadius: 8 }} />
+                        <img src={image} alt="Captured" style={{ width: '100%', maxWidth: 400, borderRadius: 8 }} />
                         <div style={{ marginTop: 12 }}>
                             <button onClick={() => setImage(null)}>🔙 بازگشت به دوربین</button>
                         </div>
