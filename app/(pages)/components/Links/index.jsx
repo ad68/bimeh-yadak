@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useContext, useEffect } from "react";
+import React from "react";
 import LinkItem from "./components/LinkItem";
 import Repair from "../../../../public/icons/Group 4.svg";
 import Api from "../../../../public/icons/hands.svg";
@@ -9,6 +9,7 @@ import Chart from "../../../../public/icons/Layer_1.svg";
 import Repair2 from "../../../../public/icons/repair.svg";
 import Bill from "../../../../public/icons/bill.svg";
 import Tow from "../../../../public/icons/tow.svg";
+import Damage from "../../../../public/icons/damage.svg";
 //
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
@@ -47,6 +48,11 @@ export default function Index() {
             href="/price-drop-insurance"
           />
           <LinkItem
+            img={Damage}
+            title="اعلام خسارت"
+            href="https://emdad1593.ir/login"
+          />
+          <LinkItem
             comingSoon={true}
             img={Repair2}
             title="بیمه تعمیرات"
@@ -55,16 +61,26 @@ export default function Index() {
           <LinkItem
             comingSoon={true}
             img={Tow}
-            title="بیمه حمل و جابحایی خودرو"
+            title="بیمه حمل و جابجایی خودرو"
             href="#"
           />
-          <LinkItem
-            comingSoon={true}
-            img={Bill}
-            title="صدور بارنامه الکترونیکی"
-            href="#"
-          />
+          <section className="visible xl:hidden">
+            <LinkItem
+              comingSoon={true}
+              img={Bill}
+              title="صدور بارنامه الکترونیکی"
+              href="#"
+            />
+          </section>
         </section>
+      </section>
+      <section className="hidden xl:block">
+        <LinkItem
+          comingSoon={true}
+          img={Bill}
+          title="صدور بارنامه الکترونیکی"
+          href="#"
+        />
       </section>
     </section>
   );

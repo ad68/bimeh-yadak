@@ -281,7 +281,7 @@ export default function Index() {
             </section>
           </section>
           <span className="block w-full text-center py-4 !border-t !border-primary">
-            توسعه یافته توسط گروه برنامه نویسی بیمه یدک
+            توسعه دهنده گروه برنامه نویسی بیمه یدک در سناپ
           </span>
         </footer>
       )}
