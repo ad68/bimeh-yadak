@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+
 import React, { useRef, useState } from 'react';
 import Webcam from 'react-webcam';
 
@@ -45,7 +45,7 @@ const CameraComponent = () => {
             }
             <section>
                 <button onClick={goToCamera}>📸 گرفتن عکس</button>
-                <Image src={image} alt="Captured" width={400} height={400} style={{ width: '100%', height: "auto", maxWidth: 400, borderRadius: 8 }} />
+                <img src={image} alt="Captured" width={400} height={400} style={{ width: '100%', height: "auto", maxWidth: 400, borderRadius: 8 }} />
             </section>
         </div>
     );
