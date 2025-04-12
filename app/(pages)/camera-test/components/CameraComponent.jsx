@@ -12,6 +12,7 @@ const CameraComponent = () => {
     const capture = () => {
         const screenshot = webcamRef.current.getScreenshot();
         setImage(screenshot);
+        setCameraMode(false)
     };
 
     /*//////const switchCamera = () => {
@@ -40,7 +41,7 @@ const CameraComponent = () => {
             <div style={{ marginTop: 12 }}>
                 {!image ? (
                     <>
-                        <button onClick={capture}>📸 گرفتن عکس</button>
+                        <button onClick={() => setCameraMode(true)}>📸 گرفتن عکس</button>
                     </>
                 ) : (
                     <>
