@@ -50,5 +50,6 @@ const CameraComponent = () => {
         </div>
     );
 };
+/* asDAsASasAS */
 
 export default CameraComponent;
