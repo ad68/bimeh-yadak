@@ -5,12 +5,7 @@ const CameraComponent = dynamic(() => import('./components/CameraComponent'), { 
 export default function Page() {
     return (
         <div>
-            <h1>دوربین تست</h1>
             <CameraComponent />
         </div>
     );
 }
-
-
-
-/* asdasdasd */
