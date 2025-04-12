@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import React, { useRef, useState } from 'react';
 import Webcam from 'react-webcam';
 
@@ -22,7 +23,7 @@ const CameraComponent = () => {
                     ref={webcamRef}
                     audio={false}
                     screenshotFormat="image/jpeg"
-                    videoConstraints="environment"
+                    videoConstraints="user"
                     style={{ width: '100%', maxWidth: 400, borderRadius: 8 }}
                 />
             )}
@@ -35,7 +36,7 @@ const CameraComponent = () => {
                     </>
                 ) : (
                     <>
-                        <img src={image} alt="Captured" style={{ width: '100%', maxWidth: 400, borderRadius: 8 }} />
+                        <Image src={image} alt="Captured" style={{ width: '100%', maxWidth: 400, borderRadius: 8 }} />
                         <div style={{ marginTop: 12 }}>
                             <button onClick={() => setImage(null)}>🔙 بازگشت به دوربین</button>
                         </div>
