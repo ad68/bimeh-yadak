@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import React, { useRef, useState } from 'react';
 import Webcam from 'react-webcam';
 
@@ -7,13 +8,17 @@ const CameraComponent = () => {
     const webcamRef = useRef(null);
     const [facingMode, setFacingMode] = useState('environment');
     const [image, setImage] = useState(null);
-    const [cameraMode, setCameraMode] = useState(true)
+    const [cameraMode, setCameraMode] = useState(false)
 
     const capture = () => {
         const screenshot = webcamRef.current.getScreenshot();
         setImage(screenshot);
         setCameraMode(false)
     };
+    const goToCamera = () => {
+        setImage(false);
+        setCameraMode(true)
+    }
 
     /*//////const switchCamera = () => {
             setFacingMode((prev) => (prev === 'user' ? 'environment' : 'user'));
@@ -38,20 +43,9 @@ const CameraComponent = () => {
 
                 </section>
             }
-            <div style={{ marginTop: 12 }}>
-                {!image ? (
-                    <>
-                        <button onClick={() => setCameraMode(true)}>📸 گرفتن عکس</button>
-                    </>
-                ) : (
-                    <>
-                        <img src={image} alt="Captured" style={{ width: '100%', maxWidth: 400, borderRadius: 8 }} />
-                        <div style={{ marginTop: 12 }}>
-                            <button onClick={() => setImage(null)}>🔙 بازگشت به دوربین</button>
-                        </div>
-                    </>
-                )}
-            </div>
+            <section className='mt-[200px]'>
+                <button onClick={goToCamera}>📸 گرفتن عکس</button>
+            </section>
         </div>
     );
 };
