@@ -43,8 +43,9 @@ const CameraComponent = () => {
 
                 </section>
             }
-            <section className='mt-[200px]'>
+            <section>
                 <button onClick={goToCamera}>📸 گرفتن عکس</button>
+                <Image src={image} alt="Captured" style={{ width: '100%', maxWidth: 400, borderRadius: 8 }} />
             </section>
         </div>
     );
