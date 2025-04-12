@@ -45,7 +45,7 @@ const CameraComponent = () => {
             }
             <section>
                 <button onClick={goToCamera}>📸 گرفتن عکس</button>
-                <Image src={image} w alt="Captured" width={400} height={400} style={{ width: '100%', height: "auto", maxWidth: 400, borderRadius: 8 }} />
+                <Image src={image} alt="Captured" width={400} height={400} style={{ width: '100%', height: "auto", maxWidth: 400, borderRadius: 8 }} />
             </section>
         </div>
     );
