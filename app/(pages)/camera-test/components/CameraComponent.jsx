@@ -14,7 +14,7 @@ const CameraComponent = () => {
         setImage(screenshot);
     };
 
-    /*     const switchCamera = () => {
+    /*//////     const switchCamera = () => {
             setFacingMode((prev) => (prev === 'user' ? 'environment' : 'user'));
         }; */
 
